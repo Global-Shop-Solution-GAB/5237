@@ -1,0 +1,3780 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.F_Entry..Create
+Gui.F_Entry..Caption("Product Drawing Requisition Form")
+Gui.F_Entry..Size(17190,10440)
+Gui.F_Entry..MinX(0)
+Gui.F_Entry..MinY(0)
+Gui.F_Entry..Position(0,0)
+Gui.F_Entry..BackColor(-2147483633)
+Gui.F_Entry..MousePointer(0)
+Gui.F_Entry..Event(UnLoad,Unload)
+Gui.F_Entry..FontSize(9)
+Gui.F_Entry.cmdNewPDRF.Create(Button)
+Gui.F_Entry.cmdNewPDRF.Size(1605,810)
+Gui.F_Entry.cmdNewPDRF.Position(9960,135)
+Gui.F_Entry.cmdNewPDRF.Caption("New PDRF")
+Gui.F_Entry.cmdNewPDRF.FontSize(9)
+Gui.F_Entry.cmdNewPDRF.Event(Click,cmdNewPDRF_Click)
+Gui.F_Entry.framePO.Create(Frame)
+Gui.F_Entry.framePO.Size(9750,915)
+Gui.F_Entry.framePO.Position(120,1005)
+Gui.F_Entry.chkPO.Create(CheckBox)
+Gui.F_Entry.chkPO.Size(1560,360)
+Gui.F_Entry.chkPO.Position(135,300)
+Gui.F_Entry.chkPO.Parent("framePO")
+Gui.F_Entry.chkPO.Caption("PO Received")
+Gui.F_Entry.chkPO.FontSize(9)
+Gui.F_Entry.chkPO.Event(Click,chkPO_Click)
+Gui.F_Entry.lbl1.Create(Label,"Delivery Date",True,1605,255,0,1815,210,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl1.Parent("framePO")
+Gui.F_Entry.dtpDelivery.Create(DatePicker)
+Gui.F_Entry.dtpDelivery.Size(1590,285)
+Gui.F_Entry.dtpDelivery.Position(1860,435)
+Gui.F_Entry.dtpDelivery.Parent("framePO")
+Gui.F_Entry.lbl2.Create(Label,"Budget",True,1620,255,0,5820,210,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl2.Parent("framePO")
+Gui.F_Entry.txtBudget.Create(TextBox,"",True,1995,315,0,5835,435,True,1,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtBudget.Parent("framePO")
+Gui.F_Entry.txtBudget.NumericOnly(1)
+Gui.F_Entry.txtSO.Create(TextBox,"",True,1425,315,0,3675,435,True,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtSO.Parent("framePO")
+Gui.F_Entry.txtSO.Locked(True)
+Gui.F_Entry.lbl29.Create(Label,"Sales Order",True,1260,255,0,3645,210,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl29.Parent("framePO")
+Gui.F_Entry.cmdBrwSO.Create(Button)
+Gui.F_Entry.cmdBrwSO.Size(435,375)
+Gui.F_Entry.cmdBrwSO.Position(5160,375)
+Gui.F_Entry.cmdBrwSO.Caption("^")
+Gui.F_Entry.cmdBrwSO.FontSize(9)
+Gui.F_Entry.cmdBrwSO.Parent("framePO")
+Gui.F_Entry.cmdBrwSO.Enabled(False)
+Gui.F_Entry.cmdBrwSO.Event(Click,cmdBrwSO_Click)
+Gui.F_Entry.frameMain.Create(Frame)
+Gui.F_Entry.frameMain.Size(9750,915)
+Gui.F_Entry.frameMain.Position(120,60)
+Gui.F_Entry.lbl3.Create(Label,"Required Date",True,1620,255,0,3225,210,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl3.Parent("frameMain")
+Gui.F_Entry.lbl3.DefaultValue("")
+Gui.F_Entry.dtpRequired.Create(DatePicker)
+Gui.F_Entry.dtpRequired.Size(1605,285)
+Gui.F_Entry.dtpRequired.Position(3240,435)
+Gui.F_Entry.dtpRequired.Parent("frameMain")
+Gui.F_Entry.lbl4.Create(Label,"Scope",True,1335,255,0,4980,210,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl4.Parent("frameMain")
+Gui.F_Entry.ddlScope.Create(DropDownList)
+Gui.F_Entry.ddlScope.Size(2130,345)
+Gui.F_Entry.ddlScope.Position(4980,435)
+Gui.F_Entry.ddlScope.Parent("frameMain")
+Gui.F_Entry.ddlScope.FontSize(9)
+Gui.F_Entry.ddlScope.Event(SelectedIndexChanged,ddlScope_Click)
+Gui.F_Entry.lbl5.Create(Label,"PDRF No.",True,1230,255,0,75,210,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl5.Parent("frameMain")
+Gui.F_Entry.txtPDRF.Create(TextBox,"",True,1215,315,0,105,435,True,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtPDRF.Parent("frameMain")
+Gui.F_Entry.txtPDRF.NumericOnly(2)
+Gui.F_Entry.txtPDRF.Locked(True)
+Gui.F_Entry.lbl6.Create(Label,"Request Date",True,1635,255,0,1425,210,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl6.Parent("frameMain")
+Gui.F_Entry.dtpStart.Create(DatePicker)
+Gui.F_Entry.dtpStart.Size(1605,285)
+Gui.F_Entry.dtpStart.Position(1455,435)
+Gui.F_Entry.dtpStart.Parent("frameMain")
+Gui.F_Entry.txtScope.Create(TextBox,"",True,2415,315,0,7230,420,False,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtScope.Parent("frameMain")
+Gui.F_Entry.tab1.Create(Tab)
+Gui.F_Entry.tab1.Size(16755,7725)
+Gui.F_Entry.tab1.Position(120,2085)
+Gui.F_Entry.tab1.FontSize(9)
+Gui.F_Entry.tab1.Tabs(4)
+Gui.F_Entry.tab1.SetTab(0)
+Gui.F_Entry.tab1.Caption("Main")
+Gui.F_Entry.tab1.SetTab(1)
+Gui.F_Entry.tab1.Caption("Detail 1")
+Gui.F_Entry.tab1.SetTab(2)
+Gui.F_Entry.tab1.Caption("Detail 2")
+Gui.F_Entry.tab1.SetTab(3)
+Gui.F_Entry.tab1.Caption("Attachments")
+Gui.F_Entry.lbl7.Create(Label,"Design Intent*",True,1935,255,0,90,165,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl7.Parent("tab1",0)
+Gui.F_Entry.ddlDesignIntent.Create(DropDownList)
+Gui.F_Entry.ddlDesignIntent.Size(3525,330)
+Gui.F_Entry.ddlDesignIntent.Position(120,390)
+Gui.F_Entry.ddlDesignIntent.Parent("tab1",0)
+Gui.F_Entry.txtDescription.Create(TextboxM)
+Gui.F_Entry.txtDescription.Size(16425,5895)
+Gui.F_Entry.txtDescription.Position(120,1320)
+Gui.F_Entry.txtDescription.Parent("tab1",0)
+Gui.F_Entry.lbl10.Create(Label,"PLEASE PROVIDE REASON FOR REQUEST (5W 1H). FOR REVERSE ENGINEERING REQUEST, IS THE CUSTOMER FACING ISSUES FOR THE CURRENT DESIGN?",True,13845,255,0,105,1110,True,0,"Arial",8,-2147483633,0)
+Gui.F_Entry.lbl10.Parent("tab1",0)
+Gui.F_Entry.GsGCDoc.Create(GsGridControl)
+Gui.F_Entry.GsGCDoc.Size(7035,7155)
+Gui.F_Entry.GsGCDoc.Position(75,90)
+Gui.F_Entry.GsGCDoc.Parent("tab1",3)
+Gui.F_Entry.GsGCDoc.Event(RowCellClick,GsGCDoc_RowCellClick)
+Gui.F_Entry.frameProject.Create(Frame)
+Gui.F_Entry.frameProject.Size(15045,2010)
+Gui.F_Entry.frameProject.Position(90,1245)
+Gui.F_Entry.frameProject.Parent("tab1",1)
+Gui.F_Entry.frameProject.Caption("Project Name*")
+Gui.F_Entry.frameProject.FontSize(9)
+Gui.F_Entry.lbl11.Create(Label,"#Leads",True,1065,255,0,120,315,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl11.Parent("frameProject")
+Gui.F_Entry.txtLeads.Create(TextBox,"",True,1785,315,0,135,525,True,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtLeads.Parent("frameProject")
+Gui.F_Entry.lbl12.Create(Label,"Form",True,1065,255,0,2175,315,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl12.Parent("frameProject")
+Gui.F_Entry.txtForm.Create(TextBox,"",True,1455,315,0,2175,525,True,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtForm.Parent("frameProject")
+Gui.F_Entry.lbl13.Create(Label,"Size",True,1065,255,0,3870,315,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl13.Parent("frameProject")
+Gui.F_Entry.txtSize.Create(TextBox,"",True,1335,315,0,3885,525,True,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtSize.Parent("frameProject")
+Gui.F_Entry.lbl14.Create(Label,"Pitch",True,1065,255,0,5460,315,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl14.Parent("frameProject")
+Gui.F_Entry.txtPitch.Create(TextBox,"",True,1035,315,0,5490,525,True,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtPitch.Parent("frameProject")
+Gui.F_Entry.txtPitch.NumericOnly(1)
+Gui.F_Entry.lbl15.Create(Label,"Handler Name",True,1935,255,0,6735,315,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl15.Parent("frameProject")
+Gui.F_Entry.txtHandlerName.Create(TextBox,"",True,2250,315,0,6750,525,True,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtHandlerName.Parent("frameProject")
+Gui.F_Entry.lbl16.Create(Label,"Sites X/ Y",True,1200,255,0,9180,315,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl16.Parent("frameProject")
+Gui.F_Entry.txtSitesXY.Create(TextBox,"",True,1215,315,0,9210,525,True,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtSitesXY.Parent("frameProject")
+Gui.F_Entry.lbl17.Create(Label,"Kelvin",True,1065,255,0,10650,315,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl17.Parent("frameProject")
+Gui.F_Entry.lbl18.Create(Label,"E-Series/ Ultra",True,1530,255,0,11940,315,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl18.Parent("frameProject")
+Gui.F_Entry.ddlESeries.Create(DropDownList)
+Gui.F_Entry.ddlESeries.Size(1425,345)
+Gui.F_Entry.ddlESeries.Position(11970,525)
+Gui.F_Entry.ddlESeries.Parent("frameProject")
+Gui.F_Entry.ddlESeries.FontSize(9)
+Gui.F_Entry.ddlKelvin.Create(DropDownList)
+Gui.F_Entry.ddlKelvin.Size(1095,345)
+Gui.F_Entry.ddlKelvin.Position(10665,525)
+Gui.F_Entry.ddlKelvin.Parent("frameProject")
+Gui.F_Entry.ddlKelvin.FontSize(9)
+Gui.F_Entry.txtProjType.Create(TextBox,"",True,6405,315,0,135,1290,True,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtProjType.Parent("frameProject")
+Gui.F_Entry.txtProjType.MaxLength(150)
+Gui.F_Entry.txtHandlerNameDesc.Create(TextBox,"",True,6615,315,0,6750,1290,True,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtHandlerNameDesc.Parent("frameProject")
+Gui.F_Entry.lblHandlerName.Create(Label,"Handler Name Note",True,3660,255,0,6735,1065,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lblHandlerName.Parent("frameProject")
+Gui.F_Entry.lbl8.Create(Label,"Description",True,1935,255,0,120,1065,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl8.Parent("frameProject")
+Gui.F_Entry.frameDrawing.Create(Frame)
+Gui.F_Entry.frameDrawing.Size(15045,1065)
+Gui.F_Entry.frameDrawing.Position(90,105)
+Gui.F_Entry.frameDrawing.Parent("tab1",1)
+Gui.F_Entry.frameDrawing.Caption("Drawing#/S")
+Gui.F_Entry.frameDrawing.FontSize(9)
+Gui.F_Entry.lbl19.Create(Label,"Customer Code*",True,1590,255,0,90,315,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl19.Parent("frameDrawing")
+Gui.F_Entry.txtCustomerCode.Create(TextBox,"",True,1440,315,0,135,525,True,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtCustomerCode.Parent("frameDrawing")
+Gui.F_Entry.lbl20.Create(Label,"Type*",True,705,255,0,2460,315,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl20.Parent("frameDrawing")
+Gui.F_Entry.ddlDrawingType.Create(DropDownList)
+Gui.F_Entry.ddlDrawingType.Size(1095,345)
+Gui.F_Entry.ddlDrawingType.Position(2490,525)
+Gui.F_Entry.ddlDrawingType.Parent("frameDrawing")
+Gui.F_Entry.ddlDrawingType.FontSize(9)
+Gui.F_Entry.ddlDrawingType.Event(SelectedIndexChanged,ddlDrawingType_Click)
+'Gui.F_Entry.lbl21.Create(Label,"Running No.",True,1935,255,0,3840,315,True,0,"Arial",9,-2147483633,0)
+'Gui.F_Entry.lbl21.Parent("frameDrawing")
+'Gui.F_Entry.txtRunningNo.Create(TextBox,"",True,1800,315,0,3855,525,True,0,"Arial",9,-2147483643,1)
+'Gui.F_Entry.txtRunningNo.Parent("frameDrawing")
+'Gui.F_Entry.txtRunningNo.Locked(True)
+'Gui.F_Entry.txtRunningNo.Enabled(False)
+Gui.F_Entry.cmdBrwCust.Create(Button)
+Gui.F_Entry.cmdBrwCust.Size(495,375)
+Gui.F_Entry.cmdBrwCust.Position(1665,495)
+Gui.F_Entry.cmdBrwCust.Parent("frameDrawing")
+Gui.F_Entry.cmdBrwCust.Caption("^")
+Gui.F_Entry.cmdBrwCust.Event(Click,cmdBrwCust_Click)
+Gui.F_Entry.frame3.Create(Frame)
+Gui.F_Entry.frame3.Size(16440,1065)
+Gui.F_Entry.frame3.Position(105,3420)
+Gui.F_Entry.frame3.Parent("tab1",1)
+Gui.F_Entry.frame3.FontSize(9)
+Gui.F_Entry.lbl26.Create(Label,"Device Plating",True,1395,255,0,2835,315,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl26.Parent("frame3")
+Gui.F_Entry.ddlDevicePlating.Create(DropDownList)
+Gui.F_Entry.ddlDevicePlating.Size(1305,345)
+Gui.F_Entry.ddlDevicePlating.Position(2820,525)
+Gui.F_Entry.ddlDevicePlating.Parent("frame3")
+Gui.F_Entry.ddlDevicePlating.FontSize(9)
+Gui.F_Entry.lbl27.Create(Label,"Application",True,1935,255,0,4305,315,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl27.Parent("frame3")
+Gui.F_Entry.ddlApplication.Create(DropDownList)
+Gui.F_Entry.ddlApplication.Size(2460,345)
+Gui.F_Entry.ddlApplication.Position(4290,525)
+Gui.F_Entry.ddlApplication.Parent("frame3")
+Gui.F_Entry.ddlApplication.FontSize(9)
+Gui.F_Entry.lbl28.Create(Label,"ESD Requirement",True,1935,255,0,6915,315,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl28.Parent("frame3")
+Gui.F_Entry.txtESD.Create(TextBox,"",True,2490,315,0,6885,525,True,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtESD.Parent("frame3")
+Gui.F_Entry.frameTestEnvironment.Create(Frame)
+Gui.F_Entry.frameTestEnvironment.Size(6855,735)
+Gui.F_Entry.frameTestEnvironment.Position(9495,195)
+Gui.F_Entry.frameTestEnvironment.Parent("frame3")
+Gui.F_Entry.frameTestEnvironment.Caption("Test Environment")
+Gui.F_Entry.frameTestEnvironment.FontSize(9)
+Gui.F_Entry.lbl32.Create(Label,"deg C",True,645,255,0,3270,375,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl32.Parent("frameTestEnvironment")
+Gui.F_Entry.lbl33.Create(Label,"deg C",True,630,255,0,6030,375,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl33.Parent("frameTestEnvironment")
+Gui.F_Entry.chkCold.Create(CheckBox)
+Gui.F_Entry.chkCold.Size(810,360)
+Gui.F_Entry.chkCold.Position(4185,270)
+Gui.F_Entry.chkCold.Parent("frameTestEnvironment")
+Gui.F_Entry.chkCold.Caption("Cold")
+Gui.F_Entry.chkCold.FontSize(9)
+Gui.F_Entry.chkCold.Event(Click,chkCold_Click)
+Gui.F_Entry.txtCold.Create(TextBox,"",True,900,315,0,5070,285,False,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtCold.Parent("frameTestEnvironment")
+Gui.F_Entry.txtCold.NumericOnly(1)
+Gui.F_Entry.txtHot.Create(TextBox,"",True,900,315,0,2295,285,False,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtHot.Parent("frameTestEnvironment")
+Gui.F_Entry.txtHot.NumericOnly(1)
+Gui.F_Entry.chkHot.Create(CheckBox)
+Gui.F_Entry.chkHot.Size(765,360)
+Gui.F_Entry.chkHot.Position(1500,270)
+Gui.F_Entry.chkHot.Parent("frameTestEnvironment")
+Gui.F_Entry.chkHot.Caption("Hot")
+Gui.F_Entry.chkHot.FontSize(9)
+Gui.F_Entry.chkHot.Event(Click,chkHot_Click)
+Gui.F_Entry.chkAmbient.Create(CheckBox)
+Gui.F_Entry.chkAmbient.Size(1170,360)
+Gui.F_Entry.chkAmbient.Position(165,270)
+Gui.F_Entry.chkAmbient.Parent("frameTestEnvironment")
+Gui.F_Entry.chkAmbient.Caption("Ambient")
+Gui.F_Entry.chkAmbient.FontSize(9)
+Gui.F_Entry.frameDeviceInfo.Create(Frame)
+Gui.F_Entry.frameDeviceInfo.Size(2565,735)
+Gui.F_Entry.frameDeviceInfo.Position(120,195)
+Gui.F_Entry.frameDeviceInfo.Parent("frame3")
+Gui.F_Entry.frameDeviceInfo.Caption("Device Info")
+Gui.F_Entry.frameDeviceInfo.FontSize(9)
+Gui.F_Entry.chkPOD.Create(CheckBox)
+Gui.F_Entry.chkPOD.Size(810,360)
+Gui.F_Entry.chkPOD.Position(150,270)
+Gui.F_Entry.chkPOD.Parent("frameDeviceInfo")
+Gui.F_Entry.chkPOD.Caption("POD")
+Gui.F_Entry.chkPOD.FontSize(9)
+Gui.F_Entry.chkSample.Create(CheckBox)
+Gui.F_Entry.chkSample.Size(1020,360)
+Gui.F_Entry.chkSample.Position(1275,270)
+Gui.F_Entry.chkSample.Parent("frameDeviceInfo")
+Gui.F_Entry.chkSample.Caption("Sample")
+Gui.F_Entry.chkSample.FontSize(9)
+Gui.F_Entry.frameNest.Create(Frame)
+Gui.F_Entry.frameNest.Size(7470,1065)
+Gui.F_Entry.frameNest.Position(105,4665)
+Gui.F_Entry.frameNest.Parent("tab1",1)
+Gui.F_Entry.frameNest.Caption("Nest Information")
+Gui.F_Entry.frameNest.FontSize(9)
+Gui.F_Entry.ddlNest.Create(DropDownList)
+Gui.F_Entry.ddlNest.Size(1770,330)
+Gui.F_Entry.ddlNest.Position(135,525)
+Gui.F_Entry.ddlNest.Parent("frameNest")
+Gui.F_Entry.txtNestRemark.Create(TextBox,"",True,5250,315,0,2100,525,True,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtNestRemark.Parent("frameNest")
+Gui.F_Entry.txtNestRemark.MaxLength(255)
+Gui.F_Entry.lbl34.Create(Label,"Remark",True,1935,255,0,2070,315,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl34.Parent("frameNest")
+Gui.F_Entry.frameSocket.Create(Frame)
+Gui.F_Entry.frameSocket.Size(7425,1065)
+Gui.F_Entry.frameSocket.Position(7710,4665)
+Gui.F_Entry.frameSocket.Parent("tab1",1)
+Gui.F_Entry.frameSocket.Caption("Socket Footprint")
+Gui.F_Entry.frameSocket.FontSize(9)
+Gui.F_Entry.ddlSocket.Create(DropDownList)
+Gui.F_Entry.ddlSocket.Size(1770,330)
+Gui.F_Entry.ddlSocket.Position(135,525)
+Gui.F_Entry.ddlSocket.Parent("frameSocket")
+Gui.F_Entry.txtKeepOutZone.Create(TextBox,"",True,5250,315,0,2100,525,True,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtKeepOutZone.Parent("frameSocket")
+Gui.F_Entry.txtKeepOutZone.MaxLength(255)
+Gui.F_Entry.lbl35.Create(Label,"Keep Out Zone",True,1935,255,0,2070,315,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl35.Parent("frameSocket")
+Gui.F_Entry.frame7.Create(Frame)
+Gui.F_Entry.frame7.Size(13965,2640)
+Gui.F_Entry.frame7.Position(90,105)
+Gui.F_Entry.frame7.Parent("tab1",2)
+Gui.F_Entry.lbl36.Create(Label,"Contact Medium",True,1935,255,0,90,315,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl36.Parent("frame7")
+Gui.F_Entry.ddlContactMedium.Create(DropDownList)
+Gui.F_Entry.ddlContactMedium.Size(3540,345)
+Gui.F_Entry.ddlContactMedium.Position(120,555)
+Gui.F_Entry.ddlContactMedium.Parent("frame7")
+Gui.F_Entry.ddlContactMedium.FontSize(9)
+Gui.F_Entry.ddlContactMedium.Event(SelectedIndexChanged,ddlContactMedium_Click)
+Gui.F_Entry.lbl37.Create(Label,"EQT Part Number",True,1935,255,0,7860,315,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl37.Parent("frame7")
+Gui.F_Entry.txtPartNo.Create(TextBox,"",True,3045,315,0,7920,555,True,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtPartNo.Parent("frame7")
+Gui.F_Entry.cmdBrwPart.Create(Button)
+Gui.F_Entry.cmdBrwPart.Size(510,375)
+Gui.F_Entry.cmdBrwPart.Position(11055,525)
+Gui.F_Entry.cmdBrwPart.Parent("frame7")
+Gui.F_Entry.cmdBrwPart.Caption("^")
+Gui.F_Entry.cmdBrwPart.FontSize(9)
+Gui.F_Entry.cmdBrwPart.Event(Click,cmdBrwPart_Click)
+Gui.F_Entry.lbl38.Create(Label,"Test Height",True,1935,255,0,11865,315,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl38.Parent("frame7")
+Gui.F_Entry.txtTestHeight.Create(TextBox,"",True,1635,315,0,11940,555,True,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtTestHeight.Parent("frame7")
+Gui.F_Entry.txtTestHeight.NumericOnly(1)
+Gui.F_Entry.lbl39.Create(Label,"Contact Medium Plating",True,2415,255,0,90,1125,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl39.Parent("frame7")
+Gui.F_Entry.txtContactMediumPlating.Create(TextBox,"",True,2205,315,0,120,1350,True,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtContactMediumPlating.Parent("frame7")
+Gui.F_Entry.lbl40.Create(Label,"Contact Medium Pitch",True,1995,255,0,2520,1125,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl40.Parent("frame7")
+Gui.F_Entry.txtContactMediumPitch.Create(TextBox,"",True,1935,315,0,2550,1350,True,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtContactMediumPitch.Parent("frame7")
+Gui.F_Entry.txtContactMediumPitch.NumericOnly(1)
+Gui.F_Entry.lbl41.Create(Label,"Contact Force",True,1590,255,0,4680,1125,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl41.Parent("frame7")
+Gui.F_Entry.txtContactForce1.Create(TextBox,"",True,1320,315,0,4725,1350,True,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtContactForce1.Parent("frame7")
+Gui.F_Entry.txtContactForce1.NumericOnly(1)
+Gui.F_Entry.lbl42.Create(Label,"Ave Resistance",True,1515,255,0,6495,1125,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl42.Parent("frame7")
+Gui.F_Entry.txtAveResistance.Create(TextBox,"",True,1395,315,0,6525,1350,True,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtAveResistance.Parent("frame7")
+Gui.F_Entry.txtAveResistance.NumericOnly(1)
+Gui.F_Entry.lbl43.Create(Label,"Current Rating",True,1395,255,0,8820,1125,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl43.Parent("frame7")
+Gui.F_Entry.txtCurrentRating.Create(TextBox,"",True,1290,315,0,8850,1350,True,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtCurrentRating.Parent("frame7")
+Gui.F_Entry.txtCurrentRating.NumericOnly(1)
+Gui.F_Entry.lbl44.Create(Label,"Self Inductance",True,1500,255,0,10800,1125,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl44.Parent("frame7")
+Gui.F_Entry.txtSelfInductance.Create(TextBox,"",True,1350,315,0,10845,1350,True,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtSelfInductance.Parent("frame7")
+Gui.F_Entry.txtSelfInductance.NumericOnly(1)
+Gui.F_Entry.lbl45.Create(Label,"gf",True,315,255,0,6075,1425,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl45.Parent("frame7")
+Gui.F_Entry.lbl46.Create(Label,"m-Ohm",True,795,255,0,7950,1425,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl46.Parent("frame7")
+Gui.F_Entry.lbl47.Create(Label,"Amp",True,555,255,0,10170,1425,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl47.Parent("frame7")
+Gui.F_Entry.lbl48.Create(Label,"nH",True,405,255,0,12225,1425,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl48.Parent("frame7")
+Gui.F_Entry.lbl49.Create(Label,"Capacitance",True,1245,255,0,90,1935,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl49.Parent("frame7")
+Gui.F_Entry.txtCapacitance.Create(TextBox,"",True,1125,315,0,120,2160,True,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtCapacitance.Parent("frame7")
+Gui.F_Entry.txtCapacitance.NumericOnly(1)
+Gui.F_Entry.lbl50.Create(Label,"pF",True,390,255,0,1275,2250,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl50.Parent("frame7")
+Gui.F_Entry.lbl51.Create(Label,"Bandwidth",True,1065,255,0,1800,1935,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl51.Parent("frame7")
+Gui.F_Entry.txtBandwidth.Create(TextBox,"",True,1140,315,0,1830,2160,True,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtBandwidth.Parent("frame7")
+Gui.F_Entry.txtBandwidth.NumericOnly(1)
+Gui.F_Entry.lbl52.Create(Label,"GHz",True,510,255,0,3000,2250,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl52.Parent("frame7")
+Gui.F_Entry.lbl53.Create(Label,"Tip Style (DUT)",True,1455,255,0,3630,1935,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl53.Parent("frame7")
+Gui.F_Entry.txtTipStyleDUT.Create(TextBox,"",True,1305,315,0,3660,2160,True,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtTipStyleDUT.Parent("frame7")
+Gui.F_Entry.lbl54.Create(Label,"Tip Finishing (DUT)",True,1935,255,0,5205,1935,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl54.Parent("frame7")
+Gui.F_Entry.txtTipFinishDUT.Create(TextBox,"",True,1650,315,0,5235,2160,True,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtTipFinishDUT.Parent("frame7")
+Gui.F_Entry.lbl55.Create(Label,"Tip Style (PCB)",True,1455,255,0,7185,1935,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl55.Parent("frame7")
+Gui.F_Entry.txtTipStylePCB.Create(TextBox,"",True,1305,315,0,7200,2160,True,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtTipStylePCB.Parent("frame7")
+Gui.F_Entry.lbl56.Create(Label,"Tip Finishing (PCB)",True,1935,255,0,8760,1935,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl56.Parent("frame7")
+Gui.F_Entry.txtTipFinishPCB.Create(TextBox,"",True,1710,315,0,8790,2160,True,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtTipFinishPCB.Parent("frame7")
+Gui.F_Entry.txtContactMedium.Create(TextBox,"",True,3525,315,0,3885,555,False,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtContactMedium.Parent("frame7")
+Gui.F_Entry.frame8.Create(Frame)
+Gui.F_Entry.frame8.Size(13965,1440)
+Gui.F_Entry.frame8.Position(90,2790)
+Gui.F_Entry.frame8.Parent("tab1",2)
+Gui.F_Entry.lbl57.Create(Label,"Manual Actuator",True,1875,255,0,90,315,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl57.Parent("frame8")
+Gui.F_Entry.ddlManualActuator.Create(DropDownList)
+Gui.F_Entry.ddlManualActuator.Size(2580,345)
+Gui.F_Entry.ddlManualActuator.Position(120,555)
+Gui.F_Entry.ddlManualActuator.Parent("frame8")
+Gui.F_Entry.ddlManualActuator.FontSize(9)
+Gui.F_Entry.ddlManualActuator.Event(SelectedIndexChanged,ddlManualActuator_Click)
+Gui.F_Entry.lbl58.Create(Label,"Pusher Actuation",True,1860,255,0,2895,315,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl58.Parent("frame8")
+Gui.F_Entry.ddlPusherActuation.Create(DropDownList)
+Gui.F_Entry.ddlPusherActuation.Size(2280,345)
+Gui.F_Entry.ddlPusherActuation.Position(2925,555)
+Gui.F_Entry.ddlPusherActuation.Parent("frame8")
+Gui.F_Entry.ddlPusherActuation.FontSize(9)
+Gui.F_Entry.ddlPusherActuation.Event(SelectedIndexChanged,ddlPusherActuation_Click)
+Gui.F_Entry.txtPusherActuation.Create(TextBox,"",True,2280,315,0,2925,1005,False,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtPusherActuation.Parent("frame8")
+Gui.F_Entry.txtPusherActuation.MaxLength(20)
+Gui.F_Entry.lbl59.Create(Label,"Thermal Mgmt",True,1935,255,0,5430,315,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl59.Parent("frame8")
+Gui.F_Entry.ddlThermalMgmt.Create(DropDownList)
+Gui.F_Entry.ddlThermalMgmt.Size(2280,345)
+Gui.F_Entry.ddlThermalMgmt.Position(5430,555)
+Gui.F_Entry.ddlThermalMgmt.Parent("frame8")
+Gui.F_Entry.ddlThermalMgmt.FontSize(9)
+Gui.F_Entry.ddlThermalMgmt.Event(SelectedIndexChanged,ddlThermalMgmt_Click)
+Gui.F_Entry.txtManualActuator.Create(TextBox,"",True,2580,315,0,120,1005,False,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtManualActuator.Parent("frame8")
+Gui.F_Entry.txtManualActuator.MaxLength(30)
+Gui.F_Entry.txtThermalMgmt.Create(TextBox,"",True,2280,315,0,5430,1005,False,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtThermalMgmt.Parent("frame8")
+Gui.F_Entry.txtThermalMgmt.MaxLength(20)
+Gui.F_Entry.frameEngraving.Create(Frame)
+Gui.F_Entry.frameEngraving.Size(16470,810)
+Gui.F_Entry.frameEngraving.Position(90,4410)
+Gui.F_Entry.frameEngraving.Parent("tab1",2)
+Gui.F_Entry.frameEngraving.Caption("Engraving")
+Gui.F_Entry.frameEngraving.FontSize(9)
+Gui.F_Entry.chkEQT.Create(CheckBox)
+Gui.F_Entry.chkEQT.Size(750,360)
+Gui.F_Entry.chkEQT.Position(90,315)
+Gui.F_Entry.chkEQT.Parent("frameEngraving")
+Gui.F_Entry.chkEQT.Caption("EQT")
+Gui.F_Entry.chkEQT.FontSize(9)
+Gui.F_Entry.chkWONo.Create(CheckBox)
+Gui.F_Entry.chkWONo.Size(1920,360)
+Gui.F_Entry.chkWONo.Position(1020,315)
+Gui.F_Entry.chkWONo.Parent("frameEngraving")
+Gui.F_Entry.chkWONo.Caption("W/O NO / MM/YY")
+Gui.F_Entry.chkWONo.FontSize(9)
+Gui.F_Entry.chkDwgNo.Create(CheckBox)
+Gui.F_Entry.chkDwgNo.Size(1860,360)
+Gui.F_Entry.chkDwgNo.Position(3075,315)
+Gui.F_Entry.chkDwgNo.Parent("frameEngraving")
+Gui.F_Entry.chkDwgNo.Caption("DWG NO-REV")
+Gui.F_Entry.chkDwgNo.FontSize(9)
+Gui.F_Entry.chkPackageID.Create(CheckBox)
+Gui.F_Entry.chkPackageID.Size(1620,360)
+Gui.F_Entry.chkPackageID.Position(5175,315)
+Gui.F_Entry.chkPackageID.Parent("frameEngraving")
+Gui.F_Entry.chkPackageID.Caption("PACKAGE ID")
+Gui.F_Entry.chkPackageID.FontSize(9)
+Gui.F_Entry.chkUltra.Create(CheckBox)
+Gui.F_Entry.chkUltra.Size(1140,360)
+Gui.F_Entry.chkUltra.Position(7110,315)
+Gui.F_Entry.chkUltra.Parent("frameEngraving")
+Gui.F_Entry.chkUltra.Caption("ULTRA")
+Gui.F_Entry.chkUltra.FontSize(9)
+Gui.F_Entry.chkESeries.Create(CheckBox)
+Gui.F_Entry.chkESeries.Size(1275,360)
+Gui.F_Entry.chkESeries.Position(8490,315)
+Gui.F_Entry.chkESeries.Parent("frameEngraving")
+Gui.F_Entry.chkESeries.Caption("E-SERIES")
+Gui.F_Entry.chkESeries.FontSize(9)
+Gui.F_Entry.chkWhitePaint.Create(CheckBox)
+Gui.F_Entry.chkWhitePaint.Size(1665,360)
+Gui.F_Entry.chkWhitePaint.Position(10080,315)
+Gui.F_Entry.chkWhitePaint.Parent("frameEngraving")
+Gui.F_Entry.chkWhitePaint.Caption("WHITE PAINT")
+Gui.F_Entry.chkWhitePaint.FontSize(9)
+Gui.F_Entry.chkCustDwg.Create(CheckBox)
+Gui.F_Entry.chkCustDwg.Size(1755,360)
+Gui.F_Entry.chkCustDwg.Position(11940,315)
+Gui.F_Entry.chkCustDwg.Parent("frameEngraving")
+Gui.F_Entry.chkCustDwg.Caption("CUST DWG NO")
+Gui.F_Entry.chkCustDwg.FontSize(9)
+Gui.F_Entry.txtCustDWG.Create(TextBox,"",True,2610,315,0,13740,330,True,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtCustDWG.Parent("frameEngraving")
+Gui.F_Entry.frameOther.Create(Frame)
+Gui.F_Entry.frameOther.Size(16470,1965)
+Gui.F_Entry.frameOther.Position(90,5265)
+Gui.F_Entry.frameOther.Parent("tab1",2)
+Gui.F_Entry.frameOther.Caption("Other Information")
+Gui.F_Entry.frameOther.FontSize(9)
+'Gui.F_Entry.txtOtherInfo.Create(TextBox,"",True,16230,5680,0,120,255,False,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtOtherInfo.Create(TextboxM)
+Gui.F_Entry.txtOtherInfo.Size(16230,1680)
+Gui.F_Entry.txtOtherInfo.Position(120,255)
+Gui.F_Entry.txtOtherInfo.Parent("frameOther")
+Gui.F_Entry.txtOtherInfo.MaxLength(255)
+'Gui.F_Entry.txtOtherInfo.Locked(True)
+Gui.F_Entry.lbl62.Create(Label,"PL*",True,450,255,0,12975,165,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lbl62.Parent("tab1",0)
+Gui.F_Entry.txtPL.Create(TextBox,"",True,495,315,0,12990,390,True,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtPL.Parent("tab1",0)
+Gui.F_Entry.txtPL.Locked(True)
+Gui.F_Entry.cmdBrwPL.Create(Button)
+Gui.F_Entry.cmdBrwPL.Size(405,375)
+Gui.F_Entry.cmdBrwPL.Position(13590,360)
+Gui.F_Entry.cmdBrwPL.Parent("tab1",0)
+Gui.F_Entry.cmdBrwPL.Caption("^")
+Gui.F_Entry.cmdBrwPL.FontSize(9)
+Gui.F_Entry.cmdBrwPL.Event(Click,cmdBrwPL_Click)
+Gui.F_Entry.frameDeliverables.Create(Frame)
+Gui.F_Entry.frameDeliverables.Size(6675,780)
+Gui.F_Entry.frameDeliverables.Position(3855,150)
+Gui.F_Entry.frameDeliverables.Parent("tab1",0)
+Gui.F_Entry.frameDeliverables.Caption("Deliverables")
+Gui.F_Entry.frameDeliverables.FontSize(9)
+Gui.F_Entry.chkDesign.Create(CheckBox)
+Gui.F_Entry.chkDesign.Size(1200,360)
+Gui.F_Entry.chkDesign.Position(150,255)
+Gui.F_Entry.chkDesign.Parent("frameDeliverables")
+Gui.F_Entry.chkDesign.Caption("Design")
+Gui.F_Entry.chkDesign.FontSize(9)
+Gui.F_Entry.chkTolerance.Create(CheckBox)
+Gui.F_Entry.chkTolerance.Size(1920,360)
+Gui.F_Entry.chkTolerance.Position(1440,255)
+Gui.F_Entry.chkTolerance.Parent("frameDeliverables")
+Gui.F_Entry.chkTolerance.Caption("Tolerance Stack")
+Gui.F_Entry.chkTolerance.FontSize(9)
+Gui.F_Entry.chkFEA.Create(CheckBox)
+Gui.F_Entry.chkFEA.Size(1560,360)
+Gui.F_Entry.chkFEA.Position(3390,255)
+Gui.F_Entry.chkFEA.Parent("frameDeliverables")
+Gui.F_Entry.chkFEA.Caption("FEA Analysis")
+Gui.F_Entry.chkFEA.FontSize(9)
+Gui.F_Entry.chkRootCause.Create(CheckBox)
+Gui.F_Entry.chkRootCause.Size(1485,360)
+Gui.F_Entry.chkRootCause.Position(5100,255)
+Gui.F_Entry.chkRootCause.Parent("frameDeliverables")
+Gui.F_Entry.chkRootCause.Caption("Root Cause")
+Gui.F_Entry.chkRootCause.FontSize(9)
+Gui.F_Entry.htmlX.create(htmlcontainer)
+Gui.F_Entry.htmlX.size(9255,7140)
+Gui.F_Entry.htmlX.position(7290,105)
+Gui.F_Entry.htmlX.parent("tab1",3)
+Gui.F_Entry.htmlX.tabindex(3)
+Gui.F_Entry.frameOldPDRF.Create(Frame)
+Gui.F_Entry.frameOldPDRF.Size(3720,975)
+Gui.F_Entry.frameOldPDRF.Position(11670,60)
+Gui.F_Entry.frameOldPDRF.Caption("Existing PDRF")
+Gui.F_Entry.frameOldPDRF.FontSize(9)
+Gui.F_Entry.cmdNewRequest.Create(Button)
+Gui.F_Entry.cmdNewRequest.Size(1605,615)
+Gui.F_Entry.cmdNewRequest.Position(135,255)
+Gui.F_Entry.cmdNewRequest.Caption("New Request")
+Gui.F_Entry.cmdNewRequest.FontSize(9)
+Gui.F_Entry.cmdNewRequest.Parent("frameOldPDRF")
+Gui.F_Entry.cmdNewRequest.Event(Click,cmdExistingPDRF_Click)
+Gui.F_Entry.cmdOpenRequest.Create(Button)
+Gui.F_Entry.cmdOpenRequest.Size(1605,615)
+Gui.F_Entry.cmdOpenRequest.Position(1950,255)
+Gui.F_Entry.cmdOpenRequest.Caption("Open Request")
+Gui.F_Entry.cmdOpenRequest.FontSize(9)
+Gui.F_Entry.cmdOpenRequest.Parent("frameOldPDRF")
+Gui.F_Entry.cmdOpenRequest.Event(Click,cmdOpenPDRF_Click)
+'Gui.F_Entry.cmdOpenRequest.Event(Click,cmdExistingPDRF_Click)
+Gui.F_Entry.cmdSave.Create(Button)
+Gui.F_Entry.cmdSave.Size(1605,810)
+Gui.F_Entry.cmdSave.Position(9960,1080)
+Gui.F_Entry.cmdSave.Caption("Save")
+Gui.F_Entry.cmdSave.FontSize(9)
+Gui.F_Entry.cmdSave.Event(Click,CheckFormInput)
+Gui.F_Entry.cmdChildPart.Create(Button)
+Gui.F_Entry.cmdChildPart.Size(1605,810)
+Gui.F_Entry.cmdChildPart.Position(11810,1080)
+Gui.F_Entry.cmdChildPart.Caption("Child Part")
+Gui.F_Entry.cmdChildPart.FontSize(9)
+Gui.F_Entry.cmdChildPart.Event(Click,cmdChildPart_Click)
+Gui.F_Entry.cmdChildPart.Visible(False)
+Gui.F_Entry.frameClass.Create(Frame)
+Gui.F_Entry.frameClass.Size(1365,1260)
+Gui.F_Entry.frameClass.Position(15495,60)
+Gui.F_Entry.frameClass.Caption("Class")
+Gui.F_Entry.frameClass.FontSize(9)
+Gui.F_Entry.ddlClassNo.Create(DropDownList)
+Gui.F_Entry.ddlClassNo.Size(1095,345)
+Gui.F_Entry.ddlClassNo.Position(120,300)
+Gui.F_Entry.ddlClassNo.Parent("frameClass")
+Gui.F_Entry.ddlClassNo.FontSize(9)
+Gui.F_Entry.ddlClassType.Create(DropDownList)
+Gui.F_Entry.ddlClassType.Size(1095,345)
+Gui.F_Entry.ddlClassType.Position(120,780)
+Gui.F_Entry.ddlClassType.Parent("frameClass")
+Gui.F_Entry.ddlClassType.FontSize(9)
+Gui.F_Entry.frameEngineer.Create(Frame)
+Gui.F_Entry.frameEngineer.Size(1965,840)
+Gui.F_Entry.frameEngineer.Position(13425,1065)
+Gui.F_Entry.frameEngineer.Caption("Engineer")
+Gui.F_Entry.frameEngineer.FontSize(9)
+Gui.F_Entry.txtEngineer.Create(TextBox,"",True,1725,315,0,120,315,True,0,"Arial",9,-2147483643,1)
+Gui.F_Entry.txtEngineer.Parent("frameEngineer")
+Gui.F_Entry.txtEngineer.Locked(True)
+Gui.F_Entry.frameRequestor.Create(Frame)
+Gui.F_Entry.frameRequestor.Size(1620,840)
+Gui.F_Entry.frameRequestor.Position(11670,1065)
+Gui.F_Entry.frameRequestor.Caption("Requestor")
+Gui.F_Entry.frameRequestor.FontSize(9)
+Gui.F_Entry.lblRequestor.Create(Label,"Label",True,1395,255,0,135,420,True,0,"Arial",9,-2147483633,0)
+Gui.F_Entry.lblRequestor.Parent("frameRequestor")
+Gui.F_Entry.cmdUpdate.Create(Button)
+Gui.F_Entry.cmdUpdate.Size(1605,810)
+Gui.F_Entry.cmdUpdate.Position(9960,1080)
+Gui.F_Entry.cmdUpdate.Caption("Update")
+Gui.F_Entry.cmdUpdate.FontSize(9)
+Gui.F_Entry.cmdUpdate.Event(Click,cmdUpdate_Click)
+Gui.F_Child..create
+Gui.F_Child..caption("Child Part Number")
+Gui.F_Child..size(5350,10775)
+Gui.F_Child..minx(0)
+Gui.F_Child..miny(0)
+Gui.F_Child..position(0,0)
+Gui.F_Child..event(UnLoad,CloseChildPart)
+Gui.F_Child..alwaysontop(False)
+Gui.F_Child..fontname("Arial")
+Gui.F_Child..fontsize(8)
+Gui.F_Child..forecolor(0)
+Gui.F_Child..BackColor(-2147483633)
+Gui.F_Child..controlbox(True)
+Gui.F_Child..maxbutton(True)
+Gui.F_Child..minbutton(True)
+Gui.F_Child..mousepointer(0)
+Gui.F_Child..moveable(True)
+Gui.F_Child..sizeable(False)
+Gui.F_Child..ShowInTaskBar(True)
+Gui.F_Child..titlebar(True)
+Gui.F_Child.GsGChild.Create(GsGridControl)
+Gui.F_Child.GsGChild.Size(5000,10045)
+Gui.F_Child.GsGChild.Position(90,90)
+'Gui.F_Child.GsGChild.Parent("tab1",3)
+Gui.F_Child.GsGChild.Event(CellValueChanged,GsGChild_CellValueChanged)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+V.Global.iMode.Declare
+V.Global.iPass.Declare(Long,1)
+V.Global.iPermission.Declare
+V.Global.iRegion.Declare
+V.Global.iSeq.Declare
+V.Global.sEngraving.Declare
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+V.Local.sIcon.Declare
+
+F.Intrinsic.String.Build("{0}\ART\gss2.ico",V.Caller.GlobalDir,V.Local.sIcon)
+Gui.F_Entry..Icon(V.Local.sIcon)
+
+F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass,600)
+
+F.Intrinsic.Control.CallSub(InitializeScreen)
+'
+F.Intrinsic.Control.CallSub(CheckUserPermission)
+F.Intrinsic.Control.CallSub(InitializeDatatable)
+
+F.Intrinsic.Control.If(V.Passed.PDRF,<>,"")
+F.Intrinsic.Control.CallSub(engineerview)
+F.Intrinsic.Control.EndIf
+V.Global.iMode.Set(0)
+Gui.F_Entry.tab1.Anchor(15)
+Gui.F_Entry.txtDescription.Anchor(15)
+Gui.F_Entry.GsGCDoc.Anchor(7)
+Gui.F_Entry.htmlX.Anchor(15)
+Gui.F_Entry..MaxButton(False)
+
+Gui.F_Entry.tab1.SetTab(0)
+Gui.F_Entry..Show
+Program.Sub.Main.End
+
+Program.Sub.Unload.Start
+F.Data.DataView.Close("dtDoc","dvDoc")
+F.Data.DataTable.Close("dtDoc")
+F.Intrinsic.Control.If(V.DataTable.dtRegion.Exists)
+	F.Data.DataTable.Close("dtRegion")
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.Close("dtContactMedium")
+F.Data.DataTable.Close("dtManualActuator")
+F.Data.DataTable.Close("dtPusherActuation")
+F.Data.DataTable.Close("dtThermalMgmt")
+F.ODBC.Connection!conx.Close
+F.Intrinsic.Control.End
+
+Program.Sub.Unload.End
+
+Program.Sub.InitializeScreen.Start
+V.Local.dateStart.Declare
+V.Local.dateTime.Declare
+V.Local.iDiff.Declare
+
+
+F.Intrinsic.Date.ConvertTString("1500","HH:NN",V.Local.dateTime)
+F.Intrinsic.Date.DateDiff("N",V.Ambient.Time,V.Local.dateTime,V.Local.iDiff)
+F.Intrinsic.Control.If(V.Local.iDiff,<,0)
+	V.Local.dateStart.Set(V.Ambient.Date)
+	F.Intrinsic.Date.DateAdd("D",1,V.Local.dateStart,V.Local.dateStart)
+	Gui.F_Entry.dtpStart.Value(V.Local.dateStart)
+F.Intrinsic.Control.EndIf
+
+'Scope
+Gui.F_Entry.ddlScope.ClearItems
+Gui.F_Entry.ddlScope.AddItem("Quality Issue",0)
+Gui.F_Entry.ddlScope.AddItem("Proposal",1)
+Gui.F_Entry.ddlScope.AddItem("Detailing",2)
+Gui.F_Entry.ddlScope.AddItem("Others",3)
+
+'Design Intent
+Gui.F_Entry.ddlDesignIntent.ClearItems
+Gui.F_Entry.ddlDesignIntent.AddItem("NEW SOLUTION",0)
+Gui.F_Entry.ddlDesignIntent.AddItem("REPLACE (100% REVERSE)",1)
+Gui.F_Entry.ddlDesignIntent.AddItem("REPLACE (DROP IN)",2)
+Gui.F_Entry.ddlDesignIntent.AddItem("Others",3)
+
+'Detail-Project Name
+'Kelvin
+Gui.F_Entry.ddlKelvin.ClearItems
+Gui.F_Entry.ddlKelvin.AddItem("(K)",0)
+Gui.F_Entry.ddlKelvin.AddItem("(NK)",1)
+Gui.F_Entry.ddlKelvin.AddItem("",2)
+
+'E-Series/Ultra
+Gui.F_Entry.ddlESeries.ClearItems
+Gui.F_Entry.ddlESeries.AddItem("E-Series",0)
+Gui.F_Entry.ddlESeries.AddItem("Ultra",1)
+Gui.F_Entry.ddlESeries.AddItem("",2)
+
+'Drawing#/S
+'Type
+Gui.F_Entry.ddlDrawingType.ClearItems
+Gui.F_Entry.ddlDrawingType.AddItem("SC",0)
+Gui.F_Entry.ddlDrawingType.AddItem("SP",1)
+Gui.F_Entry.ddlDrawingType.AddItem("CK",2)
+Gui.F_Entry.ddlDrawingType.AddItem("N",3)
+Gui.F_Entry.ddlDrawingType.AddItem("SB",4)
+Gui.F_Entry.ddlDrawingType.AddItem("STD",5)
+Gui.F_Entry.ddlDrawingType.AddItem("P",6)
+
+'Frame3
+'Device Plating
+Gui.F_Entry.ddlDevicePlating.ClearItems
+Gui.F_Entry.ddlDevicePlating.AddItem("Au",0)
+Gui.F_Entry.ddlDevicePlating.AddItem("SnPb",1)
+Gui.F_Entry.ddlDevicePlating.AddItem("100% Sn",2)
+Gui.F_Entry.ddlDevicePlating.AddItem("NiPd",3)
+Gui.F_Entry.ddlDevicePlating.AddItem("SnAuCu",4)
+Gui.F_Entry.ddlDevicePlating.AddItem("Others",5)
+
+'Application
+Gui.F_Entry.ddlApplication.ClearItems
+Gui.F_Entry.ddlApplication.AddItem("AC < 2GHz, Kelvin",0)
+Gui.F_Entry.ddlApplication.AddItem("AC < 2GHz, Non-Kelvin",1)
+Gui.F_Entry.ddlApplication.AddItem("AC (RF) > 2GHZ, Kelvin",2)
+Gui.F_Entry.ddlApplication.AddItem("AC (RF) > 2GHZ, Non-Kelvin",3)
+Gui.F_Entry.ddlApplication.AddItem("DC (HC) > 4A, Kelvin",4)
+Gui.F_Entry.ddlApplication.AddItem("DC (HC) > 4A, Non-Kelvin",5)
+Gui.F_Entry.ddlApplication.AddItem("DC  < 2A, Kelvin",6)
+Gui.F_Entry.ddlApplication.AddItem("DC  < 2A, Non-Kelvin",7)
+
+'Nest Information
+Gui.F_Entry.ddlNest.ClearItems
+Gui.F_Entry.ddlNest.AddItem("NEW",0)
+Gui.F_Entry.ddlNest.AddItem("SAMPLE",1)
+Gui.F_Entry.ddlNest.AddItem("SOFT COPY",2)
+
+'Socket Information
+Gui.F_Entry.ddlSocket.ClearItems
+Gui.F_Entry.ddlSocket.AddItem("NEW",0)
+Gui.F_Entry.ddlSocket.AddItem("SAMPLE",1)
+Gui.F_Entry.ddlSocket.AddItem("SOFT COPY",2)
+
+'Contact Medium
+Gui.F_Entry.ddlContactMedium.ClearItems
+Gui.F_Entry.ddlContactMedium.AddItem("PROBE PIN",0)
+Gui.F_Entry.ddlContactMedium.AddItem("CONTACT FINGER",1)
+Gui.F_Entry.ddlContactMedium.AddItem("EXISTING PROBE PIN (provide PN)",2)
+Gui.F_Entry.ddlContactMedium.AddItem("EXISTING CONTACT FINGER (provide PN)",3)
+Gui.F_Entry.ddlContactMedium.AddItem("Others",4)
+
+'Manual Actuator
+Gui.F_Entry.ddlManualActuator.ClearItems
+Gui.F_Entry.ddlManualActuator.AddItem("NONE",0)
+Gui.F_Entry.ddlManualActuator.AddItem("CLIP ON-FIXED",1)
+Gui.F_Entry.ddlManualActuator.AddItem("CLIP ON-SPRING",2)
+Gui.F_Entry.ddlManualActuator.AddItem("CLIP ON-ADJUSTABLE",3)
+Gui.F_Entry.ddlManualActuator.AddItem("CLAMPSHELL-FIXED",4)
+Gui.F_Entry.ddlManualActuator.AddItem("CLAMPSHELL-SPRING",5)
+Gui.F_Entry.ddlManualActuator.AddItem("CLAMPSHELL-ADJUSTABLE",6)
+Gui.F_Entry.ddlManualActuator.AddItem("Others",7)
+
+'Pusher Actuation
+Gui.F_Entry.ddlPusherActuation.ClearItems
+Gui.F_Entry.ddlPusherActuation.AddItem("KNOB",0)
+Gui.F_Entry.ddlPusherActuation.AddItem("LEVER",1)
+Gui.F_Entry.ddlPusherActuation.AddItem("N/A",2)
+Gui.F_Entry.ddlPusherActuation.AddItem("Others",3)
+
+'Thermal Mgmt
+Gui.F_Entry.ddlThermalMgmt.ClearItems
+Gui.F_Entry.ddlThermalMgmt.AddItem("ACTIVE COOLING",0)
+Gui.F_Entry.ddlThermalMgmt.AddItem("PASSIVE COOLING",1)
+Gui.F_Entry.ddlThermalMgmt.AddItem("N/A",2)
+Gui.F_Entry.ddlThermalMgmt.AddItem("Others",3)
+
+'Disable some fields
+Gui.F_Entry.dtpStart.Enabled(False)
+Gui.F_Entry.dtpDelivery.Enabled(False)
+Gui.F_Entry.txtPartNo.Enabled(False)
+Gui.F_Entry.cmdBrwPart.Enabled(True)
+Gui.F_Entry.txtManualActuator.Enabled(False)
+Gui.F_Entry.txtPusherActuation.Enabled(False)
+Gui.F_Entry.txtThermalMgmt.Enabled(False)
+
+'Class No and Class Type
+Gui.F_Entry.ddlClassNo.ClearItems
+Gui.F_Entry.ddlClassNo.AddItem("1",0)
+Gui.F_Entry.ddlClassNo.AddItem("2",1)
+Gui.F_Entry.ddlClassNo.AddItem("3",2)
+
+Gui.F_Entry.ddlClassType.ClearItems
+Gui.F_Entry.ddlClassType.AddItem("FA",0)
+Gui.F_Entry.ddlClassType.AddItem("NEW",0)
+Gui.F_Entry.ddlClassType.AddItem("REV",0)
+
+Gui.F_Entry.frameEngineer.Visible(False)
+
+F.Intrinsic.Control.If(V.DataTable.dtDoc.Exists)
+	F.Data.DataView.Close("dtDoc","dvDoc")
+	F.Data.DataTable.Close("dtDoc")
+F.Intrinsic.Control.EndIf
+
+F.Data.DataTable.Create("dtDoc",True)
+F.Data.DataTable.AddColumn("dtDoc","File_Seq","Long")
+F.Data.DataTable.AddColumn("dtDoc","Filename","String")
+F.Data.DataTable.AddColumn("dtDoc","Add","Long")
+F.Data.DataTable.AddColumn("dtDoc","Delete","Long")
+F.Data.DataTable.AddRow("dtDoc","File_Seq",1)
+F.Data.DataView.Create("dtDoc","dvDoc",22,"","File_Seq ASC")
+Gui.F_Entry.GsGCDoc.AddGridviewFromDataview("gvDoc","dtDoc","dvDoc")
+Gui.F_Entry.GsGCDoc.MainView("gvDoc")
+Gui.F_Entry.GsGCDoc.ColumnEdit("gvDoc","Add","EditorButton","Add")
+Gui.F_Entry.GsGCDoc.ColumnEdit("gvDoc","Delete","EditorButton","Delete")
+Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","Filename","AllowEdit",False)
+Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","Add","AllowEdit",False)
+Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","Delete","AllowEdit",False)
+Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","Add","ShowCaption",False)
+Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","Delete","ShowCaption",False)
+Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","File_Seq","HeaderHAlignment","Center")
+Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","Filename","HeaderHAlignment","Center")
+Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","File_Seq","CellHAlignment","Center")
+Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","File_Seq","MinWidth","40")
+Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","Filename","MinWidth","250")
+Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","Add","MinWidth","45")
+Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","Delete","MinWidth","45")
+Program.Sub.InitializeScreen.End
+
+Program.Sub.ClearScreen.Start
+V.Local.i1.Declare
+
+'frameMain
+Gui.F_Entry.txtPDRF.Text("")
+
+'framePO
+Gui.F_Entry.chkPO.Value(0)
+Gui.F_Entry.txtBudget.Text("")
+Gui.F_Entry.txtScope.Text("")
+Gui.F_Entry.txtScope.Enabled(False)
+
+'tab-Main
+'Gui.F_Entry.txtRemarks.Text("")
+Gui.F_Entry.txtDescription.Text("")
+Gui.F_Entry.txtPL.Text("")
+
+'tab-Detail 1
+'Project name
+Gui.F_Entry.txtLeads.Text("")
+Gui.F_Entry.txtForm.Text("")
+Gui.F_Entry.txtSize.Text("")
+Gui.F_Entry.txtPitch.Text("")
+Gui.F_Entry.txtHandlerName.Text("")
+Gui.F_Entry.txtSitesXY.Text("")
+Gui.F_Entry.txtProjType.Text("")
+Gui.F_Entry.txtProjType.Locked(False)
+'Gui.F_Entry.txtProjType.Enabled(True)
+
+'tab-Detail 1
+'Drawing#
+Gui.F_Entry.txtCustomerCode.Text("")
+Gui.F_Entry.txtCustomerCode.Enabled(True)
+'gui.F_Entry.txtRunningNo.Text("")
+'Gui.F_Entry.txtRunningNo2.Text("")
+'Gui.F_Entry.txtRunningNo3.Text("")
+'Gui.F_Entry.txtRunningNo4.Text("")
+
+'tab-Detail 1
+'frame3
+Gui.F_Entry.txtESD.Text("")
+
+'tab-Detail 1
+'Test Environment
+gui.F_Entry.txtCold.Text("")
+Gui.F_Entry.txtCold.Enabled(False)
+Gui.F_Entry.txtHot.Text("")
+Gui.F_Entry.txtHot.Enabled(False)
+Gui.F_Entry.chkAmbient.Value(0)
+Gui.F_Entry.chkCold.Value(0)
+Gui.F_Entry.chkHot.Value(0)
+
+'tab-Detail 1
+'Nest Information
+Gui.F_Entry.txtNestRemark.Text("")
+
+'tab-Detail 1
+'Socket Footprint
+Gui.F_Entry.txtKeepOutZone.Text("")
+
+'tab-Detail 2
+'frame7
+Gui.F_Entry.txtContactMedium.Text("")
+Gui.F_Entry.txtPartNo.Text("")
+Gui.F_Entry.cmdBrwPart.Enabled(True)
+Gui.F_Entry.txtTestHeight.Text("")
+Gui.F_Entry.txtContactMediumPlating.Text("")
+Gui.F_Entry.txtContactMediumPitch.Text("")
+Gui.F_Entry.txtContactForce1.Text("0")
+Gui.F_Entry.txtAveResistance.Text("0")
+Gui.F_Entry.txtCurrentRating.Text("0")
+Gui.F_Entry.txtSelfInductance.Text("0")
+Gui.F_Entry.txtCapacitance.Text("0")
+Gui.F_Entry.txtBandwidth.Text("0")
+Gui.F_Entry.txtTipStyleDUT.Text("")
+Gui.F_Entry.txtTipFinishDUT.Text("")
+Gui.F_Entry.txtTipStylePCB.Text("")
+Gui.F_Entry.txtTipFinishPCB.Text("")
+
+'tab-Detail 2
+'frame8
+Gui.F_Entry.txtManualActuator.Text("")
+Gui.F_Entry.txtManualActuator.Enabled(False)
+Gui.F_Entry.txtPusherActuation.Text("")
+Gui.F_Entry.txtPusherActuation.Enabled(False)
+Gui.F_Entry.txtThermalMgmt.Text("")
+Gui.F_Entry.txtThermalMgmt.Enabled(False)
+
+'tab-Detail 2
+'Engraving
+Gui.F_Entry.chkEQT.Value(0)
+Gui.F_Entry.chkWONo.Value(0)
+Gui.F_Entry.chkDwgNo.Value(0)
+Gui.F_Entry.chkESeries.Value(0)
+Gui.F_Entry.chkPackageID.Value(0)
+Gui.F_Entry.chkUltra.Value(0)
+Gui.F_Entry.chkWhitePaint.Value(0)
+
+'tab-Detail 2
+'Other Info
+Gui.F_Entry.txtCustDWG.Text("")
+Gui.F_Entry.txtOtherInfo.Text("")
+
+'tab-Status
+F.Intrinsic.Control.If(V.DataTable.dtStatus.Exists)
+	F.Intrinsic.Control.For(V.Local.i1,V.DataTable.dtStatus.RowCount--,0,-1)
+		F.Data.DataTable.DeleteRow("dtStatus",V.Local.i1)
+	F.Intrinsic.Control.Next(V.Local.i1)
+	F.Data.DataTable.AcceptChanges("dtStatus")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.CallSub(InitializeScreen)
+Program.Sub.ClearScreen.End
+
+Program.Sub.chkPO_Click.Start
+V.Local.sPDRF.Declare
+
+'Click on PO Received
+F.Intrinsic.Control.If(V.Screen.F_Entry!chkPO.Value,=,1)
+	Gui.F_Entry.dtpDelivery.Value(V.Ambient.Date)
+	Gui.F_Entry.dtpDelivery.Enabled(True)
+	Gui.F_Entry.cmdBrwSO.Enabled(True)
+	Gui.F_Entry.cmdBrwCust.Enabled(False)
+F.Intrinsic.Control.Else
+	Gui.F_Entry.dtpDelivery.Enabled(False)
+	Gui.F_Entry.cmdBrwSO.Enabled(False)
+	Gui.F_Entry.cmdBrwCust.Enabled(True)
+F.Intrinsic.Control.EndIf
+
+V.Local.sPDRF.Set(V.Screen.F_Entry!txtPDRF.Text)
+F.Intrinsic.Control.If(V.Local.sPDRF.Trim,=,"")
+	Gui.F_Entry.cmdBrwCust.Visible(True)
+F.Intrinsic.Control.Else
+	Gui.F_Entry.cmdBrwCust.Visible(False)
+F.Intrinsic.Control.EndIf
+Program.Sub.chkPO_Click.End
+
+Program.Sub.ddlContactMedium_Click.Start
+V.Local.bInString.Declare
+V.Local.sSelect.Declare
+'Click on Contact Medium dropdownlist
+V.Local.sSelect.Set(V.Screen.F_Entry!ddlContactMedium.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,<>,"")
+	F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"Others")
+		Gui.F_Entry.txtContactMedium.Enabled(True)
+	F.Intrinsic.Control.Else
+		Gui.F_Entry.txtContactMedium.Text("")
+		Gui.F_Entry.txtContactMedium.Enabled(False)
+'		Gui.F_Entry.txtContactMedium.Enabled(False)
+'		Gui.F_Entry.cmdBrwContactMedium.Enabled(False)
+		F.Intrinsic.String.IsInString(V.Local.sSelect,"EXISTING",True,V.Local.bInString)
+		F.Intrinsic.Control.If(V.Local.bInString)
+			Gui.F_Entry.txtPartNo.Enabled(True)
+			Gui.F_Entry.cmdBrwPart.Enabled(True)
+		F.Intrinsic.Control.Else
+			Gui.F_Entry.txtPartNo.Enabled(False)
+			Gui.F_Entry.cmdBrwPart.Enabled(False)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+Program.Sub.ddlContactMedium_Click.End
+
+Program.Sub.ddlManualActuator_Click.Start
+V.Local.sSelect.Declare
+'Click on Manual Actuator dropdownlist
+V.Local.sSelect.Set(V.Screen.F_Entry!ddlManualActuator.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,<>,"")
+	F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"Others")
+		Gui.F_Entry.txtManualActuator.Visible(True)
+		Gui.F_Entry.ddlPusherActuation.Visible(True)
+		Gui.F_Entry.txtPusherActuation.Visible(True)
+		Gui.F_Entry.ddlThermalMgmt.Visible(True)
+		Gui.F_Entry.txtThermalMgmt.Visible(True)
+		Gui.F_Entry.txtManualActuator.Text("")
+		Gui.F_Entry.txtManualActuator.Enabled(True)
+	F.Intrinsic.Control.ElseIf(V.Local.sSelect.Trim,=,"NONE")
+		Gui.F_Entry.txtManualActuator.Visible(False)
+		Gui.F_Entry.ddlPusherActuation.Visible(False)
+		Gui.F_Entry.txtPusherActuation.Visible(False)
+		Gui.F_Entry.ddlThermalMgmt.Visible(False)
+		Gui.F_Entry.txtThermalMgmt.Visible(False)
+	F.Intrinsic.Control.Else
+		Gui.F_Entry.txtManualActuator.Visible(True)
+		Gui.F_Entry.ddlPusherActuation.Visible(True)
+		Gui.F_Entry.txtPusherActuation.Visible(True)
+		Gui.F_Entry.txtManualActuator.Enabled(False)
+		Gui.F_Entry.ddlThermalMgmt.Visible(True)
+		Gui.F_Entry.txtThermalMgmt.Visible(True)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+Program.Sub.ddlManualActuator_Click.End
+
+Program.Sub.ddlPusherActuation_Click.Start
+V.Local.sSelect.Declare
+'Click on Pusher Actuation dropdownlist
+V.Local.sSelect.Set(V.Screen.F_Entry!ddlPusherActuation.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,<>,"")
+	F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"Others")
+		Gui.F_Entry.txtPusherActuation.Text("")
+		Gui.F_Entry.txtPusherActuation.Enabled(True)
+	F.Intrinsic.Control.Else
+		Gui.F_Entry.txtPusherActuation.Enabled(False)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+Program.Sub.ddlPusherActuation_Click.End
+
+Program.Sub.ddlThermalMgmt_Click.Start
+V.Local.sSelect.Declare
+'Click on Thermal Management dropdownlist
+V.Local.sSelect.Set(V.Screen.F_Entry!ddlThermalMgmt.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,<>,"")
+	F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"Others")
+		Gui.F_Entry.txtThermalMgmt.Text("")
+		Gui.F_Entry.txtThermalMgmt.Enabled(True)
+	F.Intrinsic.Control.Else
+		Gui.F_Entry.txtManualActuator.Enabled(False)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+Program.Sub.ddlThermalMgmt_Click.End
+
+Program.Sub.CheckFormInput.Start
+V.Local.bInString.Declare
+V.Local.iPass.Declare
+V.Local.iType.Declare
+V.Local.sContactMedium.Declare
+V.Local.sPart.Declare
+V.Local.sSelect.Declare
+V.Local.sText.Declare
+
+'Verify that required fields have been selected
+V.Local.sSelect.Set(V.Screen.F_Entry!ddlScope.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+	F.Intrinsic.UI.Msgbox("Scope must be selected")
+	Gui.F_Entry.ddlScope.SetFocus
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"Others")
+		V.Local.sSelect.Set(V.Screen.F_Entry!txtScope.Text)
+		F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+			F.Intrinsic.UI.Msgbox("Scope must be keyed in")
+			Gui.F_Entry.txtScope.SetFocus
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+'tab - Main
+V.Local.sSelect.Set(V.Screen.F_Entry!ddlDesignIntent.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+	F.Intrinsic.UI.Msgbox("Design Intent must be selected")
+	Gui.F_Entry.tab1.SetTab(0)
+	Gui.F_Entry.ddlDesignIntent.SetFocus
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.F_Entry!chkDesign.Value,=,0)
+F.Intrinsic.Control.AndIf(V.Screen.F_Entry!chkTolerance.Value,=,0)
+F.Intrinsic.Control.AndIf(V.Screen.F_Entry!chkFEA.Value,=,0)
+F.Intrinsic.Control.AndIf(V.Screen.F_Entry!chkRootCause.Value,=,0)
+	F.Intrinsic.UI.Msgbox("Deliverables must be selected")
+	Gui.F_Entry.tab1.SetTab(0)
+	Gui.F_Entry.frameDeliverables.SetFocus
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+V.Local.sSelect.Set(V.Screen.F_Entry!txtDescription.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+	F.Intrinsic.UI.Msgbox("Reason for Request must be filled in")
+	Gui.F_Entry.tab1.SetTab(0)
+	Gui.F_Entry.txtDescription.SetFocus
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+V.Local.sSelect.Set(V.Screen.F_Entry!txtPL.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+	F.Intrinsic.UI.Msgbox("PL must be selected")
+	Gui.F_Entry.tab1.SetTab(0)
+	Gui.F_Entry.cmdBrwPL.SetFocus
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'Drawing#
+V.Local.sSelect.Set(V.Screen.F_Entry!txtCustomerCode.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+	F.Intrinsic.UI.Msgbox("Customer Code must be selected")
+	Gui.F_Entry.tab1.SetTab(0)
+	Gui.F_Entry.txtCustomerCode.SetFocus
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+V.Local.sSelect.Set(V.Screen.F_Entry!ddlDrawingType.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+	F.Intrinsic.UI.Msgbox("Drawing Type must be selected")
+	Gui.F_Entry.tab1.SetTab(0)
+	Gui.F_Entry.ddlDrawingType.SetFocus
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.ElseIf(V.Local.sSelect.Trim,=,"SC")
+	F.Intrinsic.Control.CallSub(VerifySC-N-CK)
+	F.Intrinsic.Control.If(V.Global.iPass,=,1)
+		F.Intrinsic.Control.CallSub(VerifySCOnly)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ElseIf(V.Local.sSelect.Trim,=,"N")
+	F.Intrinsic.Control.CallSub(VerifySC-N-CK)
+F.Intrinsic.Control.ElseIf(V.Local.sSelect.Trim,=,"CK")
+	F.Intrinsic.Control.CallSub(VerifySC-N-CK)
+F.Intrinsic.Control.ElseIf(V.Local.sSelect.Trim,=,"SP")
+	'Project type
+	V.Local.sSelect.Set(V.Screen.F_Entry!txtProjType.Text)
+	F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+		F.Intrinsic.UI.Msgbox("Project Name Description must be keyed in")
+		Gui.F_Entry.txtProjType.SetFocus
+		F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.Else
+		V.Local.sSelect.Set(V.Screen.F_Entry!txtHandlerNameDesc.Text)
+		F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+			F.Intrinsic.UI.Msgbox("Project Name Handler Name Note must be keyed in")
+			Gui.F_Entry.txtProjType.SetFocus
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	V.Global.iPass.Set(1)
+F.Intrinsic.Control.ElseIf(V.Local.sSelect.Trim,=,"SB")
+	'Project type
+	V.Local.sSelect.Set(V.Screen.F_Entry!txtProjType.Text)
+	F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+		F.Intrinsic.UI.Msgbox("Project Name Description must be keyed in")
+		Gui.F_Entry.txtProjType.SetFocus
+		F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.Else
+		V.Local.sSelect.Set(V.Screen.F_Entry!txtHandlerNameDesc.Text)
+		F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+			F.Intrinsic.UI.Msgbox("Project Name Handler Name Note must be keyed in")
+			Gui.F_Entry.txtProjType.SetFocus
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	V.Global.iPass.Set(1)
+F.Intrinsic.Control.ElseIf(V.Local.sSelect.Trim,=,"P")
+	'Project type
+	V.Local.sSelect.Set(V.Screen.F_Entry!txtProjType.Text)
+	F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+		F.Intrinsic.UI.Msgbox("Project Name Description must be keyed in")
+		Gui.F_Entry.txtProjType.SetFocus
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.Else
+		V.Local.sSelect.Set(V.Screen.F_Entry!txtHandlerNameDesc.Text)
+		F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+			F.Intrinsic.UI.Msgbox("Project Name Handler Name Note must be keyed in")
+			Gui.F_Entry.txtProjType.SetFocus
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	V.Global.iPass.Set(1)
+F.Intrinsic.Control.Else
+	'Project type
+	V.Local.sSelect.Set(V.Screen.F_Entry!txtProjType.Text)
+	F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+		F.Intrinsic.UI.Msgbox("Project Name Description must be keyed in")
+		Gui.F_Entry.txtProjType.SetFocus
+		F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.Else
+		V.Local.sSelect.Set(V.Screen.F_Entry!txtHandlerNameDesc.Text)
+		F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+			F.Intrinsic.UI.Msgbox("Project Name Handler Name Note must be keyed in")
+			Gui.F_Entry.txtProjType.SetFocus
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	V.Global.iPass.Set(1)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Global.iPass,=,0)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'F.Intrinsic.Control.ElseIf(V.Local.iType,=,2)
+'	'Handler name
+'	V.Local.sSelect.Set(V.Screen.F_Entry!txtHandlerName.Text)
+'	F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+'		F.Intrinsic.UI.Msgbox("Project Name Handler Name must be filled in")
+'		Gui.F_Entry.tab1.SetTab(1)
+'		Gui.F_Entry.txtHandlerName.SetFocus
+'		F.Intrinsic.Control.ExitSub
+'	F.Intrinsic.Control.EndIf
+'	
+'	'Handler name note
+'	V.Local.sSelect.Set(V.Screen.F_Entry!txtHandlerNameDesc.Text)
+'	F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+'		F.Intrinsic.UI.Msgbox("Project Name Handler Name Note must be filled in")
+'		Gui.F_Entry.tab1.SetTab(1)
+'		Gui.F_Entry.txtHandlerNameDesc.SetFocus
+'		F.Intrinsic.Control.ExitSub
+'	F.Intrinsic.Control.EndIf
+'F.Intrinsic.Control.EndIf
+
+'tab 1 - Detail 2
+'Contact Medium
+'V.Local.sSelect.Set(V.Screen.F_Entry!ddlContactMedium.Text)
+'F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+'	F.Intrinsic.UI.Msgbox("Contact Medium must be selected")
+'	Gui.F_Entry.tab1.SetTab(2)
+'	Gui.F_Entry.ddlContactMedium.SetFocus
+'	F.Intrinsic.Control.ExitSub
+'F.Intrinsic.Control.Else
+'	F.Intrinsic.String.IsInString(V.Local.sSelect,"(provide PN)",True,V.Local.bInString)
+'	F.Intrinsic.Control.If(V.Local.bInString)
+'		'EQT part number
+'		V.Local.sSelect.Set(V.Screen.F_Entry!txtPartNo.Text)
+'		F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+'			F.Intrinsic.UI.Msgbox("EQT Part Number must be selected")
+'			Gui.F_Entry.tab1.SetTab(2)
+'			Gui.F_Entry.txtPartNo.SetFocus
+'			F.Intrinsic.Control.ExitSub
+'		F.Intrinsic.Control.EndIf
+'	F.Intrinsic.Control.EndIf
+'F.Intrinsic.Control.EndIf
+
+'Test height
+V.Local.sSelect.Set(V.Screen.F_Entry!txtTestHeight.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+	Gui.F_Entry.txtTestHeight.Text("0")
+F.Intrinsic.Control.EndIf
+
+'Contact Medium Plating
+V.Local.sSelect.Set(V.Screen.F_Entry!txtContactMediumPlating.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+	Gui.F_Entry.txtContactMediumPlating.Text("0")
+F.Intrinsic.Control.EndIf
+
+'Contact Medium Pitch
+V.Local.sSelect.Set(V.Screen.F_Entry!txtContactMediumPitch.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+	Gui.F_Entry.txtContactMediumPitch.Text("0")
+F.Intrinsic.Control.EndIf
+
+'Contact Force
+V.Local.sSelect.Set(V.Screen.F_Entry!txtContactForce1.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+	Gui.F_Entry.txtContactForce1.Text("0")
+F.Intrinsic.Control.EndIf
+
+'Ave Resistance
+V.Local.sSelect.Set(V.Screen.F_Entry!txtAveResistance.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+	Gui.F_Entry.txtContactForce1.Text("0")
+F.Intrinsic.Control.EndIf
+
+'Current Rating
+V.Local.sSelect.Set(V.Screen.F_Entry!txtCurrentRating.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+	Gui.F_Entry.txtCurrentRating.Text("0")
+F.Intrinsic.Control.EndIf
+
+'Self Inductance
+V.Local.sSelect.Set(V.Screen.F_Entry!txtSelfInductance.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+	Gui.F_Entry.txtSelfInductance.Text("0")
+F.Intrinsic.Control.EndIf
+
+'Capacitance
+V.Local.sSelect.Set(V.Screen.F_Entry!txtCapacitance.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+	Gui.F_Entry.txtCapacitance.Text("0")
+F.Intrinsic.Control.EndIf
+
+'Bandwidth
+V.Local.sSelect.Set(V.Screen.F_Entry!txtBandwidth.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+	Gui.F_Entry.txtBandwidth.Text("0")
+F.Intrinsic.Control.EndIf
+
+''Tip Style DUT
+'V.Local.sSelect.Set(V.Screen.F_Entry!txtTipStyleDUT.Text)
+'F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+'	F.Intrinsic.UI.Msgbox("Tip Style DUT must be filled in")
+'	Gui.F_Entry.tab1.SetTab(2)
+'	Gui.F_Entry.txtTipStyleDUT.SetFocus
+'	F.Intrinsic.Control.ExitSub
+'F.Intrinsic.Control.EndIf
+
+''Tip Finishing DUT
+'V.Local.sSelect.Set(V.Screen.F_Entry!txtTipFinishDUT.Text)
+'F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+'	F.Intrinsic.UI.Msgbox("Tip Finishing DUT must be filled in")
+'	Gui.F_Entry.tab1.SetTab(2)
+'	Gui.F_Entry.txtTipFinishDUT.SetFocus
+'	F.Intrinsic.Control.ExitSub
+'F.Intrinsic.Control.EndIf
+
+''Tip Style PCB
+'V.Local.sSelect.Set(V.Screen.F_Entry!txtTipStylePCB.Text)
+'F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+'	F.Intrinsic.UI.Msgbox("Tip Style PCB must be filled in")
+'	Gui.F_Entry.tab1.SetTab(2)
+'	Gui.F_Entry.txtTipStylePCB.SetFocus
+'	F.Intrinsic.Control.ExitSub
+'F.Intrinsic.Control.EndIf
+
+''Tip Finishing PCB
+'V.Local.sSelect.Set(V.Screen.F_Entry!txtTipFinishPCB.Text)
+'F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+'	F.Intrinsic.UI.Msgbox("Tip Finishing PCB must be filled in")
+'	Gui.F_Entry.tab1.SetTab(2)
+'	Gui.F_Entry.txtTipFinishPCB.SetFocus
+'	F.Intrinsic.Control.ExitSub
+'F.Intrinsic.Control.EndIf
+
+'Manual Actuator
+'V.Local.sSelect.Set(V.Screen.F_Entry!ddlManualActuator.Text)
+'F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+'	F.Intrinsic.UI.Msgbox("Manual Actuator must be selected")
+'	Gui.F_Entry.tab1.SetTab(2)
+'	Gui.F_Entry.ddlManualActuator.SetFocus
+'	F.Intrinsic.Control.ExitSub
+'F.Intrinsic.Control.ElseIf(V.Local.sSelect.Trim,=,"Others")
+'	V.Local.sText.Set(V.Screen.F_Entry!txtManualActuator.Text)
+'	F.Intrinsic.Control.If(V.Local.sText.Trim,=,"")
+'		F.Intrinsic.UI.Msgbox("Manual Actuator (Others) must be filled in")
+'		Gui.F_Entry.tab1.SetTab(2)
+'		Gui.F_Entry.txtManualActuator.SetFocus
+'		F.Intrinsic.Control.ExitSub
+'	F.Intrinsic.Control.EndIf
+'F.Intrinsic.Control.EndIf
+
+'Pusher Actuation
+'V.Local.sSelect.Set(V.Screen.F_Entry!ddlPusherActuation.Text)
+'F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+'	F.Intrinsic.UI.Msgbox("Pusher Actuation must be selected")
+'	Gui.F_Entry.tab1.SetTab(2)
+'	Gui.F_Entry.ddlPusherActuation.SetFocus
+'	F.Intrinsic.Control.ExitSub
+'F.Intrinsic.Control.ElseIf(V.Local.sSelect.Trim,=,"Others")
+'	V.Local.sText.Set(V.Screen.F_Entry!txtPusherActuation.Text)
+'	F.Intrinsic.Control.If(V.Local.sText.Trim,=,"")
+'		F.Intrinsic.UI.Msgbox("Pusher Actuation (Others) must be filled in")
+'		Gui.F_Entry.tab1.SetTab(2)
+'		Gui.F_Entry.txtPusherActuation.SetFocus
+'		F.Intrinsic.Control.ExitSub
+'	F.Intrinsic.Control.EndIf
+'F.Intrinsic.Control.EndIf
+
+'Thermal Management
+'V.Local.sSelect.Set(V.Screen.F_Entry!ddlThermalMgmt.Text)
+'F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+'	F.Intrinsic.UI.Msgbox("Thermal Management must be selected")
+'	Gui.F_Entry.tab1.SetTab(2)
+'	Gui.F_Entry.txtThermalMgmt.SetFocus
+'	F.Intrinsic.Control.ExitSub
+'F.Intrinsic.Control.ElseIf(V.Local.sSelect.Trim,=,"Others")
+'	V.Local.sText.Set(V.Screen.F_Entry!txtThermalMgmt.Text)
+'	F.Intrinsic.Control.If(V.Local.sText.Trim,=,"")
+'		F.Intrinsic.UI.Msgbox("Thermal Management (Others) must be filled in")
+'		Gui.F_Entry.tab1.SetTab(2)
+'		Gui.F_Entry.txtThermalMgmt.SetFocus
+'		F.Intrinsic.Control.ExitSub
+'	F.Intrinsic.Control.EndIf
+'F.Intrinsic.Control.EndIf
+
+'Check attachments
+'F.Intrinsic.Control.If(V.DataTable.dtDoc.RowCount,=,1)
+'	F.Intrinsic.Control.If(V.DataTable.dtDoc(0).Filename!FieldValTrim,=,"")
+'		F.Intrinsic.UI.Msgbox("At least 1 document must be attached to this PDRF")
+'		Gui.F_Entry.tab1.SetTab(3)
+'		F.Intrinsic.Control.ExitSub
+'	F.Intrinsic.Control.EndIf
+'F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.CallSub(cmdSave_Click)
+Program.Sub.CheckFormInput.End
+
+Program.Sub.cmdSave_Click.Start
+V.Local.bChange.Declare
+V.Local.bInString.Declare
+V.Local.dateDelivery.Declare
+V.Local.dateDue.Declare
+V.Local.dateIssue.Declare
+V.Local.dateToday.Declare
+V.Local.fAvgResistance.Declare
+V.Local.fBandwidth.Declare
+V.Local.fBudget.Declare
+V.Local.fCapacitance.Declare
+V.Local.fContactForce1.Declare
+V.Local.fContactForce2.Declare
+V.Local.fContactMediumPitch.Declare
+V.Local.fCurrentRating.Declare
+V.Local.fSelfInductance.Declare
+V.Local.fTempCold.Declare(Float,0)
+V.Local.fTempHot.Declare(Float,0)
+V.Local.fTestHeight.Declare
+V.Local.i1.Declare
+V.Local.iAmbient.Declare(Long,0)
+V.Local.iCold.Declare(Long,0)
+V.Local.iHot.Declare(Long,0)
+V.Local.iID.Declare
+V.Local.iRunningNo.Declare
+V.Local.iSeq.Declare
+V.Local.sClassNo.Declare
+V.Local.sClassType.Declare
+V.Local.sContactMedium.Declare
+V.Local.sCustDwgNo.Declare
+V.Local.sCustomer.Declare
+V.Local.sDatetime.Declare
+V.Local.sDeliverables1.Declare
+V.Local.sDeliverables2.Declare
+V.Local.sDesc.Declare
+V.Local.sDesc2.Declare
+V.Local.sDesignIntent1.Declare
+V.Local.sDesignIntent2.Declare
+V.Local.sDwgType.Declare
+V.Local.sEQTPart.Declare
+V.Local.sESeries.Declare
+V.Local.sFilename.Declare
+V.Local.sFilenameServer.Declare
+V.Local.sFilepath.Declare
+V.Local.sHandlerName.Declare
+V.Local.sManualActuator.Declare
+V.Local.sPart.Declare
+V.Local.sPDRF.Declare
+V.Local.sPL.Declare
+V.Local.sProjType.Declare
+V.Local.sPusherActuation.Declare
+V.Local.sRemarks1.Declare
+V.Local.sRemarks2.Declare
+V.Local.sScope.Declare
+V.Local.sSelect.Declare
+V.Local.sSO.Declare
+V.Local.sSQL.Declare
+V.Local.sTestEnv.Declare
+V.Local.sThermalMgmt.Declare
+V.Local.sUser.Declare
+V.Local.sLeads.Declare
+V.Local.sForm.Declare
+V.Local.sSize.Declare
+V.Local.sPitch.Declare
+V.Local.sXY.Declare
+V.Local.sESD.Declare
+V.Local.sNestRemark.Declare
+V.Local.sPlating.Declare
+V.Local.sStyleDUT.Declare
+V.Local.sFinishDUT.Declare
+V.Local.sStylePCB.Declare
+V.Local.sFinishPCB.Declare
+V.Local.sOtherInfo.Declare
+V.Local.sKeepOut.Declare
+
+V.Local.sPDRF.Set(V.Screen.F_Entry!txtPDRF.Text)	
+V.Local.sUser.Set(V.Caller.User)
+
+V.Local.sSelect.Set(V.Screen.F_Entry!txtTestHeight.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+	V.Local.fTestHeight.Set(0)
+F.Intrinsic.Control.Else
+	V.Local.fTestHeight.Set(V.Screen.F_Entry!txtTestHeight.Text)
+F.Intrinsic.Control.EndIf
+
+V.Local.sSelect.Set(V.Screen.F_Entry!txtContactMediumPitch.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+	V.Local.fContactMediumPitch.Set(0)
+F.Intrinsic.Control.Else
+	V.Local.fContactMediumPitch.Set(V.Screen.F_Entry!txtContactMediumPitch.Text)
+F.Intrinsic.Control.EndIf
+
+V.Local.sSelect.Set(V.Screen.F_Entry!txtContactForce1.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+	V.Local.fContactForce1.Set(0)
+F.Intrinsic.Control.Else
+	V.Local.fContactForce1.Set(V.Screen.F_Entry!txtContactForce1.Text)
+F.Intrinsic.Control.EndIf
+
+V.Local.sSelect.Set(V.Screen.F_Entry!txtAveResistance.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+	V.Local.fAvgResistance.Set(0)
+F.Intrinsic.Control.Else
+	V.Local.fAvgResistance.Set(V.Screen.F_Entry!txtAveResistance.Text)
+F.Intrinsic.Control.EndIf
+
+V.Local.sSelect.Set(V.Screen.F_Entry!txtCurrentRating.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+	V.Local.fCurrentRating.Set(0)
+F.Intrinsic.Control.Else
+	V.Local.fCurrentRating.Set(V.Screen.F_Entry!txtCurrentRating.Text)
+F.Intrinsic.Control.EndIf
+
+V.Local.sSelect.Set(V.Screen.F_Entry!txtSelfInductance.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+	V.Local.fSelfInductance.Set(0)
+F.Intrinsic.Control.Else
+	V.Local.fSelfInductance.Set(V.Screen.F_Entry!txtSelfInductance.Text)
+F.Intrinsic.Control.EndIf
+
+V.Local.sSelect.Set(V.Screen.F_Entry!txtCapacitance.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+	V.Local.fCapacitance.Set(0)
+F.Intrinsic.Control.Else
+	V.Local.fCapacitance.Set(V.Screen.F_Entry!txtCapacitance.Text)
+F.Intrinsic.Control.EndIf
+
+V.Local.sSelect.Set(V.Screen.F_Entry!txtBandwidth.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+	V.Local.fBandwidth.Set(0)
+F.Intrinsic.Control.Else
+	V.Local.fBandwidth.Set(V.Screen.F_Entry!txtBandwidth.Text)
+F.Intrinsic.Control.EndIf
+
+V.Local.sDesc.Set(V.Screen.F_Entry!txtDescription.Text)
+
+F.Intrinsic.Control.If(V.Global.iMode,=,0)
+	F.Intrinsic.Control.If(V.Local.sPDRF.Trim,=,"")
+		'New PDRF
+		F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst","select max(id) as id from GAB_5237_PDRF")
+		F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,True)
+			V.Local.iID.Set(1)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Math.Add(V.ODBC.conx!rst.FieldVal!id,1,V.Local.iID)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conx!rst.Close
+
+		'Save the new PDRF
+		V.Local.dateToday.Set(V.Ambient.Date)
+		F.Intrinsic.String.Build("insert into GAB_5237_PDRF(id, date_start) values({0},'{1}');",V.Local.iID,V.Local.dateToday.PervasiveDate,V.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+		V.Local.iSeq.Set(1)
+	F.Intrinsic.Control.Else
+		V.Local.dateToday.Set(V.Ambient.Date)
+		'New request based on existing PDRF
+		F.Intrinsic.Math.ConvertToLong(V.Local.sPDRF,V.Local.iID)
+	F.Intrinsic.Control.EndIf
+
+	V.Local.sDesc.Set(V.Screen.F_Entry!txtDescription.Text)
+	V.Local.sPL.Set(V.Screen.F_Entry!txtPL.Text)
+	'Save the new seq into GAB_5237_PDRF_ISSUE
+	F.Intrinsic.String.Build("select max(seq) as seq from GAB_5237_PDRF_ISSUE where id = {0}",V.Local.iID,V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF)
+		V.Local.iSeq.Set(1)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.ODBC.conx!rst.FieldVal!seq,1,V.Local.iSeq)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.Close
+	V.Local.dateDue.Set(V.Screen.F_Entry!dtpRequired.Value)
+	V.Local.sScope.Set(V.Screen.F_Entry!ddlScope.Text)
+	F.Intrinsic.Control.If(V.Local.sScope.Trim,=,"Others")
+		V.Local.sScope.Set(V.Screen.F_Entry!txtScope.Text)
+	F.Intrinsic.Control.EndIf
+	V.Local.fBudget.Set(V.Screen.F_Entry!txtBudget.Text)
+	
+	F.Intrinsic.String.Replace(V.Local.sUser,"'","",V.Local.sUser)
+	F.Intrinsic.String.Replace(V.Local.sScope,"'","",V.Local.sScope)
+	F.Intrinsic.String.Replace(v.Local.sDesc,"'","",v.Local.sDesc)
+	F.Intrinsic.String.Replace(V.Local.sPL,"'","",V.Local.sPL)
+	
+	F.Intrinsic.String.Build("insert into GAB_5237_PDRF_ISSUE(id,seq,date_issue,date_due,date_complete,requestor,scope,date_consent,class_no,approver,engineer,budget,DATE_ACKNOWLEDGE) values({0},{1},'{2}','{3}','1900-01-01','{4}','{5}','1900-01-01',0,'','',{6},'1900-01-01')",V.Local.iID,V.Local.iSeq,V.Local.dateToday.PervasiveDate,V.Local.dateDue.PervasiveDate,V.Local.sUser.Trim,V.Local.sScope.Trim,V.Local.fBudget,V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+	'Save data into GAB_5237_PDRF_INTENT
+	F.Intrinsic.String.Build("insert into GAB_5237_PDRF_INTENT(id,seq,design_intent,description,pl,design,tolerance,fea,root_cause) values({0},{1},'{2}','{3}','{4}',{5},{6},{7},{8});",V.Local.iID,V.Local.iSeq,V.Screen.F_Entry!ddlDesignIntent.Text,v.Local.sDesc.Trim,V.Local.sPL.Trim,V.Screen.F_Entry!chkDesign.Value,V.Screen.F_Entry!chkTolerance.Value,V.Screen.F_Entry!chkFEA.Value,V.Screen.F_Entry!chkRootCause.Value,V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+	'Save data as the first change into GAB_5237_PDRF_CHANGE
+	F.Intrinsic.String.Format(V.Ambient.Now,"YYYY-MM-DD HH:NN:SS",V.Local.sDatetime)
+	F.Intrinsic.String.Build("insert into GAB_5237_PDRF_CHANGE(id,seq,date_time_chg,gss_user,design_intent,description,design,tolerance,fea,root_cause) values({0},{1},'{2}','{3}','{4}','{5}',{6},{7},{8},{9});",V.Local.iID,V.Local.iSeq,V.Local.sDatetime.Trim,V.Local.sUser.Trim,V.Screen.F_Entry!ddlDesignIntent.Text,v.Local.sDesc.Trim,V.Screen.F_Entry!chkDesign.Value,V.Screen.F_Entry!chkTolerance.Value,V.Screen.F_Entry!chkFEA.Value,V.Screen.F_Entry!chkRootCause.Value,V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+	'If there is a PO
+	F.Intrinsic.Control.If(V.Screen.F_Entry!chkPO.Value,=,1)
+		V.Local.dateDelivery.Set(V.Screen.F_Entry!dtpDelivery.Value)
+		V.Local.sSO.Set(V.Screen.F_Entry!txtSO.Text)
+		F.Intrinsic.String.Replace(V.Local.sSO,"'","",V.Local.sSO)		
+		F.Intrinsic.String.Build("insert into GAB_5237_PDRF_PO(id,seq,po_flag,date_delivery,order_no) values({0},{1},1,'{2}','{3}');",V.Local.iID,V.Local.iSeq,V.Local.dateDelivery.PervasiveDate,V.Local.sSO.Trim,V.Local.sSQL)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("insert into GAB_5237_PDRF_PO(id,seq,po_flag,date_delivery,order_no) values({0},{1},0,'1900-01-01','');",V.Local.iID,V.Local.iSeq,V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+	'Save PDRF Drawing No
+	V.Local.sCustomer.Set(V.Screen.F_Entry!txtCustomerCode.Text)
+	V.Local.sDwgType.Set(V.Screen.F_Entry!ddlDrawingType.Text)
+	
+	F.Intrinsic.String.Replace(V.Local.sDwgType,"'","",V.Local.sDwgType)
+	F.Intrinsic.String.Replace(V.Local.sCustomer,"'","",V.Local.sCustomer)
+	
+'	F.Intrinsic.String.Build("insert into GAB_5237_PDRF_DWG(id,seq,customer,dwg_type,running_no) values({0},{1},'{2}','{3}',{4});",V.Local.iID,V.Local.iSeq,V.Local.sCustomer.Trim,V.Local.sDwgType.Trim,V.Screen.F_Entry!txtRunningNo.Text,V.Local.sSQL)
+	F.Intrinsic.String.Build("insert into GAB_5237_PDRF_DWG(id,seq,customer,dwg_type) values({0},{1},'{2}','{3}');",V.Local.iID,V.Local.iSeq,V.Local.sCustomer.Trim,V.Local.sDwgType.Trim,V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+	'Update GAB_5237_PDRF_NO
+'	V.Local.iRunningNo.Set(V.Screen.F_Entry!txtRunningNo.Text)
+'	F.Intrinsic.Math.Add(V.Local.iRunningNo,1,V.Local.iRunningNo)
+'	F.Intrinsic.String.Build("select last_no from GAB_5237_PDRF_NO where field_name = '{0}'",V.Local.sDwgType.Trim,V.Local.sSQL)
+'	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+'	F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF)
+'		F.Intrinsic.String.Build("insert into GAB_5237_PDRF_NO(field_name,last_no) values('{0}',{1})",V.Local.sDwgType.Trim,V.Local.iRunningNo,V.Local.sSQL)
+'	F.Intrinsic.Control.Else
+'		F.Intrinsic.String.Build("update GAB_5237_PDRF_NO set last_no = {1} where field_name = '{0}'",V.Local.sDwgType.Trim,V.Local.iRunningNo,V.Local.sSQL)
+'	F.Intrinsic.Control.EndIf
+'	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+	'Save PDRF project name GAB_5237_PDRF_PRJ
+	V.Local.sProjType.Set(V.Screen.F_Entry!txtProjType.Text)
+	F.Intrinsic.Control.If(V.Local.sDwgType.Trim,=,"SP")
+		V.Local.sHandlerName.Set(V.Screen.F_Entry!txtHandlerNameDesc.Text)
+	F.Intrinsic.Control.ElseIf(V.Local.sDwgType.Trim,=,"SB")
+		V.Local.sHandlerName.Set(V.Screen.F_Entry!txtHandlerNameDesc.Text)
+	F.Intrinsic.Control.ElseIf(V.Local.sDwgType.Trim,=,"P")
+		V.Local.sHandlerName.Set(V.Screen.F_Entry!txtHandlerNameDesc.Text)
+	F.Intrinsic.Control.ElseIf(V.Local.sDwgType.Trim,=,"STD")
+		V.Local.sHandlerName.Set(V.Screen.F_Entry!txtHandlerNameDesc.Text)
+	F.Intrinsic.Control.Else
+		V.Local.sHandlerName.Set(V.Screen.F_Entry!txtHandlerName.Text)
+	F.Intrinsic.Control.EndIf
+	
+	V.Local.sLeads.Set(V.Screen.F_Entry!txtLeads.Text)
+	V.Local.sForm.Set(V.Screen.F_Entry!txtForm.Text)
+	V.Local.sSize.Set(V.Screen.F_Entry!txtSize.Text)
+	V.Local.sPitch.Set(V.Screen.F_Entry!txtPitch.Text)
+	V.Local.sXY.Set(V.Screen.F_Entry!txtSitesXY.Text)
+	
+	F.Intrinsic.String.Replace(V.Local.sHandlerName,"'","",V.Local.sHandlerName)
+	F.Intrinsic.String.Replace(V.Local.sLeads,"'","",V.Local.sLeads)
+	F.Intrinsic.String.Replace(V.Local.sForm,"'","",V.Local.sForm)
+	F.Intrinsic.String.Replace(V.Local.sSize,"'","",V.Local.sSize)
+	F.Intrinsic.String.Replace(V.Local.sPitch,"'","",V.Local.sPitch)
+	F.Intrinsic.String.Replace(V.Local.sXY,"'","",V.Local.sXY)
+	F.Intrinsic.String.Replace(V.Local.sProjType,"'","",V.Local.sProjType)
+	
+	F.Intrinsic.String.Build("insert into GAB_5237_PDRF_PRJ(id,seq,leads,form,size,pitch,handler_name,sites_xy,kelvin,e_series,prj_type) values({0},{1},'{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}');",V.Local.iID,V.Local.iSeq,V.Local.sLeads.Trim,V.Local.sForm.Trim,V.Local.sSize.Trim,V.Local.sPitch.Trim,V.Local.sHandlerName.Trim,V.Local.sXY.Trim,V.Screen.F_Entry!ddlKelvin.Text,V.Screen.F_Entry!ddlESeries.Text,V.Local.sProjType.Trim,V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+	'Save PDRF device info
+	F.Intrinsic.Control.If(V.Screen.F_Entry!chkAmbient.Value,=,1)
+		V.Local.iAmbient.Set(1)
+	F.Intrinsic.Control.ElseIf(V.Screen.F_Entry!chkCold.Value,=,1)
+		V.Local.iCold.Set(1)
+		V.Local.fTempCold.Set(V.Screen.F_Entry!txtCold.Text)
+	F.Intrinsic.Control.ElseIf(V.Screen.F_Entry!chkHot.Value,=,1)
+		V.Local.iHot.Set(1)
+		V.Local.fTempHot.Set(V.Screen.F_Entry!txtHot.Text)
+	F.Intrinsic.Control.EndIf
+	
+	V.Local.sESD.Set(V.Screen.F_Entry!txtESD.Text)
+	F.Intrinsic.String.Replace(V.Local.sESD,"'","",V.Local.sESD)
+	
+	F.Intrinsic.String.Build("insert into GAB_5237_PDRF_DEV(id,seq,device_plating,application,esd,ambient,hot,hot_temp,cold,cold_temp,device_pod,device_sample) values({0},{1},'{2}','{3}','{4}','{5}',{6},{7},{8},{9},{10},{11});",V.Local.iID,V.Local.iSeq,V.Screen.F_Entry!ddlDevicePlating.Text,V.Screen.F_Entry!ddlApplication.Text,V.Local.sESD.Trim,V.Local.iAmbient,V.Local.iHot,V.Local.fTempHot,V.Local.iCold,V.Local.fTempCold,V.Screen.F_Entry!chkPOD.Value,V.Screen.F_Entry!chkSample.Value,V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	
+	V.Local.sNestRemark.Set(V.Screen.F_Entry!txtNestRemark.Text)
+	F.Intrinsic.String.Replace(V.Local.sNestRemark,"'","",V.Local.sNestRemark)
+	
+	V.Local.sKeepOut.Set(V.Screen.F_Entry!txtKeepOutZone.Text)
+	F.Intrinsic.String.Replace(V.Local.sKeepOut,"'","",V.Local.sKeepOut)
+
+	'Nesting and socket footprint
+	F.Intrinsic.String.Build("insert into GAB_5237_PDRF_NEST(id,seq,nesting,remarks) values({0},{1},'{2}','{3}');",V.Local.iID,V.Local.iSeq,V.Screen.F_Entry!ddlNest.Text,V.Local.sNestRemark.Trim,V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	F.Intrinsic.String.Build("insert into GAB_5237_PDRF_SCKT(id,seq,socket_footprint,keep_out_zone) values({0},{1},'{2}','{3}');",V.Local.iID,V.Local.iSeq,V.Screen.F_Entry!ddlSocket.Text,V.Local.sKeepOut,V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+	'Physical Parameters
+	V.Local.sESeries.Set(V.Screen.F_Entry!ddlESeries.Text)
+	F.Intrinsic.Control.If(V.Local.sESeries.Trim,=,"")
+		V.Local.sContactMedium.Set(V.Screen.F_Entry!ddlContactMedium.Text)
+		V.Local.sPart.Set(V.Screen.F_Entry!txtContactMedium.Text)
+		V.Local.sEQTPart.Set("")
+	F.Intrinsic.Control.Else
+		V.Local.sContactMedium.Set("")
+		V.Local.sPart.Set("")
+		V.Local.sEQTPart.Set(V.Screen.F_Entry!txtPartNo.Text)
+	F.Intrinsic.Control.EndIf
+	
+	V.Local.sPlating.Set(V.Screen.F_Entry!txtContactMediumPlating.Text)
+	V.Local.sStyleDUT.Set(V.Screen.F_Entry!txtTipStyleDUT.Text)
+	V.Local.sFinishDUT.Set(V.Screen.F_Entry!txtTipFinishDUT.Text)
+	V.Local.sStylePCB.Set(V.Screen.F_Entry!txtTipStylePCB.Text)
+	V.Local.sFinishPCB.Set(V.Screen.F_Entry!txtTipFinishPCB.Text)
+	
+	F.Intrinsic.String.Replace(V.Local.sESeries,"'","",V.Local.sESeries)
+	F.Intrinsic.String.Replace(V.Local.sContactMedium,"'","",V.Local.sContactMedium)
+	F.Intrinsic.String.Replace(V.Local.sPart,"'","",V.Local.sPart)
+	F.Intrinsic.String.Replace(V.Local.sEQTPart,"'","",V.Local.sEQTPart)
+	F.Intrinsic.String.Replace(V.Local.sPlating,"'","",V.Local.sPlating)
+	F.Intrinsic.String.Replace(V.Local.sStyleDUT,"'","",V.Local.sStyleDUT)
+	F.Intrinsic.String.Replace(V.Local.sFinishDUT,"'","",V.Local.sFinishDUT)
+	F.Intrinsic.String.Replace(V.Local.sStylePCB,"'","",V.Local.sStylePCB)
+	F.Intrinsic.String.Replace(V.Local.sFinishPCB,"'","",V.Local.sFinishPCB)
+
+	F.Intrinsic.String.Build("insert into GAB_5237_PDRF_PARAM(id,seq,contact_medium,part,test_height,contact_medium_plate,contact_medium_pitch,contact_force,avg_resistance,current_rating,self_inductance,capacitance,bandwidth,tip_style_dut,tip_finishing_dut,tip_style_pcb,tip_finishing_pcb,eqt_part) values({0},{1},'{2}','{3}',{4},'{5}',{6},{7},{8},{9},{10},{11},{12},'{13}','{14}','{15}','{16}','{17}');",V.Local.iID,V.Local.iSeq,V.Local.sContactMedium.Trim,V.Local.sPart.Trim,V.Local.fTestHeight,V.Local.sPlating,V.Local.fContactMediumPitch,V.Local.fContactForce1,V.Local.fAvgResistance,V.Local.fCurrentRating,V.Local.fSelfInductance,V.Local.fCapacitance,V.Local.fBandwidth,V.Local.sStyleDUT.Trim,V.Local.sFinishDUT.Trim,V.Local.sStylePCB.Trim,V.Local.sFinishPCB.Trim,V.Local.sEQTPart.Trim,V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+	'Actuator
+	V.Local.sManualActuator.Set(V.Screen.F_Entry!ddlManualActuator.Text)
+	F.Intrinsic.Control.If(V.Local.sManualActuator.Trim,=,"Others")
+		V.Local.sManualActuator.Set(V.Screen.F_Entry!txtManualActuator.Text)
+	F.Intrinsic.Control.EndIf
+	V.Local.sPusherActuation.Set(V.Screen.F_Entry!ddlPusherActuation.Text)
+	F.Intrinsic.Control.If(V.Local.sPusherActuation.Trim,=,"Others")
+		V.Local.sPusherActuation.Set(V.Screen.F_Entry!txtPusherActuation.Text)
+	F.Intrinsic.Control.EndIf
+	V.Local.sThermalMgmt.Set(V.Screen.F_Entry!ddlThermalMgmt.Text)
+	F.Intrinsic.Control.If(V.Local.sThermalMgmt.Trim,=,"Others")
+		V.Local.sThermalMgmt.Set(V.Screen.F_Entry!txtThermalMgmt.Text)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Replace(V.Local.sManualActuator,"'","",V.Local.sManualActuator)
+	F.Intrinsic.String.Replace(V.Local.sPusherActuation,"'","",V.Local.sPusherActuation)
+	F.Intrinsic.String.Replace(V.Local.sThermalMgmt,"'","",V.Local.sThermalMgmt)
+	
+	F.Intrinsic.String.Build("insert into GAB_5237_PDRF_ACT(id,seq,manual_actuator,pusher_actuation,thermal_mgmt) values({0},{1},'{2}','{3}','{4}');",V.Local.iID,V.Local.iSeq,V.Local.sManualActuator.Trim,V.Local.sPusherActuation.Trim,V.Local.sThermalMgmt.Trim,V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+	'Other information and engraving
+	V.Local.sCustDwgNo.Set(V.Screen.F_Entry!txtCustDWG.Text)
+	V.Local.sOtherInfo.Set(V.Screen.F_Entry!txtOtherInfo.Text)
+	F.Intrinsic.String.Replace(V.Local.sCustDwgNo,"'","",V.Local.sCustDwgNo)
+	F.Intrinsic.String.Replace(V.Local.sOtherInfo,"'","",V.Local.sOtherInfo)
+	
+	F.Intrinsic.String.Build("insert into GAB_5237_PDRF_OTH(id,seq,eqt,wo_no,dwg_no,package,ultra,white,cust_dwg,cust_dwg_no,other_info,e_series) values({0},{1},{2},{3},{4},{5},{6},{7},{8},'{9}','{10}',{11});",V.Local.iID,V.Local.iSeq,V.Screen.F_Entry!chkEQT.Value,V.Screen.F_Entry!chkWONo.Value,V.Screen.F_Entry!chkDwgNo.Value,V.Screen.F_Entry!chkPackageID.Value,V.Screen.F_Entry!chkUltra.Value,V.Screen.F_Entry!chkWhitePaint.Value,V.Screen.F_Entry!chkCustDwg.Value,V.Local.sCustDwgNo.Trim,V.Local.sOtherInfo.Trim,V.Screen.F_Entry!chkESeries.Value,V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+	'Send notification to engineering managers about a new PDRF
+	F.Intrinsic.Control.CallSub(NewRequestNotification,"PDRF",V.Local.iID,"Seq",V.Local.iSeq,"StartDate",V.Screen.F_Entry!dtpStart.Value)
+
+	F.Intrinsic.String.Build("New Request for PDRF {0} has been created",V.Local.iID,V.Local.sDesc)
+	F.Intrinsic.UI.Msgbox(V.Local.sDesc)
+F.Intrinsic.Control.Else
+	'Updating request placed before
+	V.Local.dateIssue.Set(V.Screen.F_Entry!dtpStart.Value)
+	F.Intrinsic.Math.ConvertToLong(V.Local.sPDRF,V.Local.iID)
+	F.Intrinsic.String.Build("select seq from GAB_5237_PDRF_ISSUE where id = {0} and requestor = '{1}' and date_issue = '{2}'",V.Local.iID,V.Local.sUser.Trim,V.Local.dateIssue.PervasiveDate,V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	V.Local.iSeq.Set(V.ODBC.conx!rst.FieldVal!seq)
+	F.ODBC.conx!rst.Close
+
+	'Check if there is any change with one of the four fields
+	V.Local.sDesignIntent1.Set(V.Screen.F_Entry!ddlDesignIntent.Text)
+	V.Local.sDesc.Set(V.Screen.F_Entry!txtDescription.Text)
+	F.Intrinsic.String.Replace(V.Local.sDesignIntent1,"'","",V.Local.sDesignIntent1)
+	F.Intrinsic.String.Replace(V.Local.sDesc,"'","",V.Local.sDesc)
+'	V.Local.sRemarks1.Set(V.Screen.F_Entry!txtRemarks.Text)
+
+	F.Intrinsic.String.Build("select design_intent,design,tolerance,fea,root_cause,description from GAB_5237_PDRF_INTENT where id = {0} and seq = {1}",V.Local.iID,V.Local.iSeq,V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	V.Local.sDesignIntent2.Set(V.ODBC.conx!rst.FieldValTrim!design_intent)
+	V.Local.sDesc2.Set(V.ODBC.conx!rst.FieldValTrim!description)
+
+	V.Local.bChange.Set(False)
+	F.Intrinsic.Control.If(V.Local.sDesignIntent1.Trim,<>,V.Local.sDesignIntent2.Trim)
+		V.Local.bChange.Set(True)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.sDesc.Trim,<>,V.Local.sDesc2.Trim)
+			V.Local.bChange.Set(True)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.If(V.Screen.F_Entry!chkDesign.Value,<>,V.ODBC.conx!rst.FieldVal!design)
+				V.Local.bChange.Set(True)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.Control.If(V.Screen.F_Entry!chkTolerance.Value,<>,V.ODBC.conx!rst.FieldVal!tolerance)
+					V.Local.bChange.Set(True)
+				F.Intrinsic.Control.Else
+					F.Intrinsic.Control.If(V.Screen.F_Entry!chkFEA.Value,<>,V.ODBC.conx!rst.FieldVal!fea)
+						V.Local.bChange.Set(True)
+					F.Intrinsic.Control.Else
+						F.Intrinsic.Control.If(V.Screen.F_Entry!chkRootCause.Value,<>,V.ODBC.conx!rst.FieldVal!root_cause)
+							V.Local.bChange.Set(True)
+						F.Intrinsic.Control.EndIf
+					F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.Close
+
+	'There's a change
+	F.Intrinsic.Control.If(V.Local.bChange)
+		F.Intrinsic.String.Build("update GAB_5237_PDRF_INTENT set design_intent = '{2}', design = {3}, description = '{4}', tolerance = {5}, fea = {6}, root_cause = {7} where id = {0} and seq = {1}",V.Local.iID,V.Local.iSeq,V.Local.sDesignIntent1.Trim,V.Screen.F_Entry!chkDesign.Value,V.Local.sDesc.Trim,V.Screen.F_Entry!chkTolerance.Value,V.Screen.F_Entry!chkFEA.Value,V.Screen.F_Entry!chkRootCause.Value,V.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+		F.Intrinsic.String.Format(V.Ambient.Now,"YYYY-MM-DD HH:NN:SS",V.Local.sDatetime)
+		V.Local.sUser.Set(V.Caller.User)
+		F.Intrinsic.String.Build("insert into GAB_5237_PDRF_CHANGE(id,seq,date_time_chg,gss_user,design_intent,description,design,tolerance,fea,root_cause) values({0},{1},'{2}','{3}','{4}','{5}',{6},{7},{8},{9});",V.Local.iID,V.Local.iSeq,V.Local.sDatetime.Trim,V.Local.sUser.Trim,V.Screen.F_Entry!ddlDesignIntent.Text,v.Local.sDesc.Trim,V.Screen.F_Entry!chkDesign.Value,V.Screen.F_Entry!chkTolerance.Value,V.Screen.F_Entry!chkFEA.Value,V.Screen.F_Entry!chkRootCause.Value,V.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+
+	V.Local.dateDue.Set(V.Screen.F_Entry!dtpRequired.Value)
+	V.Local.sScope.Set(V.Screen.F_Entry!ddlScope.Text)
+	F.Intrinsic.Control.If(V.Local.sScope.Trim,=,"Others")
+		V.Local.sScope.Set(V.Screen.F_Entry!txtScope.Text)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.String.Replace(V.Local.sScope,"'","",V.Local.sScope)
+	F.Intrinsic.String.Build("update gab_5237_pdrf_issue set date_due = '{2}', scope = '{3}' where id = {0} and seq = {1}",V.Local.iID,V.Local.iSeq,V.Local.dateDue.PervasiveDate,V.Local.sScope.Trim,V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+	'If there is a PO
+	F.Intrinsic.Control.If(V.Screen.F_Entry!chkPO.Value,=,1)
+		V.Local.dateDelivery.Set(V.Screen.F_Entry!dtpDelivery.Value)
+		V.Local.sSO.Set(V.Screen.F_Entry!txtSO.Text)
+		F.Intrinsic.String.Replace(V.Local.sSO,"'","",V.Local.sSO)		
+		F.Intrinsic.String.Build("update GAB_5237_PDRF_PO set po_flag = 1, date_delivery = '{2}', order_no = '{3}' where id = {0} and seq = {1}",V.Local.iID,V.Local.iSeq,V.Local.dateDelivery.PervasiveDate,V.Local.sSO.Trim,V.Local.sSQL)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("update GAB_5237_PDRF_PO set po_flag = 0, date_delivery = '1900-01-01', order_no = '' where id = {0} and seq = {1}",V.Local.iID,V.Local.iSeq,V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+	'Save PDRF Drawing No
+	V.Local.sCustomer.Set(V.Screen.F_Entry!txtCustomerCode.Text)
+	V.Local.sDwgType.Set(V.Screen.F_Entry!ddlDrawingType.Text)
+	F.Intrinsic.String.Replace(V.Local.sCustomer,"'","",V.Local.sCustomer)
+	F.Intrinsic.String.Replace(V.Local.sDwgType,"'","",V.Local.sDwgType)
+'	F.Intrinsic.String.Build("update GAB_5237_PDRF_DWG set customer = '{2}', dwg_type = '{3}', running_no = {4} where id = {0} and seq = {1}",V.Local.iID,V.Local.iSeq,V.Local.sCustomer.Trim,V.Screen.F_Entry!ddlDrawingType.Text,V.Screen.F_Entry!txtRunningNo.Text,V.Local.sSQL)
+	F.Intrinsic.String.Build("update GAB_5237_PDRF_DWG set customer = '{2}', dwg_type = '{3}' where id = {0} and seq = {1}",V.Local.iID,V.Local.iSeq,V.Local.sCustomer.Trim,V.Screen.F_Entry!ddlDrawingType.Text,V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+	'Save PDRF project name GAB_5237_PDRF_PRJ
+	V.Local.sProjType.Set(V.Screen.F_Entry!txtProjType.Text)
+	F.Intrinsic.Control.If(V.Local.sDwgType.Trim,=,"SP")
+		V.Local.sHandlerName.Set(V.Screen.F_Entry!txtHandlerNameDesc.Text)
+	F.Intrinsic.Control.ElseIf(V.Local.sDwgType.Trim,=,"SB")
+		V.Local.sHandlerName.Set(V.Screen.F_Entry!txtHandlerNameDesc.Text)
+	F.Intrinsic.Control.ElseIf(V.Local.sDwgType.Trim,=,"P")
+		V.Local.sHandlerName.Set(V.Screen.F_Entry!txtHandlerNameDesc.Text)
+	F.Intrinsic.Control.ElseIf(V.Local.sDwgType.Trim,=,"STD")
+		V.Local.sHandlerName.Set(V.Screen.F_Entry!txtHandlerNameDesc.Text)
+	F.Intrinsic.Control.Else
+		V.Local.sHandlerName.Set(V.Screen.F_Entry!txtHandlerName.Text)
+	F.Intrinsic.Control.EndIf
+	
+	V.Local.sLeads.Set(V.Screen.F_Entry!txtLeads.Text)
+	V.Local.sForm.Set(V.Screen.F_Entry!txtForm.Text)
+	V.Local.sSize.Set(V.Screen.F_Entry!txtSize.Text)
+	V.Local.sPitch.Set(V.Screen.F_Entry!txtPitch.Text)
+	V.Local.sXY.Set(V.Screen.F_Entry!txtSitesXY.Text)
+	
+	F.Intrinsic.String.Replace(V.Local.sHandlerName,"'","",V.Local.sHandlerName)
+	F.Intrinsic.String.Replace(V.Local.sLeads,"'","",V.Local.sLeads)
+	F.Intrinsic.String.Replace(V.Local.sForm,"'","",V.Local.sForm)
+	F.Intrinsic.String.Replace(V.Local.sSize,"'","",V.Local.sSize)
+	F.Intrinsic.String.Replace(V.Local.sPitch,"'","",V.Local.sPitch)
+	F.Intrinsic.String.Replace(V.Local.sXY,"'","",V.Local.sXY)
+	F.Intrinsic.String.Replace(V.Local.sProjType,"'","",V.Local.sProjType)
+	
+	F.Intrinsic.String.Build("update GAB_5237_PDRF_PRJ set leads = '{2}', form = '{3}', size = '{4}', pitch = '{5}', handler_name = '{6}', sites_xy = '{7}', kelvin = '{8}', e_series = '{9}', prj_type = '{10}' where id = {0} and seq = {1}",V.Local.iID,V.Local.iSeq,V.Local.sLeads.Trim,V.Local.sForm.Trim,V.Local.sSize.Trim,V.Local.sPitch.Trim,V.Local.sHandlerName.Trim,V.Local.sXY,V.Screen.F_Entry!ddlKelvin.Text,V.Screen.F_Entry!ddlESeries.Text,V.Local.sProjType.Trim,V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+	'Save PDRF device info
+	F.Intrinsic.Control.If(V.Screen.F_Entry!chkAmbient.Value,=,1)
+		V.Local.iAmbient.Set(1)
+	F.Intrinsic.Control.ElseIf(V.Screen.F_Entry!chkCold.Value,=,1)
+		V.Local.iCold.Set(1)
+		V.Local.fTempCold.Set(V.Screen.F_Entry!txtCold.Text)
+	F.Intrinsic.Control.ElseIf(V.Screen.F_Entry!chkHot.Value,=,1)
+		V.Local.iHot.Set(1)
+		V.Local.fTempHot.Set(V.Screen.F_Entry!txtHot.Text)
+	F.Intrinsic.Control.EndIf
+
+	V.Local.sESD.Set(V.Screen.F_Entry!txtESD.Text)
+	F.Intrinsic.String.Replace(V.Local.sESD,"'","",V.Local.sESD)
+	
+	F.Intrinsic.String.Build("update GAB_5237_PDRF_DEV set device_pod = {2}, device_sample = {11}, device_plating = '{3}', application = '{4}', esd = '{5}', ambient = {6}, hot = {7}, hot_temp = {8}, cold = {9}, cold_temp = {10} where id = {0} and seq = {1}",V.Local.iID,V.Local.iSeq,V.Screen.F_Entry!chkPOD.Value,V.Screen.F_Entry!ddlDevicePlating.Text,V.Screen.F_Entry!ddlApplication.Text,V.Local.sESD.Trim,V.Local.iAmbient,V.Local.iHot,V.Local.fTempHot,V.Local.iCold,V.Local.fTempCold,V.Screen.F_Entry!chkSample.Value,V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	
+	V.Local.sNestRemark.Set(V.Screen.F_Entry!txtNestRemark.Text)
+	F.Intrinsic.String.Replace(V.Local.sNestRemark,"'","",V.Local.sNestRemark)
+	
+	V.Local.sKeepOut.Set(V.Screen.F_Entry!txtKeepOutZone.Text)
+	F.Intrinsic.String.Replace(V.Local.sKeepOut,"'","",V.Local.sKeepOut)
+
+	'Nesting and socket footprint
+	F.Intrinsic.String.Build("update GAB_5237_PDRF_NEST set nesting = '{2}', remarks ='{3}' where id = {0} and seq = {1}",V.Local.iID,V.Local.iSeq,V.Screen.F_Entry!ddlNest.Text,V.Local.sNestRemark,V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	F.Intrinsic.String.Build("update GAB_5237_PDRF_SCKT set socket_footprint = '{2}', keep_out_zone = '{3}' where id = {0} and seq = {1}",V.Local.iID,V.Local.iSeq,V.Screen.F_Entry!ddlSocket.Text,V.Local.sKeepOut,V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+	'Physical Parameters
+	V.Local.sESeries.Set(V.Screen.F_Entry!ddlESeries.Text)
+	F.Intrinsic.Control.If(V.Local.sESeries.Trim,=,"")
+		V.Local.sContactMedium.Set(V.Screen.F_Entry!ddlContactMedium.Text)
+		V.Local.sPart.Set(V.Screen.F_Entry!txtContactMedium.Text)
+		V.Local.sEQTPart.Set("")
+	F.Intrinsic.Control.Else
+		V.Local.sContactMedium.Set("")
+		V.Local.sPart.Set("")
+		V.Local.sEQTPart.Set(V.Screen.F_Entry!txtPartNo.Text)
+	F.Intrinsic.Control.EndIf
+	
+	V.Local.sPlating.Set(V.Screen.F_Entry!txtContactMediumPlating.Text)
+	V.Local.sStyleDUT.Set(V.Screen.F_Entry!txtTipStyleDUT.Text)
+	V.Local.sFinishDUT.Set(V.Screen.F_Entry!txtTipFinishDUT.Text)
+	V.Local.sStylePCB.Set(V.Screen.F_Entry!txtTipStylePCB.Text)
+	V.Local.sFinishPCB.Set(V.Screen.F_Entry!txtTipFinishPCB.Text)
+	
+	F.Intrinsic.String.Replace(V.Local.sESeries,"'","",V.Local.sESeries)
+	F.Intrinsic.String.Replace(V.Local.sContactMedium,"'","",V.Local.sContactMedium)
+	F.Intrinsic.String.Replace(V.Local.sPart,"'","",V.Local.sPart)
+	F.Intrinsic.String.Replace(V.Local.sEQTPart,"'","",V.Local.sEQTPart)
+	F.Intrinsic.String.Replace(V.Local.sPlating,"'","",V.Local.sPlating)
+	F.Intrinsic.String.Replace(V.Local.sStyleDUT,"'","",V.Local.sStyleDUT)
+	F.Intrinsic.String.Replace(V.Local.sFinishDUT,"'","",V.Local.sFinishDUT)
+	F.Intrinsic.String.Replace(V.Local.sStylePCB,"'","",V.Local.sStylePCB)
+	F.Intrinsic.String.Replace(V.Local.sFinishPCB,"'","",V.Local.sFinishPCB)	
+
+	F.Intrinsic.String.Build("update GAB_5237_PDRF_PARAM set contact_medium = '{2}', part = '{3}', test_height = {4}, contact_medium_plate = '{5}', contact_medium_pitch = {6}, contact_force = {7}, avg_resistance = {8}, current_rating = {9}, self_inductance = {10}, capacitance = {11}, bandwidth = {12}, tip_style_dut = '{13}',  tip_finishing_dut = '{14}', tip_style_pcb = '{15}', tip_finishing_pcb = '{16}', eqt_part = '{17}' where id = {0} and seq = {1}",V.Local.iID,V.Local.iSeq,V.Local.sContactMedium.Trim,V.Local.sPart.Trim,V.Local.fTestHeight,V.Local.sPlating,V.Local.fContactMediumPitch,V.Local.fContactForce1,V.Local.fAvgResistance,V.Local.fCurrentRating,V.Local.fSelfInductance,V.Local.fCapacitance,V.Local.fBandwidth,V.Local.sStyleDUT,V.Local.sFinishDUT.Trim,V.Local.sStylePCB.Trim,V.Local.sFinishPCB.Trim,V.Local.sEQTPart.Trim,V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+	'Actuator
+	V.Local.sManualActuator.Set(V.Screen.F_Entry!ddlManualActuator.Text)
+	F.Intrinsic.Control.If(V.Local.sManualActuator.Trim,=,"Others")
+		V.Local.sManualActuator.Set(V.Screen.F_Entry!txtManualActuator.Text)
+	F.Intrinsic.Control.EndIf
+	V.Local.sPusherActuation.Set(V.Screen.F_Entry!ddlPusherActuation.Text)
+	F.Intrinsic.Control.If(V.Local.sPusherActuation.Trim,=,"Others")
+		V.Local.sPusherActuation.Set(V.Screen.F_Entry!txtPusherActuation.Text)
+	F.Intrinsic.Control.EndIf
+	V.Local.sThermalMgmt.Set(V.Screen.F_Entry!ddlThermalMgmt.Text)
+	F.Intrinsic.Control.If(V.Local.sThermalMgmt.Trim,=,"Others")
+		V.Local.sThermalMgmt.Set(V.Screen.F_Entry!txtThermalMgmt.Text)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.String.Build("update GAB_5237_PDRF_ACT set manual_actuator = '{2}', pusher_actuation = '{3}', thermal_mgmt = '{4}' where id = {0} and seq = {1}",V.Local.iID,V.Local.iSeq,V.Local.sManualActuator.Trim,V.Local.sPusherActuation.Trim,V.Local.sThermalMgmt.Trim,V.Local.fContactForce2,V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+	'Other information and engraving
+	V.Local.sCustDwgNo.Set(V.Screen.F_Entry!txtCustDWG.Text)
+	V.Local.sOtherInfo.Set(V.Screen.F_Entry!txtOtherInfo.Text)
+	F.Intrinsic.String.Replace(V.Local.sCustDwgNo,"'","",V.Local.sCustDwgNo)
+	F.Intrinsic.String.Replace(V.Local.sOtherInfo,"'","",V.Local.sOtherInfo)
+	
+	F.Intrinsic.String.Build("update GAB_5237_PDRF_OTH set eqt = {2}, wo_no = {3}, dwg_no = {4}, package = {5}, ultra = {6}, white = {7}, cust_dwg = {8}, cust_dwg_no = '{9}', other_info = '{10}', e_series = {11} where id = {0} and seq = {1}",V.Local.iID,V.Local.iSeq,V.Screen.F_Entry!chkEQT.Value,V.Screen.F_Entry!chkWONo.Value,V.Screen.F_Entry!chkDwgNo.Value,V.Screen.F_Entry!chkPackageID.Value,V.Screen.F_Entry!chkUltra.Value,V.Screen.F_Entry!chkWhitePaint.Value,V.Screen.F_Entry!chkCustDwg.Value,V.Local.sCustDwgNo.Trim,V.Local.sOtherInfo,V.Screen.F_Entry!chkESeries.Value,V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+	'Remove document attachment links from GAB_5237_PDRF_DOC
+	F.Intrinsic.String.Build("delete from GAB_5237_PDRF_DOC where id = {0} and seq = {1}",V.Local.iID,V.Local.iSeq,V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+	F.Intrinsic.String.Build("PDRF {0} has been updated",V.Local.iID,V.Local.sDesc)
+	F.Intrinsic.UI.Msgbox(V.Local.sDesc)
+F.Intrinsic.Control.EndIf
+
+'Saving document attachments
+F.Intrinsic.Control.If(V.DataTable.dtDoc(0).Filename!FieldValTrim,<>,"")
+	F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtDoc.RowCount--,1)
+		'Save data into GAB_5237_PDRF_DOC
+		F.Intrinsic.Control.If(V.DataTable.dtDoc(V.Local.i1).Filename!FieldValTrim,<>,"")
+			F.Intrinsic.String.Split(V.DataTable.dtDoc(V.Local.i1).Filename!FieldVal,"\",V.Local.sFilename)
+			F.Intrinsic.String.Build("{0}\PDRF\{1}\{2}\REQUEST\{3}",V.Caller.FilesDir,V.Local.iID,V.Local.iSeq,V.Local.sFilename(V.Local.sFilename.UBound),V.Local.sFilenameServer)
+			F.Intrinsic.String.Replace(V.Local.sFilenameServer,"'","",V.Local.sFilenameServer)
+			F.Intrinsic.String.Build("insert into GAB_5237_PDRF_DOC(id,seq,file_seq,filename,doc_type) values({0},{1},{2},'{3}',1);",V.Local.iID,V.Local.iSeq,V.DataTable.dtDoc(V.Local.i1).File_Seq!FieldVal,V.Local.sFilenameServer,V.Local.sSQL)
+			F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+			'Copy file if not exist in server
+			F.Intrinsic.File.Exists(V.Local.sFilenameServer,V.Local.bChange)
+			F.Intrinsic.Control.If(V.Local.bChange,=,False)
+				F.Intrinsic.String.Build("{0}\PDRF",V.Caller.FilesDir,V.Local.sFilepath)
+				F.Intrinsic.File.DirExists(V.Local.sFilepath,V.Local.bChange)
+				F.Intrinsic.Control.If(V.Local.bChange,=,False)
+					F.Intrinsic.File.CreateDir(V.Local.sFilepath)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.String.Build("{0}\PDRF\{1}",V.Caller.FilesDir,V.Local.iID,V.Local.sFilepath)
+				F.Intrinsic.File.DirExists(V.Local.sFilepath,V.Local.bChange)
+				F.Intrinsic.Control.If(V.Local.bChange,=,False)
+					F.Intrinsic.File.CreateDir(V.Local.sFilepath)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.String.Build("{0}\PDRF\{1}\{2}",V.Caller.FilesDir,V.Local.iID,V.Local.iSeq,V.Local.sFilepath)
+				F.Intrinsic.File.DirExists(V.Local.sFilepath,V.Local.bChange)
+				F.Intrinsic.Control.If(V.Local.bChange,=,False)
+					F.Intrinsic.File.CreateDir(V.Local.sFilepath)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.String.Build("{0}\REQUEST",V.Local.sFilepath,V.Local.sFilepath)
+				F.Intrinsic.File.DirExists(V.Local.sFilepath,V.Local.bChange)
+				F.Intrinsic.Control.If(V.Local.bChange,=,False)
+					F.Intrinsic.File.CreateDir(V.Local.sFilepath)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.File.CopyFile(V.DataTable.dtDoc(V.Local.i1).Filename!FieldVal,V.Local.sFilenameServer)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.i1)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.CallSub(ClearScreen)
+Program.Sub.cmdSave_Click.End
+
+Program.Sub.CheckUserPermission.Start
+V.Local.sSQL.Declare
+V.Local.sUser.Declare
+
+'Permission
+'0 - Requestor
+'1 - Engineer
+'2 - Manager
+'3 - Management
+
+V.Local.sUser.Set(V.Caller.User)
+F.Intrinsic.String.Build("select engineer, manager, management from GAB_5237_PDRF_LVL where gss_user = '{0}'",V.Local.sUser.Trim,V.Local.sSQL)
+F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,true)
+	Gui.F_Entry.frameClass.Visible(False)
+	Gui.F_Entry.frameRequestor.Visible(False)
+	Gui.F_Entry.cmdNewPDRF.Visible(True)
+	Gui.F_Entry.cmdNewRequest.Visible(True)
+	Gui.F_Entry.cmdSave.Visible(True)
+	Gui.F_Entry.cmdUpdate.Visible(False)
+	V.Global.iPermission.Set(0)
+
+	'Get user region ID. Not sure how or why Max is using this.
+	F.Intrinsic.String.Build("select region_id, region_id2, region_id3, region_id4, region_id5 from gab_5257_user_region where gss_user = '{0}'",V.Local.sUser.Trim,V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rstUser",V.Local.sSQL)
+	F.Intrinsic.Control.If(V.ODBC.conx!rstUser.EOF)
+		V.Global.iRegion.Set(0)
+	F.Intrinsic.Control.Else
+		V.Global.iRegion.Set(V.ODBC.conx!rstUser.FieldVal!region_id)
+
+		F.Intrinsic.Control.If(V.DataTable.dtRegion.Exists)
+			F.Data.DataTable.Close("dtRegion")
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.String.Build("select customer as Customer from gab_5257_cust_region where region_id = {0} or region_id = {1} or region_id = {2} or region_id = {3} or region_id = {4}",V.Global.iRegion,V.ODBC.conx!rstUser.FieldVal!region_id2,V.ODBC.conx!rstUser.FieldVal!region_id3,V.ODBC.conx!rstUser.FieldVal!region_id4,V.ODBC.conx!rstUser.FieldVal!region_id5,V.Local.sSQL)
+		F.Data.DataTable.CreateFromSQL("dtRegion","conx",V.Local.sSQL,True)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rstUser.Close
+F.Intrinsic.Control.Else
+'F.Intrinsic.UI.Msgbox(V.ODBC.conx!rst.FieldVal!manager)
+	F.Intrinsic.Control.If(V.ODBC.conx!rst.FieldVal!manager,=,"True")
+		Gui.F_Entry.frameClass.Visible(True)
+		Gui.F_Entry.frameRequestor.Visible(True)
+		Gui.F_Entry.cmdNewPDRF.Visible(False)
+		Gui.F_Entry.cmdNewRequest.Visible(False)
+		Gui.F_Entry.cmdSave.Visible(False)
+		Gui.F_Entry.cmdUpdate.Visible(True)
+		Gui.F_Entry.txtOtherInfo.Locked(True)
+		V.Global.iPermission.Set(2)
+	F.Intrinsic.Control.ElseIf(V.ODBC.conx!rst.FieldVal!management,=,"True")
+		Gui.F_Entry.frameClass.Visible(True)
+		Gui.F_Entry.frameRequestor.Visible(True)
+		Gui.F_Entry.cmdNewPDRF.Visible(False)
+		Gui.F_Entry.cmdNewRequest.Visible(False)
+		Gui.F_Entry.txtOtherInfo.Locked(True)
+		V.Global.iPermission.Set(3)
+	F.Intrinsic.Control.ElseIf(V.ODBC.conx!rst.FieldVal!engineer,=,"True")
+		Gui.F_Entry.frameClass.Visible(True)
+		Gui.F_Entry.frameRequestor.Visible(True)
+		Gui.F_Entry.cmdNewPDRF.Visible(False)
+		Gui.F_Entry.cmdNewRequest.Visible(False)
+		Gui.F_Entry.cmdSave.Visible(False)
+		Gui.F_Entry.cmdUpdate.Visible(True)
+		Gui.F_Entry.txtOtherInfo.Locked(False)
+		V.Global.iPermission.Set(1)
+	F.Intrinsic.Control.Else
+	Gui.F_Entry.frameClass.Visible(False)
+	Gui.F_Entry.frameRequestor.Visible(False)
+	Gui.F_Entry.cmdNewPDRF.Visible(True)
+	Gui.F_Entry.cmdNewRequest.Visible(True)
+	Gui.F_Entry.cmdSave.Visible(True)
+	Gui.F_Entry.cmdUpdate.Visible(False)
+	V.Global.iPermission.Set(0)		
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rst.Close
+Program.Sub.CheckUserPermission.End
+
+Program.Sub.NewRequestNotification.Start
+V.Local.i1.Declare
+V.Local.iC.Declare(Long,1)
+V.Local.iMsgID.Declare
+V.Local.iPDRF.Declare
+V.Local.iRet.Declare
+V.Local.iSeq.Declare
+V.Local.iUserS.Declare
+V.Local.iUserR.Declare
+V.Local.sEmail.Declare
+V.Local.sMessage.Declare
+V.Local.sName.Declare
+V.Local.sOrigEmail.Declare
+V.Local.sOrigName.Declare
+V.Local.sSubject.Declare
+v.Local.sRecipientEmailAndName.Declare
+v.Local.sSenderEmailAndName.Declare
+
+V.Local.iPDRF.Set(V.Args.PDRF)
+V.Local.iSeq.Set(V.Args.Seq)
+
+F.Intrinsic.String.Build("New PDRF Request No. {0}",V.Local.iPDRF,V.Local.sSubject)
+F.Intrinsic.String.Concat("PDRF No.: ",V.Local.iPDRF,V.Local.sMessage)
+F.Intrinsic.String.Concat(V.Local.sMessage,V.Ambient.NewLine,"Request Date: ",V.Args.StartDate,V.Local.sMessage)
+F.Intrinsic.String.Concat(V.Local.sMessage,V.Ambient.NewLine,"Required Date: ",V.Screen.F_Entry!dtpRequired.Value,V.Local.sMessage)
+F.Intrinsic.String.Concat(V.Local.sMessage,V.Ambient.NewLine,"Requested By: ",V.Caller.User,V.Local.sMessage)
+F.Intrinsic.String.Concat(V.Local.sMessage,V.Ambient.NewLine,V.Ambient.NewLine,"Design Intent: ",V.Screen.F_Entry!ddlDesignIntent.Text,V.Local.sMessage)
+F.Intrinsic.String.Concat(V.Local.sMessage,V.Ambient.NewLine,V.Ambient.NewLine,"Deliverables: ",V.Local.sMessage)
+F.Intrinsic.Control.If(V.Screen.F_Entry!chkDesign.Value,=,1)
+	F.Intrinsic.String.Concat(V.Local.sMessage,V.Ambient.NewLine,V.Local.iC,". Design",V.Local.sMessage)
+	F.Intrinsic.Math.Add(V.Local.iC,1,V.Local.iC)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.F_Entry!chkTolerance.Value,=,1)
+	F.Intrinsic.String.Concat(V.Local.sMessage,V.Ambient.NewLine,V.Local.iC,". Tolerance Stack",V.Local.sMessage)
+	F.Intrinsic.Math.Add(V.Local.iC,1,V.Local.iC)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.F_Entry!chkFEA.Value,=,1)
+	F.Intrinsic.String.Concat(V.Local.sMessage,V.Ambient.NewLine,V.Local.iC,". FEA Analysis",V.Local.sMessage)
+	F.Intrinsic.Math.Add(V.Local.iC,1,V.Local.iC)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.F_Entry!chkRootCause.Value,=,1)
+	F.Intrinsic.String.Concat(V.Local.sMessage,V.Ambient.NewLine,V.Local.iC,". Root Cause",V.Local.sMessage)
+	F.Intrinsic.Math.Add(V.Local.iC,1,V.Local.iC)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.Concat(V.Local.sMessage,V.Ambient.NewLine,"Description: ",V.Screen.F_Entry!txtDescription.Text,V.Local.sMessage)
+
+F.Data.DataTable.CreateFromSQL("dtManager","conx","select gss_user as UserID from GAB_5237_PDRF_LVL where manager = 1")
+F.Intrinsic.Control.If(V.DataTable.dtManager.RowCount,>,0)
+	F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtManager.RowCount--,1)
+		'Get Sender's User ID
+		Function.Global.Security.GetUserID(V.Caller.User,V.Caller.CompanyCode,V.Local.iUserS)
+		Function.Global.Security.GetUserID(V.DataTable.dtManager(V.Local.i1).UserID!FieldValTrim,V.Caller.CompanyCode,V.Local.iUserR)
+
+		'send an internal message 
+		F.Global.Messaging.InternalMessageCreate(-1,V.Ambient.Date,V.Local.iUserS.Trim,V.Local.sSubject,V.Local.sMessage,V.Local.iMsgID)
+		F.Global.Messaging.InternalMessageQueueToUser(V.Local.iUserR,V.Local.iMsgID)
+
+		'Send email
+		F.Global.Messaging.isCourierRunning(V.Local.iRet)
+		F.Intrinsic.Control.If(V.Local.iRet,<>,0)
+			F.Global.Security.GetUserEmail(V.DataTable.dtManager(V.Local.i1).UserID!FieldValTrim,V.Caller.CompanyCode,V.Local.sOrigEmail)
+'			F.Intrinsic.UI.Msgbox(V.Local.sOrigEmail)
+			F.Global.Security.GetFullName(V.DataTable.dtManager(V.Local.i1).UserID!FieldValTrim,V.Caller.CompanyCode,V.Local.sOrigName)
+			F.Intrinsic.String.Concat(v.Local.sOrigName.Trim,"*!*",v.Local.sOrigEmail.Trim,v.Local.sRecipientEmailAndName)
+			
+			F.Global.Security.GetUserEmail(V.Caller.User,V.Caller.CompanyCode,V.Local.sEmail)
+			F.Global.Security.GetFullName(V.Caller.User,V.Caller.CompanyCode,V.Local.sName)
+			F.Intrinsic.String.Concat(v.Local.sEmail.Trim,"*!*",v.Local.sName.Trim,v.Local.sSenderEmailAndName)
+
+			'F.Global.Messaging.CreateEMMessage(V.Local.sOrigEmail,V.Local.sOrigName,V.Local.sEmail,V.Local.sName,V.Local.sSubject,V.Local.sMessage)
+			F.Global.Messaging.QueueMessage(v.Caller.CompanyCode,v.Local.iUserS,v.Caller.Caller,v.Local.sSubject,v.Local.sSenderEmailAndName,v.Local.sRecipientEmailAndName,v.Local.sMessage)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.i1)
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.Close("dtManager")
+Program.Sub.NewRequestNotification.End
+
+Program.Sub.cmdNewPDRF_Click.Start
+V.Global.iMode.Set(0)
+V.Global.sEngraving.Set("")
+Gui.F_Entry.cmdBrwPL.Visible(True)
+F.Intrinsic.Control.CallSub(ClearScreen)
+
+Gui.F_Entry.txtLeads.Locked(False)
+Gui.F_Entry.txtForm.Locked(False)
+Gui.F_Entry.txtSize.Locked(False)
+Gui.F_Entry.txtPitch.Locked(False)
+Gui.F_Entry.txtSitesXY.Locked(False)
+Gui.F_Entry.ddlKelvin.Enabled(True)
+Gui.F_Entry.ddlESeries.Enabled(True)
+Gui.F_Entry.txtProjType.Locked(False)
+Gui.F_Entry.txtHandlerName.Locked(False)
+Gui.F_Entry.txtHandlerNameDesc.Locked(False)
+
+Gui.F_Entry.cmdBrwCust.Visible(True)
+Gui.F_Entry.ddlDrawingType.Enabled(True)
+Gui.F_Entry.txtCustomerCode.Locked(False)
+Program.Sub.cmdNewPDRF_Click.End
+
+Program.Sub.cmdExistingPDRF_Click.Start
+V.Local.iWidths.Declare
+V.Local.sDwgType.Declare
+V.Local.sMessage.Declare
+V.Local.sRet.Declare
+V.Local.sSQL.Declare
+V.Local.sTitles.Declare
+
+F.Intrinsic.String.Split("PDRF*!*Seq","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("1000*!*800","*!*",V.Local.iWidths)
+F.Intrinsic.UI.Browser("Select a PDRF","conx","select id, max(seq) from GAB_5237_PDRF_ISSUE group by id",V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+
+	F.Intrinsic.String.Build("select date_complete from GAB_5237_PDRF_ISSUE where id = {0} and seq = {1}",V.Local.sRet(0),V.Local.sRet(1),V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	F.Intrinsic.Control.If(V.ODBC.conx!rst.FieldValPervasiveDate!date_complete,=,"1900-01-01")
+'	F.Intrinsic.Control.If(V.ODBC.conx!rst.FieldValPervasiveDate!date_complete,<>,"1900-01-01")
+		'There is an open PDRF not yet completed
+		'There is a completed cannot change
+		F.Intrinsic.String.Build("There is an open request for PDRF {0}. Please select another one.",V.Local.sRet(0),V.Local.sMessage)
+'		F.Intrinsic.String.Build("There is a completed request for PDRF {0}. Please select another one.",V.Local.sRet(0),V.Local.sMessage)
+		F.Intrinsic.UI.Msgbox(V.Local.sMessage)
+	F.Intrinsic.Control.Else
+		'Proceed with new request from the selected PDRF
+		V.Global.iMode.Set(0)
+		F.Intrinsic.Control.CallSub(LockUnlock,"Lock",False)
+		F.Intrinsic.Control.CallSub(ClearScreen)
+		Gui.F_Entry.txtPDRF.Text(V.Local.sRet(0))
+		V.Global.sEngraving.Set("")
+
+		'Retrieve PL from previous PDRF request
+		F.Intrinsic.String.Build("select PL from GAB_5237_PDRF_INTENT where id = {0} and seq = {1}",V.Local.sRet(0),V.Local.sRet(1),V.Local.sSQL)
+		F.ODBC.Connection!conx.OpenLocalRecordsetRO("rstPL",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.conx!rstPL.EOF,=,False)
+			Gui.F_Entry.txtPL.Text(V.ODBC.conx!rstPL.FieldValTrim!PL)
+'			Gui.F_Entry.cmdBrwPL.Visible(False)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conx!rstPL.Close
+
+		'Retrieve drawing number from previous PDRF request
+		F.Intrinsic.String.Build("select Customer, dwg_type, running_no from GAB_5237_PDRF_DWG where id = {0} and seq = {1}",V.Local.sRet(0),V.Local.sRet(1),V.Local.sSQL)
+		F.ODBC.Connection!conx.OpenLocalRecordsetRO("rstPL",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.conx!rstPL.EOF,=,False)
+			Gui.F_Entry.txtCustomerCode.Text(V.ODBC.conx!rstPL.FieldValTrim!Customer)
+			Gui.F_Entry.ddlDrawingType.Text(V.ODBC.conx!rstPL.FieldValTrim!dwg_type)
+'			Gui.F_Entry.txtRunningNo.Text(V.ODBC.conx!rstPL.FieldValTrim!running_no)
+'			Gui.F_Entry.cmdBrwCust.Visible(False)
+'			Gui.F_Entry.ddlDrawingType.Enabled(False)
+'			Gui.F_Entry.txtCustomerCode.Locked(True)
+			V.Local.sDwgType.Set(V.ODBC.conx!rstPL.FieldValTrim!dwg_type)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conx!rstPL.Close
+
+		'Project name frame
+		F.Intrinsic.String.Build("select leads, form, handler_name, size, pitch, sites_xy, kelvin, e_series, prj_type from GAB_5237_PDRF_PRJ where id = {0} and seq = {1}",V.Local.sRet(0),V.Local.sRet(1),V.Local.sSQL)
+		F.ODBC.Connection!conx.OpenLocalRecordsetRO("rstPL",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.conx!rstPL.EOF,=,False)
+			Gui.F_Entry.txtLeads.Text(V.ODBC.conx!rstPL.FieldValTrim!leads)
+			Gui.F_Entry.txtForm.Text(V.ODBC.conx!rstPL.FieldValTrim!form)
+			Gui.F_Entry.txtSize.Text(V.ODBC.conx!rstPL.FieldValTrim!size)
+			Gui.F_Entry.txtPitch.Text(V.ODBC.conx!rstPL.FieldVal!pitch)
+			Gui.F_Entry.txtSitesXY.Text(V.ODBC.conx!rstPL.FieldValTrim!sites_xy)
+			Gui.F_Entry.ddlKelvin.Text(V.ODBC.conx!rstPL.FieldValTrim!kelvin)
+			Gui.F_Entry.ddlESeries.Text(V.ODBC.conx!rstPL.FieldValTrim!e_series)
+			Gui.F_Entry.txtProjType.Text(V.ODBC.conx!rstPL.FieldValTrim!prj_type)
+			F.Intrinsic.Control.If(V.Local.sDwgType.Trim,=,"SP")
+				Gui.F_Entry.lbl15.Visible(False)
+				Gui.F_Entry.txtHandlerName.Visible(False)
+				Gui.F_Entry.lblHandlerName.Visible(True)
+				Gui.F_Entry.txtHandlerNameDesc.Visible(True)
+				Gui.F_Entry.txtHandlerNameDesc.Text(V.ODBC.conx!rstPL.FieldValTrim!handler_name)
+			F.Intrinsic.Control.ElseIf(V.Local.sDwgType.Trim,=,"SB")
+				Gui.F_Entry.lbl15.Visible(False)
+				Gui.F_Entry.txtHandlerName.Visible(False)
+				Gui.F_Entry.lblHandlerName.Visible(True)
+				Gui.F_Entry.txtHandlerNameDesc.Visible(True)
+				Gui.F_Entry.txtHandlerNameDesc.Text(V.ODBC.conx!rstPL.FieldValTrim!handler_name)
+			F.Intrinsic.Control.ElseIf(V.Local.sDwgType.Trim,=,"P")
+				Gui.F_Entry.lbl15.Visible(False)
+				Gui.F_Entry.txtHandlerName.Visible(False)
+				Gui.F_Entry.lblHandlerName.Visible(True)
+				Gui.F_Entry.txtHandlerNameDesc.Visible(True)
+				Gui.F_Entry.txtHandlerNameDesc.Text(V.ODBC.conx!rstPL.FieldValTrim!handler_name)
+			F.Intrinsic.Control.ElseIf(V.Local.sDwgType.Trim,=,"STD")
+				Gui.F_Entry.lbl15.Visible(False)
+				Gui.F_Entry.txtHandlerName.Visible(False)
+				Gui.F_Entry.lblHandlerName.Visible(True)
+				Gui.F_Entry.txtHandlerNameDesc.Visible(True)
+				Gui.F_Entry.txtHandlerNameDesc.Text(V.ODBC.conx!rstPL.FieldValTrim!handler_name)
+			F.Intrinsic.Control.Else
+				Gui.F_Entry.lbl15.Visible(True)
+				Gui.F_Entry.txtHandlerName.Visible(True)
+				Gui.F_Entry.lblHandlerName.Visible(False)
+				Gui.F_Entry.txtHandlerNameDesc.Visible(False)
+				Gui.F_Entry.txtHandlerName.Text(V.ODBC.conx!rstPL.FieldValTrim!handler_name)
+			F.Intrinsic.Control.EndIf
+
+'			Gui.F_Entry.txtLeads.Locked(True)
+'			Gui.F_Entry.txtForm.Locked(True)
+'			Gui.F_Entry.txtSize.Locked(True)
+'			Gui.F_Entry.txtPitch.Locked(True)
+'			Gui.F_Entry.txtSitesXY.Locked(True)
+'			Gui.F_Entry.ddlKelvin.Enabled(False)
+'			Gui.F_Entry.ddlESeries.Enabled(False)
+'			Gui.F_Entry.txtProjType.Locked(True)
+'			Gui.F_Entry.txtHandlerName.Locked(True)
+'			Gui.F_Entry.txtHandlerNameDesc.Locked(True)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conx!rstPL.Close
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.Close
+F.Intrinsic.Control.EndIf
+Program.Sub.cmdExistingPDRF_Click.End
+
+Program.Sub.cmdOpenPDRF_Click.Start
+V.Local.bInString.Declare
+V.Local.iSeq.Declare
+V.Local.iWidths.Declare
+V.Local.sDwgType.Declare
+V.Local.sFilter.Declare
+V.Local.sFilterRet.Declare
+V.Local.sRet.Declare
+V.Local.sSQL.Declare
+V.Local.sTitles.Declare
+V.Local.sUser.Declare
+V.Local.sValue.Declare
+
+'Open browser of current open PDRF
+V.Local.sUser.Set(V.Caller.User)
+F.Intrinsic.Control.If(V.Global.iPermission,=,0)
+	F.Intrinsic.String.Build("select id, seq, date_issue, date_due from GAB_5237_PDRF_ISSUE where requestor = '{0}' and date_complete = '1900-01-01'",V.Local.sUser.Trim,V.Local.sSQL)
+F.Intrinsic.Control.ElseIf(V.Global.iPermission,=,1)
+	F.Intrinsic.String.Build("select id, seq, date_issue, date_due from GAB_5237_PDRF_ISSUE where engineer = '{0}' and date_complete = '1900-01-01'",V.Local.sUser.Trim,V.Local.sSQL)
+F.Intrinsic.Control.Else
+	V.Local.sSQL.Set("select id, seq, date_issue, date_due from GAB_5237_PDRF_ISSUE where date_complete = '1900-01-01'")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.Split("PDRF*!*Seq*!*Issue Date*!*Due Date","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("1000*!*300*!*1500*!*1500","*!*",V.Local.iWidths)
+
+F.Intrinsic.UI.Browser("Select a PDRF","conx",V.Local.sSQL,V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+V.Global.iMode.Set(1)
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	V.Global.iSeq.Set(V.Local.sRet(1))
+
+	'Check if fields in Main tab is still editable for requestor
+	F.Intrinsic.String.Build("select date_issue, date_due, date_consent, requestor, budget from GAB_5237_PDRF_ISSUE where id = {0} and seq = {1}",V.Local.sRet(0),V.Local.sRet(1),V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	F.Intrinsic.Control.If(V.Global.iPermission,=,0)
+		F.Intrinsic.Control.If(V.ODBC.conx!rst.FieldValPervasiveDate!date_consent,=,"1900-01-01")
+			F.Intrinsic.Control.CallSub(LockUnlock,"Lock",False)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.CallSub(LockUnlock,"Lock",True)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	Gui.F_Entry.txtPDRF.Text(V.Local.sRet(0))
+	Gui.F_Entry.dtpStart.Value(V.ODBC.conx!rst.FieldVal!date_issue)
+	Gui.F_Entry.dtpRequired.Value(V.ODBC.conx!rst.FieldVal!date_due)
+	Gui.F_Entry.lblRequestor.Caption(V.ODBC.conx!rst.FieldVal!requestor)
+	F.Intrinsic.String.Format(V.ODBC.conx!rst.FieldVal!budget,"#,0.00",V.Local.sValue)
+	Gui.F_Entry.txtBudget.Text(V.Local.sValue)
+
+	F.ODBC.conx!rst.Close
+
+	'Retrieve Main data
+	F.Intrinsic.String.Build("select pl, design_intent, design, tolerance, fea, root_cause, description from GAB_5237_PDRF_INTENT where id ={0} and seq = {1}",V.Local.sRet(0),V.Local.sRet(1),V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	Gui.F_Entry.txtPL.Text(V.ODBC.conx!rst.FieldVal!pl)
+	Gui.F_Entry.ddlDesignIntent.Text(V.ODBC.conx!rst.FieldValTrim!design_intent)
+	Gui.F_Entry.chkDesign.Value(V.ODBC.conx!rst.FieldVal!design)
+	Gui.F_Entry.chkTolerance.Value(V.ODBC.conx!rst.FieldVal!tolerance)
+	Gui.F_Entry.chkFEA.Value(V.ODBC.conx!rst.FieldVal!fea)
+	Gui.F_Entry.chkRootCause.Value(V.ODBC.conx!rst.FieldVal!root_cause)
+	Gui.F_Entry.txtDescription.Text(V.ODBC.conx!rst.FieldValTrim!description)
+	F.ODBC.conx!rst.Close
+
+	'PO Information
+	F.Intrinsic.String.Build("select po_flag, date_delivery, order_no from GAB_5237_PDRF_PO where id = {0} and seq = {1}",V.Local.sRet(0),V.Local.sRet(1),V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	F.Intrinsic.Control.If(V.ODBC.conx!rst.FieldVal!po_flag,=,1)
+		Gui.F_Entry.chkPO.Value(1)
+		Gui.F_Entry.dtpDelivery.Value(V.ODBC.conx!rst.FieldVal!date_delivery)
+		Gui.F_Entry.txtSO.Text(V.ODBC.conx!rst.FieldValTrim!order_no)
+	F.Intrinsic.Control.Else
+		Gui.F_Entry.chkPO.Value(0)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.Close
+
+	'Drawing number
+	F.Intrinsic.String.Build("select customer, dwg_type, running_no from GAB_5237_PDRF_DWG where id = {0} and seq = {1}",V.Local.sRet(0),V.Local.sRet(1),V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	Gui.F_Entry.txtCustomerCode.Text(V.ODBC.conx!rst.FieldValTrim!customer)
+	Gui.F_Entry.ddlDrawingType.Text(V.ODBC.conx!rst.FieldValTrim!dwg_type)
+'	Gui.F_Entry.txtRunningNo.Text(V.ODBC.conx!rst.FieldValTrim!running_no)
+	F.ODBC.conx!rst.Close
+
+	'Project Name
+	V.Local.sDwgType.Set(V.Screen.F_Entry!ddlDrawingType.Text)
+	F.Intrinsic.String.Build("select leads, form, size, pitch, handler_name, sites_xy, kelvin, e_series, prj_type from GAB_5237_PDRF_PRJ where id = {0} and seq = {1}",V.Local.sRet(0),V.Local.sRet(1),V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	Gui.F_Entry.txtLeads.Text(V.ODBC.conx!rst.FieldValTrim!leads)
+	Gui.F_Entry.txtForm.Text(V.ODBC.conx!rst.FieldValTrim!form)
+	Gui.F_Entry.txtSize.Text(V.ODBC.conx!rst.FieldVal!size)
+	Gui.F_Entry.txtPitch.Text(V.ODBC.conx!rst.FieldVal!pitch)
+	F.Intrinsic.Control.If(V.Local.sDwgType.Trim,=,"SP")
+		Gui.F_Entry.lbl15.Visible(False)
+		Gui.F_Entry.txtHandlerName.Visible(False)
+		Gui.F_Entry.lblHandlerName.Visible(True)
+		Gui.F_Entry.txtHandlerNameDesc.Visible(True)
+		Gui.F_Entry.txtHandlerNameDesc.Text(V.ODBC.conx!rst.FieldValTrim!handler_name)
+	F.Intrinsic.Control.ElseIf(V.Local.sDwgType.Trim,=,"SB")
+		Gui.F_Entry.lbl15.Visible(False)
+		Gui.F_Entry.txtHandlerName.Visible(False)
+		Gui.F_Entry.lblHandlerName.Visible(True)
+		Gui.F_Entry.txtHandlerNameDesc.Visible(True)
+		Gui.F_Entry.txtHandlerNameDesc.Text(V.ODBC.conx!rst.FieldValTrim!handler_name)
+	F.Intrinsic.Control.ElseIf(V.Local.sDwgType.Trim,=,"P")
+		Gui.F_Entry.lbl15.Visible(False)
+		Gui.F_Entry.txtHandlerName.Visible(False)
+		Gui.F_Entry.lblHandlerName.Visible(True)
+		Gui.F_Entry.txtHandlerNameDesc.Visible(True)
+		Gui.F_Entry.txtHandlerNameDesc.Text(V.ODBC.conx!rst.FieldValTrim!handler_name)
+	F.Intrinsic.Control.ElseIf(V.Local.sDwgType.Trim,=,"STD")
+		Gui.F_Entry.lbl15.Visible(False)
+		Gui.F_Entry.txtHandlerName.Visible(False)
+		Gui.F_Entry.lblHandlerName.Visible(True)
+		Gui.F_Entry.txtHandlerNameDesc.Visible(True)
+		Gui.F_Entry.txtHandlerNameDesc.Text(V.ODBC.conx!rst.FieldValTrim!handler_name)
+	F.Intrinsic.Control.Else
+		Gui.F_Entry.lbl15.Visible(True)
+		Gui.F_Entry.txtHandlerName.Visible(True)
+		Gui.F_Entry.lblHandlerName.Visible(False)
+		Gui.F_Entry.txtHandlerNameDesc.Visible(False)
+		Gui.F_Entry.txtHandlerName.Text(V.ODBC.conx!rst.FieldValTrim!handler_name)
+	F.Intrinsic.Control.EndIf
+	Gui.F_Entry.txtSitesXY.Text(V.ODBC.conx!rst.FieldValTrim!sites_xy)
+	Gui.F_Entry.ddlKelvin.Text(V.ODBC.conx!rst.FieldValTrim!kelvin)
+	Gui.F_Entry.ddlESeries.Text(V.ODBC.conx!rst.FieldValTrim!e_series)
+	Gui.F_Entry.txtProjType.Text(V.ODBC.conx!rst.FieldValTrim!prj_type)
+	F.ODBC.conx!rst.Close
+
+	'Device Info
+	F.Intrinsic.String.Build("select device_pod, device_sample, device_plating, application, esd, ambient, hot, hot_temp, cold, cold_temp from GAB_5237_PDRF_DEV where id = {0} and seq = {1}",V.Local.sRet(0),V.Local.sRet(1),V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	Gui.F_Entry.chkPOD.Value(V.ODBC.conx!rst.FieldVal!device_pod)
+	Gui.F_Entry.chkSample.Value(V.ODBC.conx!rst.FieldVal!device_sample)
+	Gui.F_Entry.ddlDevicePlating.Text(V.ODBC.conx!rst.FieldValTrim!device_plating)
+	Gui.F_Entry.ddlApplication.Text(V.ODBC.conx!rst.FieldValTrim!application)
+	Gui.F_Entry.txtESD.Text(V.ODBC.conx!rst.FieldValTrim!esd)
+	Gui.F_Entry.chkAmbient.Value(V.ODBC.conx!rst.FieldVal!ambient)
+	Gui.F_Entry.chkHot.Value(V.ODBC.conx!rst.FieldVal!Hot)
+	Gui.F_Entry.txtHot.Text(V.ODBC.conx!rst.FieldVal!hot_temp)
+	Gui.F_Entry.chkCold.Value(V.ODBC.conx!rst.FieldValTrim!Cold)
+	Gui.F_Entry.txtCold.Text(V.ODBC.conx!rst.FieldVal!cold_temp)
+	F.ODBC.conx!rst.Close
+
+	'Nest Information
+	F.Intrinsic.String.Build("select nesting, remarks from GAB_5237_PDRF_NEST where id = {0} and seq = {1}",V.Local.sRet(0),V.Local.sRet(1),V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	Gui.F_Entry.ddlNest.Text(V.ODBC.conx!rst.FieldValTrim!nesting)
+	Gui.F_Entry.txtNestRemark.Text(V.ODBC.conx!rst.FieldValTrim!remarks)
+	F.ODBC.conx!rst.Close
+
+	'Socket Footprint
+	F.Intrinsic.String.Build("select socket_footprint, keep_out_zone from GAB_5237_PDRF_SCKT where id = {0} and seq = {1}",V.Local.sRet(0),V.Local.sRet(1),V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	Gui.F_Entry.ddlSocket.Text(V.ODBC.conx!rst.FieldValTrim!socket_footprint)
+	Gui.F_Entry.txtKeepOutZone.Text(V.ODBC.conx!rst.FieldValTrim!keep_out_zone)
+	F.ODBC.conx!rst.Close
+
+	'Physical parameters
+	F.Intrinsic.String.Build("select contact_medium, part, eqt_part, test_height, contact_medium_plate, contact_medium_pitch, contact_force, avg_resistance, current_rating, self_inductance, capacitance, bandwidth, tip_style_dut, tip_finishing_dut, tip_style_pcb, tip_finishing_pcb from GAB_5237_PDRF_PARAM where id = {0} and seq = {1}",V.Local.sRet(0),V.Local.sRet(1),V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	F.Intrinsic.String.Build("Value = '{0}'",V.ODBC.conx!rst.FieldValTrim!contact_medium,V.Local.sFilter)
+	F.Data.DataTable.Select("dtContactMedium",V.Local.sFilter,V.Local.sFilterRet)
+	F.Intrinsic.Control.If(V.Local.sFilterRet,=,"***NORETURN***")
+		Gui.F_Entry.ddlContactMedium.Text("Others")
+	F.Intrinsic.Control.Else
+		Gui.F_Entry.ddlContactMedium.Text(V.ODBC.conx!rst.FieldValTrim!contact_medium)		
+	F.Intrinsic.Control.EndIf
+	Gui.F_Entry.txtContactMedium.Text(V.ODBC.conx!rst.FieldValTrim!part)
+	Gui.F_Entry.txtPartNo.Text(V.ODBC.conx!rst.FieldValTrim!eqt_part)
+	Gui.F_Entry.txtTestHeight.Text(V.ODBC.conx!rst.FieldVal!test_height)
+	Gui.F_Entry.txtContactMediumPlating.Text(V.ODBC.conx!rst.FieldValTrim!contact_medium_plate)
+	Gui.F_Entry.txtContactMediumPitch.Text(V.ODBC.conx!rst.FieldVal!contact_medium_pitch)
+	Gui.F_Entry.txtContactForce1.Text(V.ODBC.conx!rst.FieldVal!contact_force)
+	Gui.F_Entry.txtAveResistance.Text(V.ODBC.conx!rst.FieldVal!avg_resistance)
+	Gui.F_Entry.txtCurrentRating.Text(V.ODBC.conx!rst.FieldVal!current_rating)
+	Gui.F_Entry.txtSelfInductance.Text(V.ODBC.conx!rst.FieldVal!self_inductance)
+	Gui.F_Entry.txtCapacitance.Text(V.ODBC.conx!rst.FieldVal!capacitance)
+	Gui.F_Entry.txtBandwidth.Text(V.ODBC.conx!rst.FieldVal!bandwidth)
+	Gui.F_Entry.txtTipStyleDUT.Text(V.ODBC.conx!rst.FieldVal!tip_style_dut)
+	Gui.F_Entry.txtTipFinishDUT.Text(V.ODBC.conx!rst.FieldVal!tip_finishing_dut)
+	Gui.F_Entry.txtTipStylePCB.Text(V.ODBC.conx!rst.FieldVal!tip_style_pcb)
+	Gui.F_Entry.txtTipFinishPCB.Text(V.ODBC.conx!rst.FieldVal!tip_finishing_pcb)
+	F.ODBC.conx!rst.Close
+
+	'Actuator
+	F.Intrinsic.String.Build("select manual_actuator, pusher_actuation, thermal_mgmt, contact_force from GAB_5237_PDRF_ACT where id = {0} and seq = {1}",V.Local.sRet(0),V.Local.sRet(1),V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	F.Intrinsic.String.Build("Value = '{0}'",V.ODBC.conx!rst.FieldValTrim!manual_actuator,V.Local.sFilter)
+	F.Data.DataTable.Select("dtManualActuator",V.Local.sFilter,V.Local.sFilterRet)
+	F.Intrinsic.Control.If(V.Local.sFilterRet,=,"***NORETURN***")
+		Gui.F_Entry.ddlManualActuator.Text("Others")
+		Gui.F_Entry.txtManualActuator.Text(V.ODBC.conx!rst.FieldValTrim!manual_actuator)
+	F.Intrinsic.Control.Else
+		Gui.F_Entry.ddlManualActuator.Text(V.ODBC.conx!rst.FieldValTrim!manual_actuator)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.String.Build("Value = '{0}'",V.ODBC.conx!rst.FieldValTrim!pusher_actuation,V.Local.sFilter)
+	F.Data.DataTable.Select("dtPusherActuation",V.Local.sFilter,V.Local.sFilterRet)
+	F.Intrinsic.Control.If(V.Local.sFilterRet,=,"***NORETURN***")
+		Gui.F_Entry.ddlPusherActuation.Text("Others")
+		Gui.F_Entry.txtPusherActuation.Text(V.ODBC.conx!rst.FieldValTrim!pusher_actuation)
+	F.Intrinsic.Control.Else
+		Gui.F_Entry.ddlPusherActuation.Text(V.ODBC.conx!rst.FieldValTrim!pusher_actuation)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.String.Build("Value = '{0}'",V.ODBC.conx!rst.FieldValTrim!thermal_mgmt,V.Local.sFilter)
+	F.Data.DataTable.Select("dtThermalMgmt",V.Local.sFilter,V.Local.sFilterRet)
+	F.Intrinsic.Control.If(V.Local.sFilterRet,=,"***NORETURN***")
+		Gui.F_Entry.ddlThermalMgmt.Text("Others")
+		Gui.F_Entry.txtThermalMgmt.Text(V.ODBC.conx!rst.FieldValTrim!thermal_mgmt)
+	F.Intrinsic.Control.Else
+		Gui.F_Entry.ddlThermalMgmt.Text(V.ODBC.conx!rst.FieldValTrim!thermal_mgmt)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.Close
+
+	'Other information
+	F.Intrinsic.String.Build("select eqt, wo_no, dwg_no, package, ultra, e_series, white, cust_dwg, cust_dwg_no, other_info from GAB_5237_PDRF_OTH where id = {0} and seq = {1}",V.Local.sRet(0),V.Local.sRet(1),V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	Gui.F_Entry.chkCustDwg.Value(V.ODBC.conx!rst.FieldVal!cust_dwg)
+	F.Intrinsic.Control.If(V.ODBC.conx!rst.FieldVal!cust_dwg,=,1)
+		Gui.F_Entry.txtCustDWG.Text(V.ODBC.conx!rst.FieldValTrim!cust_dwg_no)
+	F.Intrinsic.Control.Else
+		Gui.F_Entry.txtCustDWG.Text("")
+	F.Intrinsic.Control.EndIf
+	Gui.F_Entry.chkEQT.Value(V.ODBC.conx!rst.FieldVal!eqt)
+	Gui.F_Entry.chkWONo.Value(V.ODBC.conx!rst.FieldVal!wo_no)
+	Gui.F_Entry.chkDwgNo.Value(V.ODBC.conx!rst.FieldVal!dwg_no)
+	Gui.F_Entry.chkPackageID.Value(V.ODBC.conx!rst.FieldVal!package)
+	Gui.F_Entry.chkUltra.Value(V.ODBC.conx!rst.FieldVal!ultra)
+	Gui.F_Entry.chkESeries.Value(V.ODBC.conx!rst.FieldVal!e_series)
+	Gui.F_Entry.chkWhitePaint.Value(V.ODBC.conx!rst.FieldVal!white)
+	Gui.F_Entry.txtOtherInfo.Text(V.ODBC.conx!rst.FieldValTrim!other_info)
+	F.ODBC.conx!rst.Close
+
+	Gui.F_Entry.dtpStart.Enabled(False)
+
+	F.Intrinsic.Control.If(V.DataTable.dtDoc.Exists)
+		F.Data.DataView.Close("dtDoc","dvDoc")
+		F.Data.DataTable.Close("dtDoc")
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.String.Build("select file_seq, filename as Filename from GAB_5237_PDRF_DOC where id = {0} and seq = {1}",V.Local.sRet(0),V.Local.sRet(1),V.Local.sSQL)
+	F.Data.DataTable.CreateFromSQL("dtDoc","conx",V.Local.sSQL,True)
+	F.Data.DataTable.AddColumn("dtDoc","Add","Long")
+	F.Data.DataTable.AddColumn("dtDoc","Delete","Long")
+	F.Intrinsic.Math.Add(V.DataTable.dtDoc.RowCount,1,V.Local.iSeq)
+	F.Data.DataTable.AddRow("dtDoc","file_Seq",V.Local.iSeq)
+	F.Data.DataView.Create("dtDoc","dvDoc",22,"","File_Seq ASC")
+	Gui.F_Entry.GsGCDoc.AddGridviewFromDataview("gvDoc","dtDoc","dvDoc")
+	Gui.F_Entry.GsGCDoc.MainView("gvDoc")
+	Gui.F_Entry.GsGCDoc.ColumnEdit("gvDoc","Add","EditorButton","Add")
+	Gui.F_Entry.GsGCDoc.ColumnEdit("gvDoc","Delete","EditorButton","Delete")
+	Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","Filename","AllowEdit",False)
+	Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","Add","AllowEdit",False)
+	Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","Delete","AllowEdit",False)
+	Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","Add","ShowCaption",False)
+	Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","Delete","ShowCaption",False)
+	Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","File_Seq","HeaderHAlignment","Center")
+	Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","Filename","HeaderHAlignment","Center")
+	Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","File_Seq","CellHAlignment","Center")
+	Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","File_Seq","MinWidth","40")
+	Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","Filename","MinWidth","250")
+	Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","Add","MinWidth","45")
+	Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","Delete","MinWidth","45")
+F.Intrinsic.Control.EndIf
+Program.Sub.cmdOpenPDRF_Click.End
+
+Program.Sub.EngineerView.Start
+V.Local.bInString.Declare
+V.Local.iSeq.Declare
+V.Local.iWidths.Declare
+V.Local.sDwgType.Declare
+V.Local.sFilter.Declare
+V.Local.sFilterRet.Declare
+V.Local.sRet.Declare
+V.Local.sSQL.Declare
+V.Local.sTitles.Declare
+V.Local.sUser.Declare
+V.Local.sValue.Declare
+
+'Open browser of current open PDRF
+'V.Local.sUser.Set(V.Caller.User)
+'F.Intrinsic.Control.If(V.Global.iPermission,=,0)
+'	F.Intrinsic.String.Build("select id, seq, date_issue, date_due from GAB_5237_PDRF_ISSUE where requestor = '{0}' and date_complete = '1900-01-01'",V.Local.sUser.Trim,V.Local.sSQL)
+'F.Intrinsic.Control.ElseIf(V.Global.iPermission,=,1)
+'	F.Intrinsic.String.Build("select id, seq, date_issue, date_due from GAB_5237_PDRF_ISSUE where engineer = '{0}' and date_complete = '1900-01-01'",V.Local.sUser.Trim,V.Local.sSQL)
+'F.Intrinsic.Control.Else
+'	V.Local.sSQL.Set("select id, seq, date_issue, date_due from GAB_5237_PDRF_ISSUE where date_complete = '1900-01-01'")
+'F.Intrinsic.Control.EndIf
+'F.Intrinsic.String.Split("PDRF*!*Seq*!*Issue Date*!*Due Date","*!*",V.Local.sTitles)
+'F.Intrinsic.String.Split("1000*!*300*!*1500*!*1500","*!*",V.Local.iWidths)
+
+'F.Intrinsic.UI.Browser("Select a PDRF","conx",V.Local.sSQL,V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+
+'F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+V.Global.iMode.Set(1)
+'	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	V.Global.iSeq.Set(V.Passed.Seq)
+
+	'Check if fields in Main tab is still editable for requestor
+	F.Intrinsic.String.Build("select date_issue, date_due, date_consent, requestor, budget from GAB_5237_PDRF_ISSUE where id = {0} and seq = {1}",V.Passed.PDRF,V.Passed.Seq,V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	F.Intrinsic.Control.If(V.Global.iPermission,=,0)
+		F.Intrinsic.Control.If(V.ODBC.conx!rst.FieldValPervasiveDate!date_consent,=,"1900-01-01")
+			F.Intrinsic.Control.CallSub(LockUnlock,"Lock",False)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.CallSub(LockUnlock,"Lock",True)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	Gui.F_Entry.txtPDRF.Text(V.Passed.PDRF)
+	Gui.F_Entry.dtpStart.Value(V.ODBC.conx!rst.FieldVal!date_issue)
+	Gui.F_Entry.dtpRequired.Value(V.ODBC.conx!rst.FieldVal!date_due)
+	Gui.F_Entry.lblRequestor.Caption(V.ODBC.conx!rst.FieldVal!requestor)
+	F.Intrinsic.String.Format(V.ODBC.conx!rst.FieldVal!budget,"#,0.00",V.Local.sValue)
+	Gui.F_Entry.txtBudget.Text(V.Local.sValue)
+
+	F.ODBC.conx!rst.Close
+
+	'Retrieve Main data
+	F.Intrinsic.String.Build("select pl, design_intent, design, tolerance, fea, root_cause, description from GAB_5237_PDRF_INTENT where id ={0} and seq = {1}",V.Passed.PDRF,V.Passed.Seq,V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	Gui.F_Entry.txtPL.Text(V.ODBC.conx!rst.FieldVal!pl)
+	Gui.F_Entry.ddlDesignIntent.Text(V.ODBC.conx!rst.FieldValTrim!design_intent)
+	Gui.F_Entry.chkDesign.Value(V.ODBC.conx!rst.FieldVal!design)
+	Gui.F_Entry.chkTolerance.Value(V.ODBC.conx!rst.FieldVal!tolerance)
+	Gui.F_Entry.chkFEA.Value(V.ODBC.conx!rst.FieldVal!fea)
+	Gui.F_Entry.chkRootCause.Value(V.ODBC.conx!rst.FieldVal!root_cause)
+	Gui.F_Entry.txtDescription.Text(V.ODBC.conx!rst.FieldValTrim!description)
+	F.ODBC.conx!rst.Close
+
+	'PO Information
+	F.Intrinsic.String.Build("select po_flag, date_delivery, order_no from GAB_5237_PDRF_PO where id = {0} and seq = {1}",V.Passed.PDRF,V.Passed.Seq,V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	F.Intrinsic.Control.If(V.ODBC.conx!rst.FieldVal!po_flag,=,1)
+		Gui.F_Entry.chkPO.Value(1)
+		Gui.F_Entry.dtpDelivery.Value(V.ODBC.conx!rst.FieldVal!date_delivery)
+		Gui.F_Entry.txtSO.Text(V.ODBC.conx!rst.FieldValTrim!order_no)
+	F.Intrinsic.Control.Else
+		Gui.F_Entry.chkPO.Value(0)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.Close
+
+	'Drawing number
+	F.Intrinsic.String.Build("select customer, dwg_type, running_no from GAB_5237_PDRF_DWG where id = {0} and seq = {1}",V.Passed.PDRF,V.Passed.Seq,V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	Gui.F_Entry.txtCustomerCode.Text(V.ODBC.conx!rst.FieldValTrim!customer)
+	Gui.F_Entry.ddlDrawingType.Text(V.ODBC.conx!rst.FieldValTrim!dwg_type)
+'	Gui.F_Entry.txtRunningNo.Text(V.ODBC.conx!rst.FieldValTrim!running_no)
+	F.ODBC.conx!rst.Close
+
+	'Project Name
+	V.Local.sDwgType.Set(V.Screen.F_Entry!ddlDrawingType.Text)
+	F.Intrinsic.String.Build("select leads, form, size, pitch, handler_name, sites_xy, kelvin, e_series, prj_type from GAB_5237_PDRF_PRJ where id = {0} and seq = {1}",V.Passed.PDRF,V.Passed.Seq,V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	Gui.F_Entry.txtLeads.Text(V.ODBC.conx!rst.FieldValTrim!leads)
+	Gui.F_Entry.txtForm.Text(V.ODBC.conx!rst.FieldValTrim!form)
+	Gui.F_Entry.txtSize.Text(V.ODBC.conx!rst.FieldVal!size)
+	Gui.F_Entry.txtPitch.Text(V.ODBC.conx!rst.FieldVal!pitch)
+	F.Intrinsic.Control.If(V.Local.sDwgType.Trim,=,"SP")
+		Gui.F_Entry.lbl15.Visible(False)
+		Gui.F_Entry.txtHandlerName.Visible(False)
+		Gui.F_Entry.lblHandlerName.Visible(True)
+		Gui.F_Entry.txtHandlerNameDesc.Visible(True)
+		Gui.F_Entry.txtHandlerNameDesc.Text(V.ODBC.conx!rst.FieldValTrim!handler_name)
+	F.Intrinsic.Control.ElseIf(V.Local.sDwgType.Trim,=,"SB")
+		Gui.F_Entry.lbl15.Visible(False)
+		Gui.F_Entry.txtHandlerName.Visible(False)
+		Gui.F_Entry.lblHandlerName.Visible(True)
+		Gui.F_Entry.txtHandlerNameDesc.Visible(True)
+		Gui.F_Entry.txtHandlerNameDesc.Text(V.ODBC.conx!rst.FieldValTrim!handler_name)
+	F.Intrinsic.Control.ElseIf(V.Local.sDwgType.Trim,=,"P")
+		Gui.F_Entry.lbl15.Visible(False)
+		Gui.F_Entry.txtHandlerName.Visible(False)
+		Gui.F_Entry.lblHandlerName.Visible(True)
+		Gui.F_Entry.txtHandlerNameDesc.Visible(True)
+		Gui.F_Entry.txtHandlerNameDesc.Text(V.ODBC.conx!rst.FieldValTrim!handler_name)
+	F.Intrinsic.Control.ElseIf(V.Local.sDwgType.Trim,=,"STD")
+		Gui.F_Entry.lbl15.Visible(False)
+		Gui.F_Entry.txtHandlerName.Visible(False)
+		Gui.F_Entry.lblHandlerName.Visible(True)
+		Gui.F_Entry.txtHandlerNameDesc.Visible(True)
+		Gui.F_Entry.txtHandlerNameDesc.Text(V.ODBC.conx!rst.FieldValTrim!handler_name)
+	F.Intrinsic.Control.Else
+		Gui.F_Entry.lbl15.Visible(True)
+		Gui.F_Entry.txtHandlerName.Visible(True)
+		Gui.F_Entry.lblHandlerName.Visible(False)
+		Gui.F_Entry.txtHandlerNameDesc.Visible(False)
+		Gui.F_Entry.txtHandlerName.Text(V.ODBC.conx!rst.FieldValTrim!handler_name)
+	F.Intrinsic.Control.EndIf
+	Gui.F_Entry.txtSitesXY.Text(V.ODBC.conx!rst.FieldValTrim!sites_xy)
+	Gui.F_Entry.ddlKelvin.Text(V.ODBC.conx!rst.FieldValTrim!kelvin)
+	Gui.F_Entry.ddlESeries.Text(V.ODBC.conx!rst.FieldValTrim!e_series)
+	Gui.F_Entry.txtProjType.Text(V.ODBC.conx!rst.FieldValTrim!prj_type)
+	F.ODBC.conx!rst.Close
+
+	'Device Info
+	F.Intrinsic.String.Build("select device_pod, device_sample, device_plating, application, esd, ambient, hot, hot_temp, cold, cold_temp from GAB_5237_PDRF_DEV where id = {0} and seq = {1}",V.Passed.PDRF,V.Passed.Seq,V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	Gui.F_Entry.chkPOD.Value(V.ODBC.conx!rst.FieldVal!device_pod)
+	Gui.F_Entry.chkSample.Value(V.ODBC.conx!rst.FieldVal!device_sample)
+	Gui.F_Entry.ddlDevicePlating.Text(V.ODBC.conx!rst.FieldValTrim!device_plating)
+	Gui.F_Entry.ddlApplication.Text(V.ODBC.conx!rst.FieldValTrim!application)
+	Gui.F_Entry.txtESD.Text(V.ODBC.conx!rst.FieldValTrim!esd)
+	Gui.F_Entry.chkAmbient.Value(V.ODBC.conx!rst.FieldVal!ambient)
+	Gui.F_Entry.chkHot.Value(V.ODBC.conx!rst.FieldVal!Hot)
+	Gui.F_Entry.txtHot.Text(V.ODBC.conx!rst.FieldVal!hot_temp)
+	Gui.F_Entry.chkCold.Value(V.ODBC.conx!rst.FieldValTrim!Cold)
+	Gui.F_Entry.txtCold.Text(V.ODBC.conx!rst.FieldVal!cold_temp)
+	F.ODBC.conx!rst.Close
+
+	'Nest Information
+	F.Intrinsic.String.Build("select nesting, remarks from GAB_5237_PDRF_NEST where id = {0} and seq = {1}",V.Passed.PDRF,V.Passed.Seq,V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	Gui.F_Entry.ddlNest.Text(V.ODBC.conx!rst.FieldValTrim!nesting)
+	Gui.F_Entry.txtNestRemark.Text(V.ODBC.conx!rst.FieldValTrim!remarks)
+	F.ODBC.conx!rst.Close
+
+	'Socket Footprint
+	F.Intrinsic.String.Build("select socket_footprint, keep_out_zone from GAB_5237_PDRF_SCKT where id = {0} and seq = {1}",V.Passed.PDRF,V.Passed.Seq,V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	Gui.F_Entry.ddlSocket.Text(V.ODBC.conx!rst.FieldValTrim!socket_footprint)
+	Gui.F_Entry.txtKeepOutZone.Text(V.ODBC.conx!rst.FieldValTrim!keep_out_zone)
+	F.ODBC.conx!rst.Close
+
+	'Physical parameters
+	F.Intrinsic.String.Build("select contact_medium, part, eqt_part, test_height, contact_medium_plate, contact_medium_pitch, contact_force, avg_resistance, current_rating, self_inductance, capacitance, bandwidth, tip_style_dut, tip_finishing_dut, tip_style_pcb, tip_finishing_pcb from GAB_5237_PDRF_PARAM where id = {0} and seq = {1}",V.Passed.PDRF,V.Passed.Seq,V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	F.Intrinsic.String.Build("Value = '{0}'",V.ODBC.conx!rst.FieldValTrim!contact_medium,V.Local.sFilter)
+	F.Data.DataTable.Select("dtContactMedium",V.Local.sFilter,V.Local.sFilterRet)
+	F.Intrinsic.Control.If(V.Local.sFilterRet,=,"***NORETURN***")
+		Gui.F_Entry.ddlContactMedium.Text("Others")
+	F.Intrinsic.Control.Else
+		Gui.F_Entry.ddlContactMedium.Text(V.ODBC.conx!rst.FieldValTrim!contact_medium)		
+	F.Intrinsic.Control.EndIf
+	Gui.F_Entry.txtContactMedium.Text(V.ODBC.conx!rst.FieldValTrim!part)
+	Gui.F_Entry.txtPartNo.Text(V.ODBC.conx!rst.FieldValTrim!eqt_part)
+	Gui.F_Entry.txtTestHeight.Text(V.ODBC.conx!rst.FieldVal!test_height)
+	Gui.F_Entry.txtContactMediumPlating.Text(V.ODBC.conx!rst.FieldValTrim!contact_medium_plate)
+	Gui.F_Entry.txtContactMediumPitch.Text(V.ODBC.conx!rst.FieldVal!contact_medium_pitch)
+	Gui.F_Entry.txtContactForce1.Text(V.ODBC.conx!rst.FieldVal!contact_force)
+	Gui.F_Entry.txtAveResistance.Text(V.ODBC.conx!rst.FieldVal!avg_resistance)
+	Gui.F_Entry.txtCurrentRating.Text(V.ODBC.conx!rst.FieldVal!current_rating)
+	Gui.F_Entry.txtSelfInductance.Text(V.ODBC.conx!rst.FieldVal!self_inductance)
+	Gui.F_Entry.txtCapacitance.Text(V.ODBC.conx!rst.FieldVal!capacitance)
+	Gui.F_Entry.txtBandwidth.Text(V.ODBC.conx!rst.FieldVal!bandwidth)
+	Gui.F_Entry.txtTipStyleDUT.Text(V.ODBC.conx!rst.FieldVal!tip_style_dut)
+	Gui.F_Entry.txtTipFinishDUT.Text(V.ODBC.conx!rst.FieldVal!tip_finishing_dut)
+	Gui.F_Entry.txtTipStylePCB.Text(V.ODBC.conx!rst.FieldVal!tip_style_pcb)
+	Gui.F_Entry.txtTipFinishPCB.Text(V.ODBC.conx!rst.FieldVal!tip_finishing_pcb)
+	F.ODBC.conx!rst.Close
+
+	'Actuator
+	F.Intrinsic.String.Build("select manual_actuator, pusher_actuation, thermal_mgmt, contact_force from GAB_5237_PDRF_ACT where id = {0} and seq = {1}",V.Passed.PDRF,V.Passed.Seq,V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	F.Intrinsic.String.Build("Value = '{0}'",V.ODBC.conx!rst.FieldValTrim!manual_actuator,V.Local.sFilter)
+	F.Data.DataTable.Select("dtManualActuator",V.Local.sFilter,V.Local.sFilterRet)
+	F.Intrinsic.Control.If(V.Local.sFilterRet,=,"***NORETURN***")
+		Gui.F_Entry.ddlManualActuator.Text("Others")
+		Gui.F_Entry.txtManualActuator.Text(V.ODBC.conx!rst.FieldValTrim!manual_actuator)
+	F.Intrinsic.Control.Else
+		Gui.F_Entry.ddlManualActuator.Text(V.ODBC.conx!rst.FieldValTrim!manual_actuator)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.String.Build("Value = '{0}'",V.ODBC.conx!rst.FieldValTrim!pusher_actuation,V.Local.sFilter)
+	F.Data.DataTable.Select("dtPusherActuation",V.Local.sFilter,V.Local.sFilterRet)
+	F.Intrinsic.Control.If(V.Local.sFilterRet,=,"***NORETURN***")
+		Gui.F_Entry.ddlPusherActuation.Text("Others")
+		Gui.F_Entry.txtPusherActuation.Text(V.ODBC.conx!rst.FieldValTrim!pusher_actuation)
+	F.Intrinsic.Control.Else
+		Gui.F_Entry.ddlPusherActuation.Text(V.ODBC.conx!rst.FieldValTrim!pusher_actuation)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.String.Build("Value = '{0}'",V.ODBC.conx!rst.FieldValTrim!thermal_mgmt,V.Local.sFilter)
+	F.Data.DataTable.Select("dtThermalMgmt",V.Local.sFilter,V.Local.sFilterRet)
+	F.Intrinsic.Control.If(V.Local.sFilterRet,=,"***NORETURN***")
+		Gui.F_Entry.ddlThermalMgmt.Text("Others")
+		Gui.F_Entry.txtThermalMgmt.Text(V.ODBC.conx!rst.FieldValTrim!thermal_mgmt)
+	F.Intrinsic.Control.Else
+		Gui.F_Entry.ddlThermalMgmt.Text(V.ODBC.conx!rst.FieldValTrim!thermal_mgmt)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.Close
+
+	'Other information
+	F.Intrinsic.String.Build("select eqt, wo_no, dwg_no, package, ultra, e_series, white, cust_dwg, cust_dwg_no, other_info from GAB_5237_PDRF_OTH where id = {0} and seq = {1}",V.Passed.PDRF,V.Passed.Seq,V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	Gui.F_Entry.chkCustDwg.Value(V.ODBC.conx!rst.FieldVal!cust_dwg)
+	F.Intrinsic.Control.If(V.ODBC.conx!rst.FieldVal!cust_dwg,=,1)
+		Gui.F_Entry.txtCustDWG.Text(V.ODBC.conx!rst.FieldValTrim!cust_dwg_no)
+	F.Intrinsic.Control.Else
+		Gui.F_Entry.txtCustDWG.Text("")
+	F.Intrinsic.Control.EndIf
+	Gui.F_Entry.chkEQT.Value(V.ODBC.conx!rst.FieldVal!eqt)
+	Gui.F_Entry.chkWONo.Value(V.ODBC.conx!rst.FieldVal!wo_no)
+	Gui.F_Entry.chkDwgNo.Value(V.ODBC.conx!rst.FieldVal!dwg_no)
+	Gui.F_Entry.chkPackageID.Value(V.ODBC.conx!rst.FieldVal!package)
+	Gui.F_Entry.chkUltra.Value(V.ODBC.conx!rst.FieldVal!ultra)
+	Gui.F_Entry.chkESeries.Value(V.ODBC.conx!rst.FieldVal!e_series)
+	Gui.F_Entry.chkWhitePaint.Value(V.ODBC.conx!rst.FieldVal!white)
+	Gui.F_Entry.txtOtherInfo.Text(V.ODBC.conx!rst.FieldValTrim!other_info)
+	F.ODBC.conx!rst.Close
+
+	Gui.F_Entry.dtpStart.Enabled(False)
+
+	F.Intrinsic.Control.If(V.DataTable.dtDoc.Exists)
+		F.Data.DataView.Close("dtDoc","dvDoc")
+		F.Data.DataTable.Close("dtDoc")
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.String.Build("select file_seq, filename as Filename from GAB_5237_PDRF_DOC where id = {0} and seq = {1}",V.Passed.PDRF,V.Passed.Seq,V.Local.sSQL)
+	F.Data.DataTable.CreateFromSQL("dtDoc","conx",V.Local.sSQL,True)
+	F.Data.DataTable.AddColumn("dtDoc","Add","Long")
+	F.Data.DataTable.AddColumn("dtDoc","Delete","Long")
+	F.Intrinsic.Math.Add(V.DataTable.dtDoc.RowCount,1,V.Local.iSeq)
+	F.Data.DataTable.AddRow("dtDoc","File_Seq",V.Local.iSeq)
+	F.Data.DataView.Create("dtDoc","dvDoc",22,"","File_Seq ASC")
+	Gui.F_Entry.GsGCDoc.AddGridviewFromDataview("gvDoc","dtDoc","dvDoc")
+	Gui.F_Entry.GsGCDoc.MainView("gvDoc")
+	Gui.F_Entry.GsGCDoc.ColumnEdit("gvDoc","Add","EditorButton","Add")
+	Gui.F_Entry.GsGCDoc.ColumnEdit("gvDoc","Delete","EditorButton","Delete")
+	Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","Filename","AllowEdit",False)
+	Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","Add","AllowEdit",False)
+	Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","Delete","AllowEdit",False)
+	Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","Add","ShowCaption",False)
+	Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","Delete","ShowCaption",False)
+	Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","File_Seq","HeaderHAlignment","Center")
+	Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","Filename","HeaderHAlignment","Center")
+	Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","File_Seq","CellHAlignment","Center")
+	Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","File_Seq","MinWidth","40")
+	Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","Filename","MinWidth","250")
+	Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","Add","MinWidth","45")
+	Gui.F_Entry.GsGCDoc.SetColumnProperty("gvDoc","Delete","MinWidth","45")
+'F.Intrinsic.Control.EndIf
+Program.Sub.EngineerView.End
+
+Program.Sub.cmdChildPart_Click.Start
+F.Intrinsic.Control.SetErrorHandler("ChildPart_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSQL.Declare
+V.Local.sPDRF.Declare
+V.Local.iID.Declare
+V.Local.iLine.Declare
+
+F.Intrinsic.Control.If(V.DataTable.dtChild.Exists,=,True)
+	F.Data.DataTable.Close("dtChild")
+F.Intrinsic.Control.EndIf
+
+V.Local.sPDRF.Set(V.Screen.F_Entry!txtPDRF.Text)
+F.Intrinsic.Math.ConvertToLong(V.Local.sPDRF,V.Local.iID)
+
+'Load Child Part Number
+F.Intrinsic.String.Build("select Seq, Part from GAB_5237_CHILD_PART where Id = '{0}'",V.Local.iID,V.Local.sSQL)
+F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+
+'Check Data Is Already Exist
+F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,True)
+	F.Data.DataTable.Create("dtChild",True)
+	F.Data.DataTable.AddColumn("dtChild","Seq","Integer")
+	F.Data.DataTable.AddColumn("dtChild","Part","String","")
+	F.Data.DataTable.AddRow("dtChild","No","1")
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("select Seq, Part from GAB_5237_CHILD_PART where Id = '{0}'",V.Local.iID,V.Local.sSQL)
+	F.Data.DataTable.CreateFromSQL("dtChild","conx",V.Local.sSQL,True)
+		F.Intrinsic.Control.If(V.DataTable.dtChild.RowCount,<,30)
+			F.Intrinsic.Math.Add(V.DataTable.dtChild.RowCount,1,V.Local.iLine)
+			F.Data.DataTable.AddRow("dtChild","Seq",V.Local.iLine)
+		F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rst.Close
+
+Gui.F_Child.GsGChild.AddGridviewFromDatatable("gvChild","dtChild")
+Gui.F_Child.GsGChild.MainView("gvChild")
+Gui.F_Child.GsGChild.SetColumnProperty("gvChild","Seq","HeaderHAlignment","Center")
+Gui.F_Child.GsGChild.SetColumnProperty("gvChild","Seq","MinWidth","25")
+Gui.F_Child.GsGChild.SetColumnProperty("gvChild","Seq","ReadOnly",True)
+Gui.F_Child.GsGChild.SetColumnProperty("gvChild","Seq","AllowEdit",False)
+Gui.F_Child.GsGChild.SetColumnProperty("gvChild","Seq","Caption","No")
+Gui.F_Child.GsGChild.SetColumnProperty("gvChild","Part","MinWidth","100")
+Gui.F_Child.GsGChild.SetColumnProperty("gvChild","Part","HeaderHAlignment","Center")
+Gui.F_Child.GsGChild.SetColumnProperty("gvChild","Part","Caption","Part Number")
+Gui.F_Child.GsGChild.SetColumnProperty("gvChild","Part","AllowEdit",True)
+Gui.F_Child.GsGChild.SetColumnProperty("gvChild","Part","ReadOnly",False)
+Gui.F_Child..Show
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("ChildPart_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_5237_PDRF_REQUEST.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdChildPart_Click.End
+
+Program.Sub.GsGChild_CellValueChanged.Start
+V.Local.iLine.Declare
+V.Local.iID.Declare
+V.Local.sQL.Declare
+V.Local.sQuery.Declare
+V.Local.sPDRF.Declare
+v.local.ilen.Declare
+v.local.iFind.Declare
+
+V.Local.sPDRF.Set(V.Screen.F_Entry!txtPDRF.Text)
+F.Intrinsic.Math.ConvertToLong(V.Local.sPDRF,V.Local.iID)
+
+Function.Intrinsic.String.Len(V.DataTable.dtChild(V.Args.RowIndex).Part!FieldValTrim,v.local.ilen)
+function.intrinsic.string.Instr(V.DataTable.dtChild(V.Args.RowIndex).Part!FieldValTrim,"'",0,v.local.iFind)
+
+	F.Intrinsic.Control.If(V.DataTable.dtChild(V.Args.RowIndex).Part!FieldValTrim,<>,"")
+		F.Intrinsic.Control.If(v.local.ilen,>,15)
+			F.Intrinsic.UI.Msgbox("The Part Has More Than 15 Characters, Please Try Again")
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(v.local.iFind,>,0)
+			F.Intrinsic.UI.Msgbox("The Part Has ' Characters, Please Try Again")
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("select Seq, Part from GAB_5237_CHILD_PART where Id = {0} and Seq = {1}",V.Local.iID,V.DataTable.dtChild(V.Args.RowIndex).Seq!FieldVal,V.Local.sQL)
+		F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sQL)
+			'Check Data Is Already Exist
+			F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,True)
+				F.Intrinsic.String.Build("insert into GAB_5237_CHILD_PART(id,seq,part) values({0},{1},'{2}');",V.Local.iID,V.DataTable.dtChild(V.Args.RowIndex).Seq!FieldVal,V.DataTable.dtChild(V.Args.RowIndex).Part!FieldValTrim,V.Local.sQuery)
+				F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("update GAB_5237_CHILD_PART set part = '{2}' where Id = {0} and Seq = {1}",V.Local.iID,V.DataTable.dtChild(V.Args.RowIndex).Seq!FieldVal,V.DataTable.dtChild(V.Args.RowIndex).Part!FieldValTrim,V.Local.sQuery)
+				F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+			F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.Close
+
+F.Intrinsic.Control.If(V.DataTable.dtChild.RowCount,<,30)
+		F.Intrinsic.Math.Add(V.DataTable.dtChild.RowCount,1,V.Local.iLine)
+	F.Data.DataTable.AddRow("dtChild","Seq",V.Local.iLine)
+F.Intrinsic.Control.EndIf
+Program.Sub.GsGChild_CellValueChanged.End
+
+Program.Sub.CloseChildPart.Start
+F.Intrinsic.Control.SetErrorHandler("CloseChildPart_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_Child..Visible(False)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("CloseChildPart_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_5237_PDRF_REQUEST.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.CloseChildPart.End
+
+Program.Sub.LockUnlock.Start
+V.Local.bLock.Declare
+V.Local.bUnlock.Declare
+
+V.Local.bLock.Set(V.Args.Lock)
+F.Intrinsic.Control.If(V.Local.bLock)
+	V.Local.bUnlock.Set(False)
+F.Intrinsic.Control.Else
+	V.Local.bUnlock.Set(True)
+F.Intrinsic.Control.EndIf
+
+Gui.F_Entry.ddlDesignIntent.Enabled(V.Local.bUnlock)
+Gui.F_Entry.chkDesign.Enabled(V.Local.bUnlock)
+Gui.F_Entry.frameDeliverables.Enabled(V.Local.bUnlock)
+Gui.F_Entry.cmdBrwPL.Enabled(V.Local.bUnlock)
+Gui.F_Entry.txtDescription.Locked(V.Local.bLock)
+Gui.F_Entry.cmdSave.Enabled(V.Local.bUnlock)
+
+Gui.F_Entry.txtCustomerCode.Locked(V.Local.bLock)
+Gui.F_Entry.cmdBrwCust.Enabled(V.Local.bUnlock)
+Gui.F_Entry.ddlDrawingType.Enabled(V.Local.bUnlock)
+
+'Detail 1 - Project Name
+Gui.F_Entry.txtLeads.Locked(V.Local.bLock)
+Gui.F_Entry.txtForm.Locked(V.Local.bLock)
+Gui.F_Entry.txtPitch.Locked(V.Local.bLock)
+Gui.F_Entry.txtSize.Locked(V.Local.bLock)
+Gui.F_Entry.txtHandlerName.Locked(V.Local.bLock)
+Gui.F_Entry.txtSitesXY.Locked(V.Local.bLock)
+Gui.F_Entry.ddlKelvin.Locked(V.Local.bLock)
+Gui.F_Entry.ddlESeries.Enabled(V.Local.bUnlock)
+
+'Gui.F_Entry.ddlDeviceInfo.Enabled(V.Local.bUnlock)
+Gui.F_Entry.ddlDevicePlating.Enabled(V.Local.bUnlock)
+Gui.F_Entry.ddlApplication.Enabled(V.Local.bUnlock)
+'Gui.F_Entry.ddlHandlerType.Enabled(V.Local.bUnlock)
+Gui.F_Entry.txtESD.Locked(V.Local.bLock)
+'Gui.F_Entry.txtHandlerModel.Locked(V.Local.bLock)
+
+Gui.F_Entry.chkAmbient.Enabled(V.Local.bUnlock)
+Gui.F_Entry.chkCold.Enabled(V.Local.bUnlock)
+Gui.F_Entry.chkHot.Enabled(V.Local.bUnlock)
+
+Gui.F_Entry.ddlNest.Enabled(V.Local.bUnlock)
+Gui.F_Entry.txtNestRemark.Locked(V.Local.bLock)
+
+Gui.F_Entry.ddlSocket.Enabled(V.Local.bUnlock)
+Gui.F_Entry.txtKeepOutZone.Locked(V.Local.bLock)
+
+Gui.F_Entry.ddlContactMedium.Enabled(V.Local.bUnlock)
+Gui.F_Entry.txtContactMedium.Locked(V.Local.bLock)
+Gui.F_Entry.txtPartNo.Locked(V.Local.bLock)
+Gui.F_Entry.cmdBrwPart.Enabled(V.Local.bUnlock)
+Gui.F_Entry.cmdBrwPart.Visible(V.Local.bUnlock)
+Gui.F_Entry.txtTestHeight.Locked(V.Local.bLock)
+
+Gui.F_Entry.txtContactMediumPitch.Locked(V.Local.bLock)
+Gui.F_Entry.txtContactMediumPlating.Locked(V.Local.bLock)
+Gui.F_Entry.txtContactForce1.Locked(V.Local.bLock)
+Gui.F_Entry.txtAveResistance.Locked(V.Local.bLock)
+Gui.F_Entry.txtCurrentRating.Locked(V.Local.bLock)
+Gui.F_Entry.txtSelfInductance.Locked(V.Local.bLock)
+Gui.F_Entry.txtCapacitance.Locked(V.Local.bLock)
+Gui.F_Entry.txtBandwidth.Locked(V.Local.bLock)
+Gui.F_Entry.txtTipStyleDUT.Locked(V.Local.bLock)
+Gui.F_Entry.txtTipStylePCB.Locked(V.Local.bLock)
+Gui.F_Entry.txtTipFinishDUT.Locked(V.Local.bLock)
+Gui.F_Entry.txtTipFinishPCB.Locked(V.Local.bLock)
+
+Gui.F_Entry.ddlManualActuator.Enabled(V.Local.bUnlock)
+Gui.F_Entry.ddlPusherActuation.Enabled(V.Local.bUnlock)
+Gui.F_Entry.ddlThermalMgmt.Enabled(V.Local.bUnlock)
+Gui.F_Entry.txtManualActuator.Locked(V.Local.bLock)
+Gui.F_Entry.txtPusherActuation.Locked(V.Local.bLock)
+Gui.F_Entry.txtThermalMgmt.Locked(V.Local.bLock)
+
+Gui.F_Entry.chkEQT.Enabled(V.Local.bUnlock)
+Gui.F_Entry.chkWONo.Enabled(V.Local.bUnlock)
+Gui.F_Entry.chkDwgNo.Enabled(V.Local.bUnlock)
+Gui.F_Entry.chkPackageID.Enabled(V.Local.bUnlock)
+Gui.F_Entry.chkUltra.Enabled(V.Local.bUnlock)
+Gui.F_Entry.chkESeries.Enabled(V.Local.bUnlock)
+Gui.F_Entry.chkWhitePaint.Enabled(V.Local.bUnlock)
+Gui.F_Entry.chkCustDwg.Enabled(V.Local.bUnlock)
+Gui.F_Entry.txtCustDWG.Locked(V.Local.bLock)
+Program.Sub.LockUnlock.End
+
+Program.Sub.cmdUpdate_Click.Start
+V.Local.dateApproved.Declare
+V.Local.iPDRF.Declare
+V.Local.iSeq.Declare
+V.Local.sClassNo.Declare
+V.Local.sClassType.Declare
+V.Local.sCustomer.Declare
+V.Local.sDwgType.Declare
+V.Local.sEngineer.Declare
+V.Local.sRunning1.Declare
+V.Local.sRunning2.Declare
+V.Local.sRunning3.Declare
+V.Local.sRunning4.Declare
+V.Local.sSQL.Declare
+V.Local.sUser.Declare
+V.Local.sDesc.Declare
+
+	'Engineering manager
+	V.Local.sClassNo.Set(V.Screen.F_Entry!ddlClassNo.Text)
+	V.Local.sClassType.Set(V.Screen.F_Entry!ddlClassType.Text)
+
+	'Update custom table
+	V.Local.iPDRF.Set(V.Screen.F_Entry!txtPDRF.Text)
+	V.Local.sUser.Set(V.Caller.User)
+
+F.Intrinsic.Control.If(V.Global.iPermission,=,1)
+	'Engineer
+'	V.Local.sCustomer.Set(V.Screen.F_Entry!txtCustomerCode.Text)
+'	F.Intrinsic.Control.If(V.Local.sCustomer.Trim,=,"")
+'		F.Intrinsic.UI.Msgbox("Customer code must be selected")
+'		F.Intrinsic.Control.ExitSub
+'	F.Intrinsic.Control.EndIf
+'	
+'	V.Local.sDwgType.Set(V.Screen.F_Entry!ddlDrawingType.Text)
+'	F.Intrinsic.Control.If(V.Local.sDwgType.Trim,=,"")
+'		F.Intrinsic.UI.Msgbox("Drawing type must be selected")
+'		F.Intrinsic.Control.ExitSub
+'	F.Intrinsic.Control.EndIf
+'	
+'	V.Local.sRunning1.Set(V.Screen.F_Entry!txtRunningNo.Text)
+'	V.Local.sRunning2.Set(V.Screen.F_Entry!txtRunningNo2.Text)
+'	V.Local.sRunning3.Set(V.Screen.F_Entry!txtRunningNo3.Text)
+'	V.Local.sRunning4.Set(V.Screen.F_Entry!txtRunningNo4.Text)
+'	
+'	V.Local.iPDRF.Set(V.Screen.F_Entry!txtPDRF.Text)
+'	F.Intrinsic.String.Build("select seq from GAB_5237_PDRF_ISSUE where id = {0} and date_complete = '1900-01-01'",V.Local.iPDRF,V.Local.sSQL)
+'	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+'	V.Local.iSeq.Set(V.ODBC.conx!rst.FieldVal!seq)
+'	F.ODBC.conx!rst.Close
+'	F.Intrinsic.String.Build("select * from GAB_5237_PDRF_DWG where id = {0} and seq = {1}",V.Local.iPDRF,V.Local.iSeq,V.Local.sSQL)
+'	F.ODBC.Connection!conx.OpenLocalRecordsetRW("rst",V.Local.sSQL)
+'	F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF)
+'		F.ODBC.conx!rst.AddNew
+'		F.ODBC.conx!rst.Set!id(V.Local.iPDRF)
+'		F.ODBC.conx!rst.Set!seq(V.Local.iSeq)
+'	F.Intrinsic.Control.EndIf
+'	F.ODBC.conx!rst.Set!customer(V.Local.sCustomer.Trim)
+'	F.ODBC.conx!rst.Set!dwg_type(V.Local.sDwgType.Trim)
+'	F.ODBC.conx!rst.Set!running_no1(V.Local.sRunning1.Trim)
+'	F.ODBC.conx!rst.Set!running_no2(V.Local.sRunning2.Trim)
+'	F.ODBC.conx!rst.Set!running_no3(V.Local.sRunning3.Trim)
+'	F.ODBC.conx!rst.Set!running_no4(V.Local.sRunning4.Trim)
+'	F.ODBC.conx!rst.Update
+'	F.ODBC.conx!rst.Close
+		F.Intrinsic.String.Build("update GAB_5237_PDRF_OTH set OTHER_INFO = '{0}' where id = {2} and seq = {3}",V.Screen.F_Entry!txtOtherInfo.Text,V.Local.sClassType.Trim,V.Local.iPDRF,V.Global.iSeq,V.Local.sUser.Trim,V.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+		F.Intrinsic.String.Build("The other information has been updated",V.Local.iPDRF,V.Local.sDesc)
+	F.Intrinsic.UI.Msgbox(V.Local.sDesc)
+F.Intrinsic.Control.ElseIf(V.Global.iPermission,=,2)
+	'Engineering manager
+'	V.Local.sClassNo.Set(V.Screen.F_Entry!ddlClassNo.Text)
+'	V.Local.sClassType.Set(V.Screen.F_Entry!ddlClassType.Text)
+
+	'Check input
+	F.Intrinsic.Control.If(V.Local.sClassNo.Trim,=,"")
+		F.Intrinsic.UI.Msgbox("Class No. must be selected")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.sClassType,=,"")
+		F.Intrinsic.UI.Msgbox("Class Type must be selected")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+
+	'Update custom table
+'	V.Local.iPDRF.Set(V.Screen.F_Entry!txtPDRF.Text)
+'	V.Local.sUser.Set(V.Caller.User)
+
+	'Send notification to management and update PDRF approval table if class 1
+	F.Intrinsic.Control.If(V.Local.sClassNo.Trim,=,"1")
+		'Check if the PDRF class has been approved
+		F.Intrinsic.String.Build("update GAB_5237_PDRF_ISSUE set class_no = {0}, class_type = '{1}', reviewer = '{4}', engineer = '' where id = {2} and seq = {3}",V.Local.sClassNo,V.Local.sClassType.Trim,V.Local.iPDRF,V.Global.iSeq,V.Local.sUser.Trim,V.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.CallSub(ApprovalNotification,"PDRF",V.Local.iPDRF)
+	F.Intrinsic.Control.Else
+		V.Local.dateApproved.Set(V.Ambient.Date)
+		F.Intrinsic.String.Build("update GAB_5237_PDRF_ISSUE set class_no = {0}, class_type = '{1}', approver = '{4}', date_approved = '{5}', reviewer = '{4}', engineer = '' where id = {2} and seq = {3}",V.Local.sClassNo,V.Local.sClassType.Trim,V.Local.iPDRF,V.Global.iSeq,V.Local.sUser.Trim,V.Local.dateApproved.PervasiveDate,V.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+Program.Sub.cmdUpdate_Click.End
+
+Program.Sub.ApprovalNotification.Start
+V.Local.i1.Declare
+V.Local.iMsgID.Declare
+V.Local.iPDRF.Declare
+V.Local.iRet.Declare
+V.Local.iSeq.Declare
+V.Local.iUserS.Declare
+V.Local.iUserR.Declare
+V.Local.sEmail.Declare
+V.Local.sMessage.Declare
+
+V.Local.sName.Declare
+V.Local.sOrigEmail.Declare
+V.Local.sOrigName.Declare
+V.Local.sSQL.Declare
+V.Local.sSubject.Declare
+V.Local.sUser.Declare
+v.Local.sRecipientEmailAndName.Declare
+v.Local.sSenderEmailAndName.Declare
+
+'Send notification to management about class 1 PDRF requiring approval
+V.Local.iPDRF.Set(V.Args.PDRF)
+
+'Build internal message and email
+F.Intrinsic.String.Build("select date_issue, reviewer, requestor from GAB_5237_PDRF_ISSUE where id = {0} and seq = {1}",V.Local.iPDRF,V.Global.iSeq,V.Local.sSQL)
+F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+
+F.Intrinsic.String.Build("PDRF No. {0} requiring approval",V.Local.iPDRF,V.Local.sSubject)
+F.Intrinsic.String.Concat("PDRF No.: ",V.Local.iPDRF,V.Local.sMessage)
+F.Intrinsic.String.Concat(V.Local.sMessage,V.Ambient.NewLine,"Request Date: ",V.ODBC.conx!rst.FieldValPervasiveDate!date_issue,V.Local.sMessage)
+F.Intrinsic.String.Concat(V.Local.sMessage,V.Ambient.NewLine,"Requested By: ",V.ODBC.conx!rst.FieldValTrim!requestor,V.Local.sMessage)
+F.Intrinsic.String.Concat(V.Local.sMessage,V.Ambient.NewLine,"Reviewed By: ",V.ODBC.conx!rst.FieldValTrim!reviewer,V.Local.sMessage)
+F.Intrinsic.String.Concat(V.Local.sMessage,V.Ambient.NewLine,V.Ambient.NewLine,"Design Intent: ",V.Screen.F_Entry!ddlDesignIntent.Text,V.Local.sMessage)
+F.Intrinsic.String.Concat(V.Local.sMessage,V.Ambient.NewLine,"Remarks: ",V.Screen.F_Entry!txtRemarks.Text,V.Local.sMessage)
+
+V.Local.sUser.Set(V.ODBC.conx!rst.FieldValTrim!reviewer)
+
+F.ODBC.conx!rst.Close
+
+F.Data.DataTable.CreateFromSQL("dtMgmt","conx","select gss_user as UserID from GAB_5237_PDRF_LVL where management = 1")
+F.Intrinsic.Control.If(V.DataTable.dtMgmt.RowCount,>,0)
+	F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtMgmt.RowCount--,1)
+		'Get Sender's User ID
+		Function.Global.Security.GetUserID(V.Local.sUser,V.Caller.CompanyCode,V.Local.iUserS)
+		Function.Global.Security.GetUserID(V.DataTable.dtMgmt(V.Local.i1).UserID!FieldValTrim,V.Caller.CompanyCode,V.Local.iUserR)
+
+		'send an internal message 
+		F.Global.Messaging.InternalMessageCreate(-1,V.Ambient.Date,V.Local.iUserS.Trim,V.Local.sSubject,V.Local.sMessage,V.Local.iMsgID)
+		F.Global.Messaging.InternalMessageQueueToUser(V.Local.iUserR,V.Local.iMsgID)
+
+		'Send email
+		F.Global.Messaging.isCourierRunning(V.Local.iRet)
+		F.Intrinsic.Control.If(V.Local.iRet,<>,0)
+			F.Global.Security.GetUserEmail(V.DataTable.dtMgmt(V.Local.i1).UserID!FieldValTrim,V.Caller.CompanyCode,V.Local.sOrigEmail)
+			F.Global.Security.GetFullName(V.DataTable.dtMgmt(V.Local.i1).UserID!FieldValTrim,V.Caller.CompanyCode,V.Local.sOrigName)
+			F.Intrinsic.String.Concat(v.Local.sOrigName.Trim,"*!*",v.Local.sOrigEmail.Trim,v.Local.sRecipientEmailAndName)
+			
+			F.Global.Security.GetUserEmail(V.Local.sUser,V.Caller.CompanyCode,V.Local.sEmail)
+			F.Global.Security.GetFullName(V.Local.sUser,V.Caller.CompanyCode,V.Local.sName)
+			F.Intrinsic.String.Concat(v.Local.sEmail.Trim,"*!*",v.Local.sName.Trim,v.Local.sSenderEmailAndName)
+
+			'F.Global.Messaging.CreateEMMessage(V.Local.sOrigEmail,V.Local.sOrigName,V.Local.sEmail,V.Local.sName,V.Local.sSubject,V.Local.sMessage)
+			F.Global.Messaging.QueueMessage(v.Caller.CompanyCode,v.Local.iUserS,v.Caller.Caller,v.Local.sSubject,v.Local.sSenderEmailAndName,v.Local.sRecipientEmailAndName,v.Local.sMessage)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.i1)
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.Close("dtMgmt")
+Program.Sub.ApprovalNotification.End
+
+Program.Sub.InitializeDatatable.Start
+F.Data.DataTable.Create("dtContactMedium",True)
+F.Data.DataTable.AddColumn("dtContactMedium","Value","String")
+F.Data.DataTable.AddRow("dtContactMedium","Value","POGO PIN")
+F.Data.DataTable.AddRow("dtContactMedium","Value","CONTACT FINGER")
+F.Data.DataTable.AddRow("dtContactMedium","Value","EXISTING POGO PIN (provide PN)")
+F.Data.DataTable.AddRow("dtContactMedium","Value","EXISTING CONTACT FINGER (provide PN)")
+
+F.Data.DataTable.Create("dtManualActuator",True)
+F.Data.DataTable.AddColumn("dtManualActuator","Value","String")
+F.Data.DataTable.AddRow("dtManualActuator","Value","NONE")
+F.Data.DataTable.AddRow("dtManualActuator","Value","CLIP ON-FIXED")
+F.Data.DataTable.AddRow("dtManualActuator","Value","CLIP ON-SPRING")
+F.Data.DataTable.AddRow("dtManualActuator","Value","CLIP ON-ADJUSTABLE")
+F.Data.DataTable.AddRow("dtManualActuator","Value","CLAMPSHELL-FIXED")
+F.Data.DataTable.AddRow("dtManualActuator","Value","CLAMPSHELL-SPRING")
+F.Data.DataTable.AddRow("dtManualActuator","Value","CLAMPSHELL-ADJUSTABLE")
+
+F.Data.DataTable.Create("dtPusherActuation",True)
+F.Data.DataTable.AddColumn("dtPusherActuation","Value","String")
+F.Data.DataTable.AddRow("dtPusherActuation","Value","KNOB")
+F.Data.DataTable.AddRow("dtPusherActuation","Value","LEVER")
+
+F.Data.DataTable.Create("dtThermalMgmt",True)
+F.Data.DataTable.AddColumn("dtThermalMgmt","Value","String")
+F.Data.DataTable.AddRow("dtThermalMgmt","Value","ACTIVE COOLING")
+F.Data.DataTable.AddRow("dtThermalMgmt","Value","PASSIVE COOLING")
+F.Data.DataTable.AddRow("dtThermalMgmt","Value","N/A")
+
+F.Data.DataTable.Create("dtProjType",True)
+F.Data.DataTable.AddColumn("dtProjType","Value","String")
+F.Data.DataTable.AddRow("dtProjType","Value","CONTACTOR")
+F.Data.DataTable.AddRow("dtProjType","Value","MA")
+F.Data.DataTable.AddRow("dtProjType","Value","CHANGE KIT")
+F.Data.DataTable.AddRow("dtProjType","Value","NEST")
+Program.Sub.InitializeDatatable.End
+
+Program.Sub.cmdBrwPart_Click.Start
+V.Local.iWidths.Declare
+V.Local.sPart.Declare
+V.Local.sRet.Declare
+V.Local.sTitles.Declare
+
+F.Intrinsic.String.Split("Part Number*!*Rev*!*Description","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("1500*!*400*!*3000","*!*",V.Local.iWidths)
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser("Select a Part Number","conx","select left(part,17), substring(part,18,3), text from inv_extra_text order by part",V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+
+	F.Intrinsic.String.GSSPartString(V.Local.sRet(0),V.Local.sRet(1),V.Local.sPart)
+	Gui.F_Entry.txtPartNo.Text(V.Local.sPart.Trim)
+	Gui.F_Entry.txtPartNo.Locked(True)
+F.Intrinsic.Control.EndIf
+Program.Sub.cmdBrwPart_Click.End
+
+Program.Sub.cmdBrwPL_Click.Start
+V.Local.iWidths.Declare
+V.Local.sRet.Declare
+V.Local.sTitles.Declare
+
+F.Intrinsic.String.Split("PL*!*Description","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("400*!*2000","*!*",V.Local.iWidths)
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+'F.Intrinsic.UI.Browser("Select a PL","conx","select product_line, product_line_name from v_product_line where product_line <> '' order by product_line",V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+F.Intrinsic.UI.Browser("Select a PL","conx","select prod_line as product_line, pl_name as product_line_name from v_pl_master where prod_line <> '' order by prod_line",V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+
+	Gui.F_Entry.txtPL.Text(V.Local.sRet(0).Trim)
+F.Intrinsic.Control.EndIf
+Program.Sub.cmdBrwPL_Click.End
+
+Program.Sub.cmdBrwCust_Click.Start
+V.Local.iWidths.Declare
+V.Local.sFilter.Declare
+V.Local.sFilterRet.Declare
+V.Local.sRet.Declare
+V.Local.sTitles.Declare
+
+F.Intrinsic.String.Split("Customer*!*Name","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("1000*!*2000","*!*",V.Local.iWidths)
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser("Select a Customer","conx","select customer, name_customer from v_customer_master order by customer",V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+
+	F.Intrinsic.Control.If(V.Global.iRegion,=,0)
+		Gui.F_Entry.txtCustomerCode.Text(V.Local.sRet(0).Trim)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("Customer = '{0}'",V.Local.sRet(1).Trim,V.Local.sFilter)
+		F.Data.DataTable.Select("dtRegion",V.Local.sFilter,V.Local.sFilterRet)
+		F.Intrinsic.Control.If(V.Local.sFilterRet,=,"***NORETURN***")
+			F.Intrinsic.UI.Msgbox("The selected customer does not belong to your region")
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.Else
+			Gui.F_Entry.txtCustomerCode.Text(V.Local.sRet(0).Trim)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	Gui.F_Entry.txtCustomerCode.Text(V.Local.sRet(0).Trim)
+F.Intrinsic.Control.EndIf
+Program.Sub.cmdBrwCust_Click.End
+
+Program.Sub.ddlScope_Click.Start
+V.Local.sSelect.Declare
+
+V.Local.sSelect.Set(V.Screen.F_Entry!ddlScope.Text)
+
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"Others")
+	Gui.F_Entry.txtScope.Enabled(True)
+F.Intrinsic.Control.Else
+	Gui.F_Entry.txtScope.Enabled(False)
+F.Intrinsic.Control.EndIf
+Program.Sub.ddlScope_Click.End
+
+Program.Sub.cmdBrwSO_Click.Start
+V.Local.iWidths.Declare
+V.Local.sFilter.Declare
+V.Local.sFilterRet.Declare
+V.Local.sRet.Declare
+V.Local.sTitles.Declare
+
+F.Intrinsic.String.Split("Order No.*!*Customer*!*Name*!*PO","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("1000*!*1200*!*2000*!*1500","*!*",V.Local.iWidths)
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser("Select a SO","conx","select s.order_no, s.customer, c.customerlong, s.customer_po from v_order_header s left join gab_customer_long c on s.customer = c.customer order by s.order_no",V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+
+	F.Intrinsic.Control.If(V.Global.iRegion,=,0)
+		Gui.F_Entry.txtSO.Text(V.Local.sRet(0).Trim)
+		Gui.F_Entry.txtCustomerCode.Text(V.Local.sRet(1).Trim)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("Customer = '{0}'",V.Local.sRet(1).Trim,V.Local.sFilter)
+		F.Data.DataTable.Select("dtRegion",V.Local.sFilter,V.Local.sFilterRet)
+		F.Intrinsic.Control.If(V.Local.sFilterRet,=,"***NORETURN***")
+			F.Intrinsic.UI.Msgbox("The selected customer for this SO does not belong to your region")
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.Else
+			Gui.F_Entry.txtSO.Text(V.Local.sRet(0).Trim)
+			Gui.F_Entry.txtCustomerCode.Text(V.Local.sRet(1).Trim)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+Program.Sub.cmdBrwSO_Click.End
+
+Program.Sub.chkHot_Click.Start
+F.Intrinsic.Control.If(V.Screen.F_Entry!chkHot.Value,=,1)
+	Gui.F_Entry.txtHot.Enabled(True)
+F.Intrinsic.Control.Else
+	Gui.F_Entry.txtHot.Text("")
+	Gui.F_Entry.txtHot.Enabled(False)
+F.Intrinsic.Control.EndIf
+Program.Sub.chkHot_Click.End
+
+Program.Sub.chkCold_Click.Start
+F.Intrinsic.Control.If(V.Screen.F_Entry!chkCold.Value,=,1)
+	Gui.F_Entry.txtCold.Enabled(True)
+F.Intrinsic.Control.Else
+	Gui.F_Entry.txtCold.Text("")
+	Gui.F_Entry.txtCold.Enabled(False)
+F.Intrinsic.Control.EndIf
+Program.Sub.chkCold_Click.End
+
+Program.Sub.ddlESeries_Click.Start
+V.Local.sSelect.Declare
+
+V.Local.sSelect.Set(V.Screen.F_Entry!ddlESeries.Text)
+
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+	Gui.F_Entry.cmdBrwPart.Enabled(True)
+F.Intrinsic.Control.Else
+	Gui.F_Entry.cmdBrwPart.Enabled(False)
+F.Intrinsic.Control.EndIf
+Program.Sub.ddlESeries_Click.End
+
+Program.Sub.ddlDrawingType_Click.Start
+V.Local.iRunningNo.Declare
+V.Local.sField.Declare
+V.Local.sSQL.Declare
+
+V.Local.sField.Set(V.Screen.F_Entry!ddlDrawingType.Text)
+'V.Local.sField.Set(V.Screen.F_Entry!ddlDrawingType.ItemData)
+
+F.Intrinsic.Control.If(V.Local.sField.Trim,<>,"")
+'	F.Intrinsic.String.Build("select last_no from GAB_5237_PDRF_NO where field_name = '{0}'",V.Local.sField.Trim,V.Local.sSQL)
+'	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+'	F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF)
+'		gui.F_Entry.txtRunningNo.Text(1)
+'	F.Intrinsic.Control.Else
+'		F.Intrinsic.Math.Add(V.ODBC.conx!rst.FieldVal!last_no,1,V.Local.iRunningNo)
+'		gui.F_Entry.txtRunningNo.Text(V.Local.iRunningNo)
+'	F.Intrinsic.Control.EndIf
+'	F.ODBC.conx!rst.Close
+
+	F.Intrinsic.Control.If(V.Local.sField.Trim,=,"SP")
+		F.Intrinsic.Control.CallSub(ProjTypeSP)
+	F.Intrinsic.Control.ElseIf(V.Local.sField.Trim,=,"SB")
+		F.Intrinsic.Control.CallSub(ProjTypeSP)
+	F.Intrinsic.Control.ElseIf(V.Local.sField.Trim,=,"STD")
+		F.Intrinsic.Control.CallSub(ProjTypeSP)
+	F.Intrinsic.Control.ElseIf(V.Local.sField.Trim,=,"P")
+		F.Intrinsic.Control.CallSub(ProjTypeSP)
+	F.Intrinsic.Control.ElseIf(V.Local.sField.Trim,=,"CK")
+		F.Intrinsic.Control.CallSub(ProjTypeCK)
+	F.Intrinsic.Control.ElseIf(V.Local.sField.Trim,=,"N")
+		F.Intrinsic.Control.CallSub(ProjTypeCK)
+	F.Intrinsic.Control.ElseIf(V.Local.sField.Trim,=,"SC")
+		F.Intrinsic.Control.CallSub(ProjTypeSC)
+'	F.Intrinsic.Control.Else
+'		Gui.F_Entry.lbl15.Visible(True)
+'		Gui.F_Entry.txtHandlerName.Visible(True)
+'		Gui.F_Entry.lblHandlerName.Visible(False)
+'		Gui.F_Entry.txtHandlerNameDesc.Visible(False)
+'		
+'		Gui.F_Entry.lbl8.Visible(True)
+'		Gui.F_Entry.txtProjType.Visible(True)
+'		
+'		Gui.F_Entry.txtLeads.Visible(True)
+'		Gui.F_Entry.txtForm.Visible(True)
+'		Gui.F_Entry.txtSize.Visible(True)
+'		Gui.F_Entry.txtPitch.Visible(True)
+'		Gui.F_Entry.txtSitesXY.Visible(True)
+'		Gui.F_Entry.ddlKelvin.Visible(True)
+'		Gui.F_Entry.ddlESeries.Visible(True)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+Program.Sub.ddlDrawingType_Click.End
+
+Program.Sub.DragDrop.Start
+v.Local.sFiles.Declare(String)
+v.Local.i.Declare(Long)
+v.Static.bBusy.Declare(Boolean)
+
+f.Intrinsic.Control.If(V.Static.bBusy,=,True)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+v.Static.bBusy.set(True)
+
+F.Intrinsic.UI.Msgbox(V.Args.Files)
+
+f.Intrinsic.String.Split(v.Args.Files,"*!*",v.Local.sFiles)
+
+v.Static.bBusy.set(False)
+Program.Sub.DragDrop.End
+
+Program.Sub.GsGCDoc_RowCellClick.Start
+V.Local.i1.Declare
+V.Local.iSeq.Declare
+V.Local.iStart.Declare
+V.Local.sFilename.Declare
+V.Local.sFilepath.Declare
+
+'Adding file attachment
+F.Intrinsic.Control.If(V.Args.Column,=,"Add")
+	F.Intrinsic.UI.ShowOpenFileDialog("","","",V.Local.sFilepath)
+
+	F.Intrinsic.Control.If(V.Local.sFilepath,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sFilepath,"\",V.Local.sFilename)
+		F.Data.DataTable.SetValue("dtDoc",V.Args.RowIndex,"Filename",V.Local.sFilepath)
+		F.Intrinsic.Math.Add(V.DataTable.dtDoc(V.DataTable.dtDoc.RowCount--).File_Seq!FieldVal,1,V.Local.iSeq)
+		F.Data.DataTable.AddRow("dtDoc","File_Seq",V.Local.iSeq)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ElseIf(V.Args.Column,=,"Filename")
+	F.Intrinsic.Control.If(V.DataTable.dtDoc(V.Args.RowIndex).Filename!FieldValTrim,<>,"")
+		F.Intrinsic.Control.If(V.Args.Clicks,=,1)
+			Gui.F_Entry.htmlX.Navigate("about:blank")
+			Gui.F_Entry.htmlX.Navigate(V.DataTable.dtDoc(V.Args.RowIndex).Filename!FieldVal,False)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ElseIf(V.Args.Column,=,"Delete")
+	F.Intrinsic.Control.If(V.DataTable.dtDoc(V.Args.RowIndex).Filename!FieldValTrim,<>,"")
+		F.Intrinsic.Math.Add(V.Args.RowIndex,1,V.Local.iStart)
+		F.Intrinsic.Control.For(V.Local.i1,V.Local.iStart,V.DataTable.dtDoc.RowCount--,1)
+			F.Intrinsic.Math.Sub(V.DataTable.dtDoc(V.Local.i1).File_Seq!FieldVal,1,V.Local.iSeq)
+			F.Data.DataTable.SetValue("dtDoc",V.Local.i1,"File_Seq",V.Local.iSeq)
+		F.Intrinsic.Control.Next(V.Local.i1)
+		F.Data.DataTable.DeleteRow("dtDoc",V.Args.RowIndex)
+		F.Data.DataTable.AcceptChanges("dtDoc")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+Program.Sub.GsGCDoc_RowCellClick.End
+
+Program.Sub.VerifySC-N-CK.Start
+V.Local.sSelect.Declare
+
+V.Local.sSelect.Set(V.Screen.F_Entry!txtLeads.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+	F.Intrinsic.UI.Msgbox("Project Name #Leads must be filled in")
+	Gui.F_Entry.tab1.SetTab(1)
+	Gui.F_Entry.txtLeads.SetFocus
+	V.Global.iPass.Set(0)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Else
+	V.Global.iPass.Set(1)	
+F.Intrinsic.Control.EndIf
+
+'Form
+V.Local.sSelect.Set(V.Screen.F_Entry!txtForm.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+	F.Intrinsic.UI.Msgbox("Project Name Form must be filled in")
+	Gui.F_Entry.tab1.SetTab(1)
+	Gui.F_Entry.txtForm.SetFocus
+	V.Global.iPass.Set(0)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Else
+	V.Global.iPass.Set(1)	
+F.Intrinsic.Control.EndIf
+
+'Size
+V.Local.sSelect.Set(V.Screen.F_Entry!txtSize.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+	F.Intrinsic.UI.Msgbox("Project Name Size must be filled in")
+	Gui.F_Entry.tab1.SetTab(1)
+	Gui.F_Entry.txtSize.SetFocus
+	V.Global.iPass.Set(0)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Else
+	V.Global.iPass.Set(1)	
+F.Intrinsic.Control.EndIf
+
+'Pitch
+V.Local.sSelect.Set(V.Screen.F_Entry!txtPitch.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+	F.Intrinsic.UI.Msgbox("Project Name Pitch must be filled in")
+	Gui.F_Entry.tab1.SetTab(1)
+	Gui.F_Entry.txtPitch.SetFocus
+	V.Global.iPass.Set(0)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Else
+	V.Global.iPass.Set(1)	
+F.Intrinsic.Control.EndIf
+
+'Handler name
+V.Local.sSelect.Set(V.Screen.F_Entry!txtHandlerName.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+	F.Intrinsic.UI.Msgbox("Project Name Handler Name must be filled in")
+	Gui.F_Entry.tab1.SetTab(1)
+	Gui.F_Entry.txtHandlerName.SetFocus
+	V.Global.iPass.Set(0)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Else
+	V.Global.iPass.Set(1)	
+F.Intrinsic.Control.EndIf
+
+'Sites XY
+V.Local.sSelect.Set(V.Screen.F_Entry!txtSitesXY.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+	F.Intrinsic.UI.Msgbox("Project Name Sites X/Y must be filled in")
+	Gui.F_Entry.tab1.SetTab(1)
+	Gui.F_Entry.txtSitesXY.SetFocus
+	V.Global.iPass.Set(0)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Else
+	V.Global.iPass.Set(1)	
+F.Intrinsic.Control.EndIf
+
+Program.Sub.VerifySC-N-CK.End
+
+Program.Sub.VerifySCOnly.Start
+V.Local.sSelect.Declare
+
+'Kelvin
+V.Local.sSelect.Set(V.Screen.F_Entry!ddlKelvin.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+	F.Intrinsic.UI.Msgbox("Project Name Kelvin must be filled in")
+	Gui.F_Entry.tab1.SetTab(1)
+	Gui.F_Entry.ddlKelvin.SetFocus
+	V.Global.iPass.Set(0)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Else
+	V.Global.iPass.Set(1)	
+F.Intrinsic.Control.EndIf
+
+'E-Series
+V.Local.sSelect.Set(V.Screen.F_Entry!ddlESeries.Text)
+F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+	F.Intrinsic.UI.Msgbox("Project Name E-Series must be filled in")
+	Gui.F_Entry.tab1.SetTab(1)
+	Gui.F_Entry.ddlESeries.SetFocus
+	V.Global.iPass.Set(0)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Else
+	V.Global.iPass.Set(1)	
+F.Intrinsic.Control.EndIf
+
+'Project Name Description
+'V.Local.sSelect.Set(V.Screen.F_Entry!txtProjType.Text)
+'F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+'	F.Intrinsic.UI.Msgbox("Project Name Description must be filled in")
+'	Gui.F_Entry.tab1.SetTab(1)
+'	Gui.F_Entry.txtProjType.SetFocus
+'	V.Global.iPass.Set(0)
+'	F.Intrinsic.Control.ExitSub
+'F.Intrinsic.Control.EndIf
+
+'Test Environment
+'F.Intrinsic.Control.If(V.Screen.F_Entry!chkAmbient.Value,=,0)
+'	F.Intrinsic.Control.If(V.Screen.F_Entry!chkCold.value,=,0)
+'		F.Intrinsic.Control.If(V.Screen.F_Entry!chkHot.Value,=,0)
+'			F.Intrinsic.UI.Msgbox("Test environment must be selected")
+'			Gui.F_Entry.tab1.SetTab(1)
+'			Gui.F_Entry.frameTestEnvironment.SetFocus
+'			V.Global.iPass.Set(0)
+'			F.Intrinsic.Control.ExitSub
+'		F.Intrinsic.Control.Else
+'			V.Local.sSelect.Set(V.Screen.F_Entry!txtHot.Text)
+'			F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+'				F.Intrinsic.UI.Msgbox("Hot temperature must be filled in")
+'				Gui.F_Entry.tab1.SetTab(1)
+'				Gui.F_Entry.txtHot.SetFocus
+'				V.Global.iPass.Set(0)
+'				F.Intrinsic.Control.ExitSub
+'			F.Intrinsic.Control.EndIf
+'		F.Intrinsic.Control.EndIf
+'	F.Intrinsic.Control.Else
+'		V.Local.sSelect.Set(V.Screen.F_Entry!txtCold.Text)
+'		F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+'			F.Intrinsic.UI.Msgbox("Cold temperature must be filled in")
+'			Gui.F_Entry.tab1.SetTab(1)
+'			Gui.F_Entry.txtCold.SetFocus
+'			V.Global.iPass.Set(0)
+'			F.Intrinsic.Control.ExitSub
+'		F.Intrinsic.Control.EndIf
+'	F.Intrinsic.Control.EndIf
+'F.Intrinsic.Control.EndIf
+
+'Socket footprint
+'V.Local.sSelect.Set(V.Screen.F_Entry!ddlSocket.Text)
+'F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+'	F.Intrinsic.UI.Msgbox("Socket footprint must be selected")
+'	Gui.F_Entry.tab1.SetTab(1)
+'	Gui.F_Entry.ddlSocket.SetFocus
+'	V.Global.iPass.Set(0)
+'	F.Intrinsic.Control.ExitSub
+'F.Intrinsic.Control.EndIf
+
+'Keep out zone
+'V.Local.sSelect.Set(V.Screen.F_Entry!txtKeepOutZone.Text)
+'F.Intrinsic.Control.If(V.Local.sSelect.Trim,=,"")
+'	F.Intrinsic.UI.Msgbox("Keep Out Zone must be filled in")
+'	Gui.F_Entry.tab1.SetTab(1)
+'	Gui.F_Entry.txtKeepOutZone.SetFocus
+'	V.Global.iPass.Set(0)
+'	F.Intrinsic.Control.ExitSub
+'F.Intrinsic.Control.EndIf
+Program.Sub.VerifySCOnly.End
+
+Program.Sub.ProjTypeSP.Start
+Gui.F_Entry.lbl15.Visible(False)
+Gui.F_Entry.txtHandlerName.Visible(False)
+Gui.F_Entry.lblHandlerName.Visible(True)
+Gui.F_Entry.txtHandlerNameDesc.Visible(True)
+
+Gui.F_Entry.lbl8.Visible(True)
+Gui.F_Entry.txtProjType.Visible(True)
+
+Gui.F_Entry.txtLeads.Visible(False)
+Gui.F_Entry.txtForm.Visible(False)
+Gui.F_Entry.txtSize.Visible(False)
+Gui.F_Entry.txtPitch.Visible(False)
+Gui.F_Entry.txtSitesXY.Visible(False)
+Gui.F_Entry.ddlKelvin.Visible(False)
+Gui.F_Entry.ddlESeries.Visible(False)
+
+'Gui.F_Entry.txtRunningNo.Locked(True)
+Program.Sub.ProjTypeSP.End
+
+Program.Sub.ProjTypeCK.Start
+Gui.F_Entry.lbl15.Visible(True)
+Gui.F_Entry.txtHandlerName.Visible(True)
+Gui.F_Entry.lblHandlerName.Visible(False)
+Gui.F_Entry.txtHandlerNameDesc.Visible(False)
+
+Gui.F_Entry.lbl8.Visible(True)
+Gui.F_Entry.txtProjType.Visible(True)
+
+Gui.F_Entry.txtLeads.Visible(True)
+Gui.F_Entry.txtForm.Visible(True)
+Gui.F_Entry.txtSize.Visible(True)
+Gui.F_Entry.txtPitch.Visible(True)
+Gui.F_Entry.txtSitesXY.Visible(True)
+Gui.F_Entry.ddlKelvin.Visible(False)
+Gui.F_Entry.ddlESeries.Visible(False)
+
+'Gui.F_Entry.txtRunningNo.Locked(True)
+Program.Sub.ProjTypeCK.End
+
+Program.Sub.ProjTypeSC.Start
+Gui.F_Entry.lbl8.Visible(True)
+Gui.F_Entry.txtProjType.Visible(True)
+Gui.F_Entry.lblHandlerName.Visible(False)
+Gui.F_Entry.txtHandlerNameDesc.Visible(False)
+
+Gui.F_Entry.lbl15.Visible(True)
+Gui.F_Entry.txtHandlerName.Visible(True)
+
+Gui.F_Entry.txtLeads.Visible(True)
+Gui.F_Entry.txtForm.Visible(True)
+Gui.F_Entry.txtSize.Visible(True)
+Gui.F_Entry.txtPitch.Visible(True)
+Gui.F_Entry.txtSitesXY.Visible(True)
+Gui.F_Entry.ddlKelvin.Visible(True)
+Gui.F_Entry.ddlESeries.Visible(True)
+
+'Gui.F_Entry.txtRunningNo.Locked(False)
+Program.Sub.ProjTypeSC.End
+
+Program.Sub.Comments.Start
+${$0$}$$}$$}$12:00:00 AM$}$False
+${$3$}$0$}$$}$0$}$-1$}$$}$12:00:00 AM$}$This dashboard reconciles changes in WIP amount of work orders between 2 accounting period. The reconcilation compares net change of what is stored in job detail and general ledger.
+${$5$}$2.0.0.0$}$2
+${$6$}$dyunus$}$20220829083014164$}$xZ6SHi8g7O0Qsxe6AiO2NH3PnOKQRy0TcuetL9cA/caNXz7MxPxLq4imCqLTHBn4kVuE1tZHk7s=
+Program.Sub.Comments.End
+
