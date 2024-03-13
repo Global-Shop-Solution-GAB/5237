@@ -1,0 +1,684 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.F_Status..Create(BaseForm)
+Gui.F_Status..Caption("PDRF Status (Engineer)")
+Gui.F_Status..Size(13350,8700)
+Gui.F_Status..MinX(0)
+Gui.F_Status..MinY(0)
+Gui.F_Status..Position(0,0)
+Gui.F_Status..BackColor(-2147483633)
+Gui.F_Status..MousePointer(0)
+Gui.F_Status..Event(UnLoad,Unload)
+Gui.F_Status..AlwaysOnTop(False)
+Gui.F_Status..FontName("Tahoma")
+Gui.F_Status..FontSize(8.25)
+Gui.F_Status..ControlBox(True)
+Gui.F_Status..MaxButton(True)
+Gui.F_Status..MinButton(True)
+Gui.F_Status..Moveable(True)
+Gui.F_Status..Sizeable(True)
+Gui.F_Status..ShowInTaskBar(True)
+Gui.F_Status..TitleBar(True)
+Gui.F_Status.tab1.Create(Tab)
+Gui.F_Status.tab1.Size(12945,7230)
+Gui.F_Status.tab1.Position(90,825)
+Gui.F_Status.tab1.FontSize(9)
+Gui.F_Status.tab1.Enabled(True)
+Gui.F_Status.tab1.Visible(True)
+Gui.F_Status.tab1.Zorder(0)
+Gui.F_Status.tab1.FontName("Tahoma")
+Gui.F_Status.tab1.Tabs(4)
+Gui.F_Status.tab1.SetTab(0)
+Gui.F_Status.tab1.Caption("Not Consented")
+Gui.F_Status.tab1.SetTab(1)
+Gui.F_Status.tab1.Caption("Ongoing")
+Gui.F_Status.tab1.SetTab(2)
+Gui.F_Status.tab1.Caption("Approved")
+Gui.F_Status.tab1.SetTab(3)
+Gui.F_Status.tab1.Caption("Drawing")
+Gui.F_Status.htmlX.create(htmlcontainer)
+Gui.F_Status.htmlX.size(12615,6630)
+Gui.F_Status.htmlX.position(105,105)
+Gui.F_Status.htmlX.parent("tab1",3)
+Gui.F_Status.htmlX.tabindex(3)
+Gui.F_Status.htmlX.Visible(True)
+Gui.F_Status.htmlX.Zorder(0)
+Gui.F_Status.GsGCReview.Create(GsGridControl)
+Gui.F_Status.GsGCReview.Size(12690,6660)
+Gui.F_Status.GsGCReview.Position(75,105)
+Gui.F_Status.GsGCReview.Parent("tab1",2)
+Gui.F_Status.GsGCReview.Event(RowCellClick,GsGCReview_RowCellClick)
+Gui.F_Status.GsGCReview.Enabled(True)
+Gui.F_Status.GsGCReview.Visible(True)
+Gui.F_Status.GsGCReview.Zorder(0)
+Gui.F_Status.GsGCOngoing.Create(GsGridControl)
+Gui.F_Status.GsGCOngoing.Size(12690,6660)
+Gui.F_Status.GsGCOngoing.Position(75,105)
+Gui.F_Status.GsGCOngoing.Parent("tab1",1)
+Gui.F_Status.GsGCOngoing.Event(RowCellClick,GsGCOngoing_RowCellClick)
+Gui.F_Status.GsGCOngoing.Enabled(True)
+Gui.F_Status.GsGCOngoing.Visible(True)
+Gui.F_Status.GsGCOngoing.Zorder(0)
+Gui.F_Status.GsGCConsent.Create(GsGridControl)
+Gui.F_Status.GsGCConsent.Size(12735,6540)
+Gui.F_Status.GsGCConsent.Position(75,105)
+Gui.F_Status.GsGCConsent.Parent("tab1",0)
+Gui.F_Status.GsGCConsent.Event(RowCellClick,GsGCConsent_RowCellClick)
+Gui.F_Status.GsGCConsent.Enabled(True)
+Gui.F_Status.GsGCConsent.Visible(True)
+Gui.F_Status.GsGCConsent.Zorder(0)
+Gui.F_Status.cmdRefresh.Create(Button)
+Gui.F_Status.cmdRefresh.Size(1620,615)
+Gui.F_Status.cmdRefresh.Position(105,120)
+Gui.F_Status.cmdRefresh.Caption("REFRESH")
+Gui.F_Status.cmdRefresh.FontSize(9)
+Gui.F_Status.cmdRefresh.Event(Click,cmdRefresh_Click)
+Gui.F_Status.cmdRefresh.Enabled(True)
+Gui.F_Status.cmdRefresh.Visible(True)
+Gui.F_Status.cmdRefresh.Zorder(0)
+Gui.F_Status.cmdRefresh.FontName("Tahoma")
+Gui.F_RevDate..Create(BaseForm)
+Gui.F_RevDate..Caption("Set Consent Date")
+Gui.F_RevDate..Size(5535,1125)
+Gui.F_RevDate..MinX(0)
+Gui.F_RevDate..MinY(0)
+Gui.F_RevDate..Position(0,0)
+Gui.F_RevDate..FontSize(9)
+Gui.F_RevDate..BackColor(-2147483633)
+Gui.F_RevDate..MousePointer(0)
+Gui.F_RevDate..Event(UnLoad,F_RevDate_Unload)
+Gui.F_RevDate..AlwaysOnTop(False)
+Gui.F_RevDate..FontName("Tahoma")
+Gui.F_RevDate..ControlBox(True)
+Gui.F_RevDate..MaxButton(True)
+Gui.F_RevDate..MinButton(True)
+Gui.F_RevDate..Moveable(True)
+Gui.F_RevDate..Sizeable(True)
+Gui.F_RevDate..ShowInTaskBar(True)
+Gui.F_RevDate..TitleBar(True)
+Gui.F_RevDate.dtp1.Create(DatePicker)
+Gui.F_RevDate.dtp1.Size(2850,285)
+Gui.F_RevDate.dtp1.Position(90,105)
+Gui.F_RevDate.dtp1.Enabled(True)
+Gui.F_RevDate.dtp1.Visible(True)
+Gui.F_RevDate.dtp1.Zorder(0)
+Gui.F_RevDate.dtp1.CheckBox(False)
+Gui.F_RevDate.dtp1.FontName("Tahoma")
+Gui.F_RevDate.dtp1.FontSize(8.25)
+Gui.F_RevDate.cmdUpdate.Create(Button)
+Gui.F_RevDate.cmdUpdate.Size(2100,375)
+Gui.F_RevDate.cmdUpdate.Position(3090,75)
+Gui.F_RevDate.cmdUpdate.Caption("Update")
+Gui.F_RevDate.cmdUpdate.FontSize(9)
+Gui.F_RevDate.cmdUpdate.Event(Click,cmdUpdate_Click)
+Gui.F_RevDate.cmdUpdate.Enabled(True)
+Gui.F_RevDate.cmdUpdate.Visible(True)
+Gui.F_RevDate.cmdUpdate.Zorder(0)
+Gui.F_RevDate.cmdUpdate.FontName("Tahoma")
+Gui.F_RevDate.lblPDRF.Create(Label,"Label",False,1935,255,0,105,945,True,0,"Arial",8,-2147483633,0,0)
+Gui.F_RevDate.lblPDRF.BorderStyle(0)
+Gui.F_RevDate.lblSeq.Create(Label,"Label",False,1935,255,0,105,1320,True,0,"Arial",8,-2147483633,0,0)
+Gui.F_RevDate.lblSeq.BorderStyle(0)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+V.Local.sIcon.Declare
+
+F.Intrinsic.String.Build("{0}\ART\gss2.ico",V.Caller.GlobalDir,V.Local.sIcon)
+Gui.F_Status..Icon(V.Local.sIcon)
+
+F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass,600)
+F.ODBC.Connection!ccon.OpenConnection(V.Ambient.Ccon,V.Ambient.Cuser,V.Ambient.Cpass)
+
+F.Intrinsic.Control.CallSub(verifyuser)
+
+F.Data.Dictionary.CreateFromSQL("dicDesc","conx","select convert(p1.id,sql_char)+'-'+convert(p1.seq,sql_char) as IDSeq, case p1.dwg_type when 'SC' then p2.leads+' '+p2.form+' '+p2.size+' '+convert(p2.pitch,sql_char)+' '+p2.handler_name+' '+p2.sites_xy+' '+p2.kelvin+' '+p2.e_series when 'CK' then p2.leads+' '+p2.form+' '+p2.size+' '+convert(p2.pitch,sql_char)+' '+p2.handler_name+' '+p2.sites_xy when 'N' then p2.leads+' '+p2.form+' '+p2.size+' '+convert(p2.pitch,sql_char)+' '+p2.handler_name+' '+p2.sites_xy else p2.prj_type+' '+p2.handler_name end as description from gab_5237_pdrf_dwg p1 left join gab_5237_pdrf_prj p2 on p1.id = p2.id and p1.seq = p2.seq")
+F.Data.Dictionary.SetDefaultReturn("dicDesc","")
+
+F.Data.Dictionary.CreateFromSQL("dicPrj","conx","select convert(id,sql_char)+'-'+convert(seq,sql_char), rtrim(customer)+rtrim(dwg_type)+convert(running_no,sql_char) from gab_5237_pdrf_dwg")
+F.Data.Dictionary.SetDefaultReturn("dicPrj","")
+
+F.Intrinsic.Control.CallSub(LoadNotConsented)
+F.Intrinsic.Control.CallSub(LoadOnGoing)
+F.Intrinsic.Control.CallSub(loadreview)
+
+Gui.F_Status.tab1.Anchor(15)
+Gui.F_Status.GsGCConsent.Anchor(15)
+Gui.F_Status.GsGCOngoing.Anchor(15)
+Gui.F_Status.GsGCReview.Anchor(15)
+Gui.F_Status.htmlX.Anchor(15)
+Gui.F_Status.tab1.SetTab(0)
+
+Gui.F_Status..Show
+Program.Sub.Main.End
+
+Program.Sub.Unload.Start
+F.Intrinsic.Control.If(V.Dictionary.dicDesc.Exists,=,TRUE)
+	F.Data.Dictionary.Close("dicDesc")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Dictionary.dicPrj.Exists,=,TRUE)
+	F.Data.Dictionary.Close("dicPrj")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtCon.Exists)
+	F.Data.DataTable.Close("dtCon")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtCur.Exists)
+	F.Data.DataTable.Close("dtCur")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtRev.Exists)
+	F.Data.DataTable.Close("dtRev")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!ccon.Close
+F.ODBC.Connection!conx.Close
+F.Intrinsic.Control.End
+
+Program.Sub.Unload.End
+
+Program.Sub.VerifyUser.Start
+V.Local.sSQL.Declare
+V.Local.sUser.Declare
+
+V.Local.sUser.Set(V.Caller.User)
+
+F.Intrinsic.String.Build("select * from GAB_5237_PDRF_LVL where gss_user = '{0}' and engineer = 1",V.Local.sUser.Trim,V.Local.sSQL)
+F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF)
+	F.Intrinsic.UI.Msgbox("Your user is not set as an Engineer")
+	F.Intrinsic.Control.CallSub(unload)
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rst.Close
+Program.Sub.VerifyUser.End
+
+Program.Sub.LoadNotConsented.Start
+V.Local.sSQL.Declare
+V.Local.sUser.Declare
+
+F.Intrinsic.Control.If(V.DataTable.dtCon.Exists)
+	F.Data.DataTable.Close("dtCon")
+F.Intrinsic.Control.EndIf
+
+'Load list of PDRF where engineer is assigned but consent date has not been set
+V.Local.sUser.Set(V.Caller.User)
+F.Intrinsic.String.Build("select id as PDRF, seq as Seq, date_issue as StartDate, date_due as DueDate, scope as Scope, ' ' as Description, requestor as Requestor, reviewer as Reviewer, approver as Approver, convert(id,sql_char)+'-'+convert(seq,sql_char) as IDSeq from GAB_5237_PDRF_ISSUE where engineer = '{0}' and date_consent = '1900-01-01' order by id",V.Local.sUser.Trim,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtCon","conx",V.Local.sSQL,True)
+F.Data.DataTable.FillFromDictionary("dtCon","dicDesc","IDSeq","Description")
+F.Data.DataTable.AddColumn("dtCon","SetDate","Long",0)
+
+Gui.F_Status.GsGCConsent.AddGridviewFromDatatable("gvCon","dtCon")
+Gui.F_Status.GsGCConsent.MainView("gvCon")
+Gui.F_Status.GsGCConsent.SetGridviewProperty("gvCon","ShowGroupPanel",True)
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","Seq","Visible",False)
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","IDSeq","Visible",False)
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","SetDate","ShowCaption",False)
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","PDRF","HeaderHAlignment","Center")
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","StartDate","HeaderHAlignment","Center")
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","DueDate","HeaderHAlignment","Center")
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","Scope","HeaderHAlignment","Center")
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","Requestor","HeaderHAlignment","Center")
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","Reviewer","HeaderHAlignment","Center")
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","Approver","HeaderHAlignment","Center")
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","Description","HeaderHAlignment","Center")
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","PDRF","CellHAlignment","Center")
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","StartDate","CellHAlignment","Center")
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","DueDate","CellHAlignment","Center")
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","Requestor","CellHAlignment","Center")
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","Reviewer","CellHAlignment","Center")
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","Approver","CellHAlignment","Center")
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","SetDate","CellHAlignment","Center")
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","Description","CellHAlignment","Center")
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","StartDate","Caption","Start Date")
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","DueDate","Caption","Required Date")
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","PDRF","MinWidth","80")
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","StartDate","MinWidth","110")
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","DueDate","MinWidth","110")
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","Scope","MinWidth","150")
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","Requestor","MinWidth","80")
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","Reviewer","MinWidth","80")
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","Approver","MinWidth","80")
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","StartDate","DisplayCustomDatetime","d")
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","DueDate","DisplayCustomDatetime","d")
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","PDRF","HeaderFontBold",True)
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","StartDate","HeaderFontBold",True)
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","DueDate","HeaderFontBold",True)
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","Scope","HeaderFontBold",True)
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","Requestor","HeaderFontBold",True)
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","Reviewer","HeaderFontBold",True)
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","Approver","HeaderFontBold",True)
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","Description","HeaderFontBold",True)
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","PDRF","CellForeColor",V.Color.LtBlue)
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","PDRF","CellFontUnderline",True)
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","PDRF","AllowEdit",False)
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","SetDate","AllowEdit",False)
+Gui.F_Status.GsGCConsent.SetColumnProperty("gvCon","SetDate","Fixed","Right")
+Gui.F_Status.GsGCConsent.ColumnEdit("gvCon","SetDate","EditorButton","Consent")
+Program.Sub.LoadNotConsented.End
+
+Program.Sub.LoadOnGoing.Start
+V.Local.sSQL.Declare
+V.Local.sUser.Declare
+
+F.Intrinsic.Control.If(V.DataTable.dtCur.Exists)
+	F.Data.DataTable.Close("dtCur")
+F.Intrinsic.Control.EndIf
+
+V.Local.sUser.Set(V.Caller.User)
+F.Intrinsic.String.Build("select P1.id as PDRF, P1.seq as Seq, P1.date_issue as StartDate, P1.date_due as DueDate, P1.date_consent as ConsentDate, P1.date_rev as RDate, P1.scope as Scope, P1.class_type as ClassType, ' ' as Project, ' ' as Description, P1.requestor as Requestor, P1.engineer as Engineer, P1.job as WO, P1.suffix as Suffix, convert(P1.id,sql_char)+'-'+convert(P1.seq,sql_char) as IDSeq from GAB_5237_PDRF_ISSUE P1 left join GAB_5237_PDRF_ENG P2 on P1.id = P2.id and P1.seq = P2.seq where P1.engineer = '{0}' and P1.date_consent <> '1900-01-01' and (P2.approver = '' or P2.approver = '*REJECT*') and P2.date_submit = '1900-01-01' order by P1.id",V.Local.sUser.Trim,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtCur","conx",V.Local.sSQL,True)
+F.Data.DataTable.FillFromDictionary("dtCur","dicDesc","IDSeq","Description")
+F.Data.DataTable.FillFromDictionary("dtCur","dicPrj","IDSeq","Project")
+'F.Data.DataTable.AddColumn("dtCur","DesignIntent","String","")
+'F.Data.DataTable.AddColumn("dtCur","Design","Boolean",False)
+'F.Data.DataTable.AddColumn("dtCur","Tolerance","Boolean",False)
+'F.Data.DataTable.AddColumn("dtCur","FEA","Boolean",False)
+'F.Data.DataTable.AddColumn("dtCur","RootCause","Boolean",False)
+F.Data.DataTable.AddColumn("dtCur","Submit","Long",0)
+
+''Fill up information from GAB_5237_PDRF_INTENT and GAB_5237_PDRF_ENG
+'F.Data.DataTable.CreateFromSQL("dtIntent","conx","select id as ID, seq as Seq, design_intent as DesignIntent, design as Design, tolerance as Tolerance, fea as FEA, root_cause as RootCause, convert(id,sql_char)+'-'+convert(seq,sql_char) as IDSeq from GAB_5237_PDRF_INTENT",True)
+''F.Data.DataTable.AddExpressionColumn("dtIntent","IDSeq","String","convert(ID,String)+'-'+convert(Seq,String)")
+'F.Data.Dictionary.CreateFromDataTable("dicIntent","dtIntent","IDSeq","DesignIntent")
+'F.Data.Dictionary.SetDefaultReturn("dicIntent","")
+'F.Data.DataTable.FillFromDictionary("dtCur","dicIntent","IDSeq","DesignIntent")
+'F.Data.Dictionary.Close("dicIntent")
+'F.Data.Dictionary.CreateFromDataTable("dicIntent","dtIntent","IDSeq","Design")
+'F.Data.Dictionary.SetDefaultReturn("dicIntent",False)
+'F.Data.DataTable.FillFromDictionary("dtCur","dicIntent","IDSeq","Design")
+'F.Data.Dictionary.Close("dicIntent")
+'F.Data.Dictionary.CreateFromDataTable("dicIntent","dtIntent","IDSeq","Tolerance")
+'F.Data.Dictionary.SetDefaultReturn("dicIntent",False)
+'F.Data.DataTable.FillFromDictionary("dtCur","dicIntent","IDSeq","Tolerance")
+'F.Data.Dictionary.Close("dicIntent")
+'F.Data.Dictionary.CreateFromDataTable("dicIntent","dtIntent","IDSeq","FEA")
+'F.Data.Dictionary.SetDefaultReturn("dicIntent",False)
+'F.Data.DataTable.FillFromDictionary("dtCur","dicIntent","IDSeq","FEA")
+'F.Data.Dictionary.Close("dicIntent")
+'F.Data.Dictionary.CreateFromDataTable("dicIntent","dtIntent","IDSeq","RootCause")
+'F.Data.Dictionary.SetDefaultReturn("dicIntent",False)
+'F.Data.DataTable.FillFromDictionary("dtCur","dicIntent","IDSeq","RootCause")
+'F.Data.Dictionary.Close("dicIntent")
+'F.Data.DataTable.Close("dtIntent")
+
+Gui.F_Status.GsGCOngoing.AddGridviewFromDatatable("gvCur","dtCur")
+Gui.F_Status.GsGCOngoing.MainView("gvCur")
+
+Gui.F_Status.GsGCOngoing.SetGridviewProperty("gvCur","ShowGroupPanel",True)
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","Seq","Visible",False)
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","IDSeq","Visible",False)
+'Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","RevDate","ShowCaption",False)
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","PDRF","HeaderHAlignment","Center")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","StartDate","HeaderHAlignment","Center")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","DueDate","HeaderHAlignment","Center")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","ConsentDate","HeaderHAlignment","Center")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","RDate","HeaderHAlignment","Center")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","Scope","HeaderHAlignment","Center")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","ClassType","HeaderHAlignment","Center")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","Project","HeaderHAlignment","Center")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","Description","HeaderHAlignment","Center")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","Requestor","HeaderHAlignment","Center")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","Engineer","HeaderHAlignment","Center")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","WO","HeaderHAlignment","Center")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","Suffix","HeaderHAlignment","Center")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","PDRF","CellHAlignment","Center")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","StartDate","CellHAlignment","Center")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","DueDate","CellHAlignment","Center")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","ConsentDate","CellHAlignment","Center")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","RDate","CellHAlignment","Center")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","ClassType","CellHAlignment","Center")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","Project","CellHAlignment","Center")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","Requestor","CellHAlignment","Center")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","Engineer","CellHAlignment","Center")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","RDate","CellHAlignment","Center")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","WO","CellHAlignment","Center")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","Suffix","CellHAlignment","Center")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","StartDate","Caption","Start Date")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","DueDate","Caption","Required Date")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","ConsentDate","Caption","Consent Date")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","RDate","Caption","Rev Date")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","ClassType","Caption","Type")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","PDRF","MinWidth","80")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","StartDate","MinWidth","110")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","DueDate","MinWidth","100")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","ConsentDate","MinWidth","110")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","RDate","MinWidth","100")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","Scope","MinWidth","110")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","ClassType","MinWidth","90")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","Project","MinWidth","90")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","Description","MinWidth","200")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","Requestor","MinWidth","80")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","Engineer","MinWidth","80")
+'Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","RevDate","MinWidth","80")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","WO","MinWidth","70")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","Suffix","MinWidth","60")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","Submit","MinWidth","60")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","StartDate","DisplayCustomDatetime","d")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","DueDate","DisplayCustomDatetime","d")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","ConsentDate","DisplayCustomDatetime","d")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","RDate","DisplayCustomDatetime","d")
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","PDRF","HeaderFontBold",True)
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","StartDate","HeaderFontBold",True)
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","DueDate","HeaderFontBold",True)
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","ConsentDate","HeaderFontBold",True)
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","RDate","HeaderFontBold",True)
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","Scope","HeaderFontBold",True)
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","ClassType","HeaderFontBold",True)
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","Project","HeaderFontBold",True)
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","Description","HeaderFontBold",True)
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","Requestor","HeaderFontBold",True)
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","Engineer","HeaderFontBold",True)
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","WO","HeaderFontBold",True)
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","Suffix","HeaderFontBold",True)
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","PDRF","CellForeColor",V.Color.LtBlue)
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","PDRF","CellFontUnderline",True)
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","PDRF","AllowEdit",False)
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","Submit","ShowCaption",False)
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","Submit","AllowEdit",False)
+Gui.F_Status.GsGCOngoing.SetColumnProperty("gvCur","Submit","Fixed","Right")
+Gui.F_Status.GsGCOngoing.ColumnEdit("gvCur","Submit","EditorButton","Submit")
+Program.Sub.LoadOnGoing.End
+
+Program.Sub.LoadReview.Start
+V.Local.dateDefault.Declare
+V.Local.sSQL.Declare
+V.Local.sUser.Declare
+
+F.Intrinsic.Control.If(V.DataTable.dtRev.Exists)
+	F.Data.DataTable.Close("dtRev")
+F.Intrinsic.Control.EndIf
+
+V.Local.sUser.Set(V.Caller.User)
+V.Local.sSQL.Set("select P1.id as PDRF, P1.seq as Seq, P1.date_consent as DueDate, P1.scope as Scope, P1.requestor as Requestor, P1.engineer as Engineer, P2.date_submit as SubmitDate from GAB_5237_PDRF_ISSUE P1 left join GAB_5237_PDRF_ENG P2 on P1.id = P2.id and P1.seq = P2.seq where P2.approver <> '' and P2.approver <> '*REJECT*' and P2.drawing = 0 order by P1.id")
+F.Data.DataTable.CreateFromSQL("dtRev","conx",V.Local.sSQL,True)
+F.Data.DataTable.AddColumn("dtRev","Drawing","String")
+'F.Data.DataTable.AddExpressionColumn("dtRev","IDSeq","String","convert(PDRF,String)+'-'+convert(Seq,String)")
+
+Gui.F_Status.GsGCReview.AddGridviewFromDatatable("gvRev","dtRev")
+Gui.F_Status.GsGCReview.MainView("gvRev")
+
+Gui.F_Status.GsGCReview.SetGridviewProperty("gvRev","ShowGroupPanel",True)
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","Seq","Visible",False)
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","PDRF","HeaderHAlignment","Center")
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","DueDate","HeaderHAlignment","Center")
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","Scope","HeaderHAlignment","Center")
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","Requestor","HeaderHAlignment","Center")
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","Engineer","HeaderHAlignment","Center")
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","SubmitDate","HeaderHAlignment","Center")
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","Drawing","HeaderHAlignment","Center")
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","PDRF","CellHAlignment","Center")
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","DueDate","CellHAlignment","Center")
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","Requestor","CellHAlignment","Center")
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","Engineer","CellHAlignment","Center")
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","SubmitDate","CellHAlignment","Center")
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","DueDate","Caption","Consent Date")
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","SubmitDate","Caption","Submit Date")
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","PDRF","MinWidth","80")
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","DueDate","MinWidth","110")
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","Scope","MinWidth","150")
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","Requestor","MinWidth","80")
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","Engineer","MinWidth","80")
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","SubmitDate","MinWidth","110")
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","Drawing","MinWidth","100")
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","DueDate","DisplayCustomDatetime","d")
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","SubmitDate","DisplayCustomDatetime","d")
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","PDRF","HeaderFontBold",True)
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","DueDate","HeaderFontBold",True)
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","Scope","HeaderFontBold",True)
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","Requestor","HeaderFontBold",True)
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","Engineer","HeaderFontBold",True)
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","SubmitDate","HeaderFontBold",True)
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","Drawing","HeaderFontBold",True)
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","PDRF","CellForeColor",V.Color.LtBlue)
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","PDRF","CellFontUnderline",True)
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","PDRF","AllowEdit",False)
+Gui.F_Status.GsGCReview.ColumnEdit("gvRev","Drawing","EditorButton","Attach")
+Gui.F_Status.GsGCReview.SetColumnProperty("gvRev","Drawing","AllowEdit",False)
+Program.Sub.LoadReview.End
+
+Program.Sub.GsGCConsent_RowCellClick.Start
+V.Local.sGASFile.Declare
+
+F.Intrinsic.Control.If(V.Args.Column,=,"PDRF")
+	F.Global.General.SetPassedDataElement("PDRF",V.DataTable.dtCon(V.Args.RowIndex).PDRF!FieldVal)
+	F.Global.General.SetPassedDataElement("Seq",V.DataTable.dtCon(V.Args.RowIndex).Seq!FieldVal)
+	F.Global.General.SetPassedDataElement("Engineer",1)
+'	F.Intrinsic.String.Concat(V.Caller.GasDir,"\GAB_5237_PDRF_VIEW.g2u",V.Local.sGASFile)
+	F.Intrinsic.String.Concat(V.Caller.GasDir,"\GAB_5237_PDRF_REQUEST.g2u",V.Local.sGASFile)
+	F.Global.General.CallSyncGAS(V.Local.sGASFile)
+F.Intrinsic.Control.ElseIf(V.Args.Column,=,"SetDate")
+	Gui.F_RevDate.lblPDRF.Caption(V.DataTable.dtCon(V.Args.RowIndex).PDRF!FieldVal)
+	Gui.F_RevDate.lblSeq.Caption(V.DataTable.dtCon(V.Args.RowIndex).Seq!FieldVal)
+	Gui.F_RevDate..Show
+F.Intrinsic.Control.EndIf
+Program.Sub.GsGCConsent_RowCellClick.End
+
+Program.Sub.GsGCOngoing_RowCellClick.Start
+V.Local.bChange.Declare
+V.Local.dateSubmit.Declare
+V.Local.iSeq.Declare
+V.Local.sFiledir.Declare
+V.Local.sFilename.Declare
+V.Local.sFilenameServer.Declare
+V.Local.sFilepath.Declare
+V.Local.sGASFile.Declare
+V.Local.sSQL.Declare
+
+F.Intrinsic.Control.If(V.Args.Column,=,"PDRF")
+	F.Global.General.SetPassedDataElement("PDRF",V.DataTable.dtCur(V.Args.RowIndex).PDRF!FieldVal)
+	F.Global.General.SetPassedDataElement("Seq",V.DataTable.dtCur(V.Args.RowIndex).Seq!FieldVal)
+	F.Global.General.SetPassedDataElement("Engineer",1)
+'	F.Intrinsic.String.Concat(V.Caller.GasDir,"\GAB_5237_PDRF_VIEW.g2u",V.Local.sGASFile)
+	F.Intrinsic.String.Concat(V.Caller.GasDir,"\GAB_5237_PDRF_REQUEST.g2u",V.Local.sGASFile)
+	F.Global.General.CallSyncGAS(V.Local.sGASFile)
+F.Intrinsic.Control.ElseIf(V.Args.Column,=,"Submit")
+	'Update submit date in GAB_5237_PDRF_ENG
+	V.Local.dateSubmit.Set(V.Ambient.Date)
+	F.Intrinsic.String.Build("update GAB_5237_PDRF_ENG set date_submit = '{2}', approver = '' where id = {0} and seq = {1}",V.DataTable.dtCur(V.Args.RowIndex).PDRF!FieldVal,V.DataTable.dtCur(V.Args.RowIndex).Seq!FieldVal,V.Local.dateSubmit.PervasiveDate,V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+	F.Data.DataTable.DeleteRow("dtCur",V.Args.RowIndex)
+	F.Data.DataTable.AcceptChanges("dtCur")
+	F.Intrinsic.Control.CallSub(LoadReview)
+F.Intrinsic.Control.EndIf
+Program.Sub.GsGCOngoing_RowCellClick.End
+
+Program.Sub.GsGCReview_RowCellClick.Start
+V.Local.bChange.Declare
+V.Local.dateReview.Declare
+V.Local.iRet.Declare
+V.Local.iSeq.Declare
+V.Local.sFiledir.Declare
+V.Local.sFilename.Declare
+V.Local.sFilenameServer.Declare
+V.Local.sFilepath.Declare
+V.Local.sGASFile.Declare
+V.Local.sSQL.Declare
+V.Local.sUser.Declare
+
+F.Intrinsic.Control.If(V.Args.Column,=,"PDRF")
+	F.Global.General.SetPassedDataElement("PDRF",V.DataTable.dtRev(V.Args.RowIndex).PDRF!FieldVal)
+	F.Global.General.SetPassedDataElement("Seq",V.DataTable.dtRev(V.Args.RowIndex).Seq!FieldVal)
+	F.Global.General.SetPassedDataElement("Engineer",1)
+'	F.Intrinsic.String.Concat(V.Caller.GasDir,"\GAB_5237_PDRF_VIEW.g2u",V.Local.sGASFile)
+	F.Intrinsic.String.Concat(V.Caller.GasDir,"\GAB_5237_PDRF_REQUEST.g2u",V.Local.sGASFile)
+	F.Global.General.CallSyncGAS(V.Local.sGASFile)
+F.Intrinsic.Control.ElseIf(V.Args.Column,=,"Drawing")
+	F.Intrinsic.UI.ShowOpenFileDialog("","","",V.Local.sFilepath)
+
+	F.Intrinsic.Control.If(V.Local.sFilepath,<>,"***CANCEL***")
+		'Save data into GAB_5237_PDRF_DOC
+		F.Intrinsic.String.Split(V.Local.sFilepath,"\",V.Local.sFilename)
+		F.Intrinsic.String.Build("{0}\PDRF\{1}\{2}\DRAWING\{3}",V.Caller.FilesDir,V.DataTable.dtRev(V.Args.RowIndex).PDRF!FieldVal,V.DataTable.dtRev(V.Args.RowIndex).Seq!FieldVal,V.Local.sFilename(V.Local.sFilename.UBound),V.Local.sFilenameServer)
+		F.Intrinsic.String.Build("select filename from GAB_5237_PDRF_DOC where id = {0} and seq = {1} and doc_type = 2",V.DataTable.dtRev(V.Args.RowIndex).PDRF!FieldVal,V.DataTable.dtRev(V.Args.RowIndex).Seq!FieldVal,V.Local.sSQL)
+		F.ODBC.Connection!conx.OpenLocalRecordsetRW("rst",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF)
+			'Get new file seq
+			F.Intrinsic.String.Build("select max(file_seq) from GAB_5237_PDRF_DOC where id = {0} and seq = {1}",V.DataTable.dtRev(V.Args.RowIndex).PDRF!FieldVal,V.DataTable.dtRev(V.Args.RowIndex).Seq!FieldVal,V.Local.sSQL)
+			F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.iSeq)
+			F.Intrinsic.Math.Add(V.Local.iSeq,1,V.Local.iSeq)
+			F.Intrinsic.String.Build("insert into GAB_5237_PDRF_DOC(id,seq,file_seq,filename,doc_type) values({0},{1},{2},'{3}',2);",V.DataTable.dtRev(V.Args.RowIndex).PDRF!FieldVal,V.DataTable.dtRev(V.Args.RowIndex).Seq!FieldVal,V.Local.iSeq,V.Local.sFilenameServer,V.Local.sSQL)
+			F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.Else
+			F.ODBC.conx!rst.Set!filename(V.Local.sFilenameServer)
+			F.ODBC.conx!rst.Update
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conx!rst.Close
+
+		'Copy file if not exist in server
+		F.Intrinsic.File.Exists(V.Local.sFilenameServer,V.Local.bChange)
+		F.Intrinsic.Control.If(V.Local.bChange,=,False)
+			F.Intrinsic.String.Build("{0}\PDRF",V.Caller.FilesDir,V.Local.sFiledir)
+			F.Intrinsic.File.DirExists(V.Local.sFiledir,V.Local.bChange)
+			F.Intrinsic.Control.If(V.Local.bChange,=,False)
+				F.Intrinsic.File.CreateDir(V.Local.sFiledir)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.String.Build("{0}\PDRF\{1}",V.Caller.FilesDir,V.DataTable.dtRev(V.Args.RowIndex).PDRF!FieldVal,V.Local.sFiledir)
+			F.Intrinsic.File.DirExists(V.Local.sFiledir,V.Local.bChange)
+			F.Intrinsic.Control.If(V.Local.bChange,=,False)
+				F.Intrinsic.File.CreateDir(V.Local.sFiledir)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.String.Build("{0}\PDRF\{1}\{2}",V.Caller.FilesDir,V.DataTable.dtRev(V.Args.RowIndex).PDRF!FieldVal,V.DataTable.dtRev(V.Args.RowIndex).Seq!FieldVal,V.Local.sFiledir)
+			F.Intrinsic.File.DirExists(V.Local.sFiledir,V.Local.bChange)
+			F.Intrinsic.Control.If(V.Local.bChange,=,False)
+				F.Intrinsic.File.CreateDir(V.Local.sFiledir)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.String.Build("{0}\DRAWING",V.Local.sFiledir,V.Local.sFiledir)
+			F.Intrinsic.File.DirExists(V.Local.sFiledir,V.Local.bChange)
+			F.Intrinsic.Control.If(V.Local.bChange,=,False)
+				F.Intrinsic.File.CreateDir(V.Local.sFiledir)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.File.CopyFile(V.Local.sFilepath,V.Local.sFilenameServer)
+		F.Intrinsic.Control.EndIf
+
+		F.Intrinsic.String.Build("update GAB_5237_PDRF_ENG set drawing = 1 where id = {0} and seq = {1}",V.DataTable.dtRev(V.Args.RowIndex).PDRF!FieldVal,V.DataTable.dtRev(V.Args.RowIndex).Seq!FieldVal,V.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+		V.Local.dateReview.Set(V.Ambient.Date)
+		F.Intrinsic.String.Build("update GAB_5237_PDRF_ISSUE set date_complete = '{2}' where id = {0} and seq = {1}",V.DataTable.dtRev(V.Args.RowIndex).PDRF!FieldVal,V.DataTable.dtRev(V.Args.RowIndex).Seq!FieldVal,V.Local.dateReview.PervasiveDate,V.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.CallSub(ApprovalNotification,"RowIndex",V.Args.RowIndex,"FilePath",V.Local.sFilenameServer)
+
+		F.Data.DataTable.DeleteRow("dtRev",V.Args.RowIndex)
+		F.Data.DataTable.AcceptChanges("dtRev")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+Program.Sub.GsGCReview_RowCellClick.End
+
+Program.Sub.ApprovalNotification.Start
+V.Local.i1.Declare
+V.Local.iMsgID.Declare
+V.Local.iPDRF.Declare
+V.Local.iRet.Declare
+V.Local.iSeq.Declare
+V.Local.iUserS.Declare
+V.Local.iUserR.Declare
+V.Local.sEmail.Declare
+V.Local.sMessage.Declare
+
+V.Local.sName.Declare
+V.Local.sOrigEmail.Declare
+V.Local.sOrigName.Declare
+V.Local.sSQL.Declare
+V.Local.sSubject.Declare
+V.Local.sUser.Declare
+v.Local.sRecipientEmailAndName.Declare
+v.Local.sSenderEmailAndName.Declare
+
+'Send notification to management about class 1 PDRF requiring approval
+V.Local.sUser.Set(V.Caller.User)
+
+'Build internal message and email
+F.Intrinsic.String.Build("PDRF No. {0} requiring drawing approval",V.DataTable.dtRev(V.Args.RowIndex).PDRF!FieldVal,V.Local.sSubject)
+F.Intrinsic.String.Concat("PDRF No.: ",V.DataTable.dtRev(V.Args.RowIndex).PDRF!FieldVal,V.Local.sMessage)
+F.Intrinsic.String.Concat(V.Local.sMessage,V.Ambient.NewLine,"Engineer: ",V.DataTable.dtRev(V.Args.RowIndex).Engineer!FieldVal,V.Local.sMessage)
+F.Intrinsic.String.Concat(V.Local.sMessage,V.Ambient.NewLine,"Submit Date: ",V.DataTable.dtRev(V.Args.RowIndex).SubmitDate!FieldVal,V.Local.sMessage)
+F.Intrinsic.String.Concat(V.Local.sMessage,V.Ambient.NewLine,"Reviewed By: ",V.Caller.User,V.Local.sMessage)
+F.Intrinsic.String.Concat(V.Local.sMessage,V.Ambient.NewLine,"Reviewed Date: ",V.Ambient.Date,V.Local.sMessage)
+
+'F.Intrinsic.String.Build("PDRF No. {0} requiring drawing approval",V.DataTable.dtRev(V.Args.RowIndex).PDRF!FieldVal,V.Local.sSubject)
+'F.Data.DataTable.CreateFromSQL("dtMgmt","conx","select gss_user as UserID from GAB_5237_PDRF_LVL where manager = 1")
+'F.Intrinsic.Control.If(V.DataTable.dtMgmt.RowCount,>,0)
+'	F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtMgmt.RowCount--,1)
+		'Get Sender's User ID
+		Function.Global.Security.GetUserID(V.Local.sUser,V.Caller.CompanyCode,V.Local.iUserS)
+		Function.Global.Security.GetUserID(V.DataTable.dtRev(V.Args.RowIndex).Requestor!FieldValTrim,V.Caller.CompanyCode,V.Local.iUserR)
+
+		'send an internal message 
+		F.Global.Messaging.InternalMessageCreate(-1,V.Ambient.Date,V.Local.iUserS.Trim,V.Local.sSubject,V.Local.sMessage,V.Local.iMsgID)
+		F.Global.Messaging.InternalMessageQueueToUser(V.Local.iUserR,V.Local.iMsgID)
+
+		'Send email with attachment
+		F.Global.Messaging.isCourierRunning(V.Local.iRet)
+		F.Intrinsic.Control.If(V.Local.iRet,<>,0)
+			F.Global.Security.GetUserEmail(V.DataTable.dtRev(V.Args.RowIndex).Engineer!FieldValTrim,V.Caller.CompanyCode,V.Local.sOrigEmail)
+			F.Global.Security.GetFullName(V.DataTable.dtRev(V.Args.RowIndex).Engineer!FieldValTrim,V.Caller.CompanyCode,V.Local.sOrigName)
+			F.Intrinsic.String.Concat(v.Local.sOrigName.Trim,"*!*",v.Local.sOrigEmail.Trim,v.Local.sRecipientEmailAndName)
+			
+			F.Global.Security.GetUserEmail(V.DataTable.dtRev(V.Args.RowIndex).Requestor!FieldValTrim,V.Caller.CompanyCode,V.Local.sEmail)
+			F.Global.Security.GetFullName(V.DataTable.dtRev(V.Args.RowIndex).Requestor!FieldValTrim,V.Caller.CompanyCode,V.Local.sName)
+			F.Intrinsic.String.Concat(v.Local.sEmail.Trim,"*!*",v.Local.sName.Trim,v.Local.sSenderEmailAndName)
+
+			'F.Global.Messaging.CreateEMMessage(V.Local.sEmail,V.Local.sName,V.Local.sOrigEmail,V.Local.sOrigName,V.Local.sSubject,V.Local.sMessage,V.Args.FilePath)
+			F.Global.Messaging.QueueMessage(v.Caller.CompanyCode,v.Local.iUserS,v.Caller.Caller,v.Local.sSubject,v.Local.sSenderEmailAndName,v.Local.sRecipientEmailAndName,v.Local.sMessage)
+		F.Intrinsic.Control.EndIf
+	'F.Intrinsic.Control.Next(V.Local.i1)
+'F.Intrinsic.Control.EndIf
+'F.Data.DataTable.Close("dtMgmt")
+Program.Sub.ApprovalNotification.End
+
+Program.Sub.cmdRefresh_Click.Start
+Gui.F_Status.tab1.Visible(False)
+F.Intrinsic.Control.CallSub(LoadNotConsented)
+F.Intrinsic.Control.CallSub(LoadOnGoing)
+F.Intrinsic.Control.CallSub(loadreview)
+Gui.F_Status.tab1.Visible(True)
+Program.Sub.cmdRefresh_Click.End
+
+Program.Sub.F_RevDate_Unload.Start
+Gui.F_RevDate..Visible(False)
+Gui.F_Status..Visible(True)
+Program.Sub.F_RevDate_Unload.End
+
+Program.Sub.cmdUpdate_Click.Start
+V.Local.dateConsent.Declare
+V.Local.dateRev.Declare
+V.Local.iPDRF.Declare
+V.Local.iRet.Declare
+V.Local.iSeq.Declare
+V.Local.sSQL.Declare
+
+V.Local.iPDRF.Set(V.Screen.F_RevDate!lblPDRF.Caption)
+V.Local.iSeq.Set(V.Screen.F_RevDate!lblSeq.Caption)
+
+V.Local.dateConsent.Set(V.Screen.F_RevDate!dtp1.Value)
+
+F.Intrinsic.String.Build("update GAB_5237_PDRF_ISSUE set date_consent = '{2}' where id = {0} and seq = {1}",V.Local.iPDRF,V.Local.iSeq,V.Local.dateConsent.PervasiveDate,V.Local.sSQL)
+F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+F.Intrinsic.String.Build("select * from GAB_5237_PDRF_ENG where id = {0} and seq = {1}",V.Local.iPDRF,V.Local.iSeq,V.Local.sSQL)
+F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF)
+	F.Intrinsic.String.Build("insert into GAB_5237_PDRF_ENG(id,seq,date_submit,approver,drawing) values({0},{1},'1900-01-01','',0)",V.Local.iPDRF,V.Local.iSeq,V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("update GAB_5237_PDRF_ENG set date_submit = '1900-01-01', approver = '', drawing = 0 where id = {0} and seq = {1}",V.Local.iPDRF,V.Local.iSeq,V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rst.Close
+
+F.Intrinsic.Control.CallSub(LoadNotConsented)
+F.Intrinsic.Control.CallSub(LoadOnGoing)
+F.Intrinsic.Control.CallSub(f_revdate_unload)
+Program.Sub.cmdUpdate_Click.End
+
+Program.Sub.Comments.Start
+${$0$}$$}$$}$12:00:00 AM$}$False
+${$3$}$0$}$$}$0$}$-1$}$$}$12:00:00 AM$}$This will allow a user to view all non-approved POs. They can approve one, multiple, or all POs. If the PO has a value greater than the users approval limit, they will not be able to approve that PO.
+${$5$}$2.0.0.0$}$2
+${$6$}$dyunus$}$20220607142438829$}$xZ6SHi8g7O0Qsxe6AiO2NH3PnOKQRy0TKXzU1KeTovbP53xWrY7l3MkiZKDYlyRQxDrFGPEdl7E=
+Program.Sub.Comments.End
