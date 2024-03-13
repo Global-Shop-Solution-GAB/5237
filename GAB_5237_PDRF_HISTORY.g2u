@@ -1,0 +1,169 @@
+Program.Sub.ScreenSU.Start
+Gui.F_History..Create
+Gui.F_History..Caption("PDRF History")
+Gui.F_History..Size(16485,10695)
+Gui.F_History..MinX(0)
+Gui.F_History..MinY(0)
+Gui.F_History..Position(0,0)
+Gui.F_History..FontSize(9)
+Gui.F_History..BackColor(-2147483633)
+Gui.F_History..MousePointer(0)
+Gui.F_History..Event(UnLoad,Unload)
+Gui.F_History.lbl1.Create(Label,"PDRF No.",True,1350,255,0,75,135,True,0,"Arial",9,-2147483633,0)
+Gui.F_History.txtPDRF.Create(TextBox,"",True,1215,315,0,105,375,True,0,"Arial",9,-2147483643,1)
+Gui.F_History.txtPDRF.Locked(True)
+Gui.F_History.cmdBrwPDRF.Create(Button)
+Gui.F_History.cmdBrwPDRF.Size(495,375)
+Gui.F_History.cmdBrwPDRF.Position(1440,330)
+Gui.F_History.cmdBrwPDRF.Caption("^")
+Gui.F_History.cmdBrwPDRF.FontSize(9)
+Gui.F_History.cmdBrwPDRF.Event(Click,cmdBrwPDRF_Click)
+Gui.F_History.GsGCSeq.Create(GsGridControl)
+Gui.F_History.GsGCSeq.Size(16065,9195)
+Gui.F_History.GsGCSeq.Position(105,810)
+Gui.F_History.GsGCSeq.Event(RowClick,GsGCSeq_RowClick)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+V.Local.sIcon.Declare
+
+F.Intrinsic.String.Build("{0}\ART\gss2.ico",V.Caller.GlobalDir,V.Local.sIcon)
+Gui.F_History..Icon(V.Local.sIcon)
+
+F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass,600)
+
+Gui.F_History.GsGCSeq.Anchor(15)
+
+Gui.F_History..Show
+Program.Sub.Main.End
+
+Program.Sub.Unload.Start
+F.Intrinsic.Control.If(V.DataTable.dtPDRF.Exists)
+	F.Data.DataTable.Close("dtPDRF")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.Close
+F.Intrinsic.Control.End
+Program.Sub.Unload.End
+
+Program.Sub.cmdBrwPDRF_Click.Start
+V.Local.iWidths.Declare
+V.Local.sRet.Declare
+V.Local.sSQL.Declare
+V.Local.sTitles.Declare
+
+F.Intrinsic.String.Split("PDRF*!*Start Date","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("1000*!*1500","*!*",V.Local.iWidths)
+
+V.Local.sSQL.Set("select id, date_start from GAB_5237_PDRF order by id")
+
+F.Intrinsic.UI.Browser("Select a PDRF","conx",V.Local.sSQL,V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	
+	Gui.F_History.txtPDRF.Text(V.Local.sRet(0))
+	Gui.F_History.GsGCSeq.Visible(False)
+	
+	F.Intrinsic.Control.If(V.DataTable.dtPDRF.Exists)
+		F.Data.DataTable.Close("dtPDRF")
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Build("select seq as Seq, date_issue as StartDate, date_due as DueDate, date_complete as CompDate, date_acknowledge as AckDate, scope as Scope, class_no as ClassNo, class_type as ClassType, requestor as Requestor, engineer as Engineer, reviewer as Reviewer, approver as Approver, job as Job, suffix as Suffix from GAB_5237_PDRF_ISSUE where id = {0}",V.Local.sRet(0),V.Local.sSQL)
+	F.Data.DataTable.CreateFromSQL("dtPDRF","conx",V.Local.sSQL,True)
+	
+	Gui.F_History.GsGCSeq.AddGridviewFromDatatable("gvPDRF","dtPDRF")
+	Gui.F_History.GsGCSeq.MainView("gvPDRF")
+	
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","Seq","HeaderHAlignment","Center")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","StartDate","HeaderHAlignment","Center")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","DueDate","HeaderHAlignment","Center")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","CompDate","HeaderHAlignment","Center")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","AckDate","HeaderHAlignment","Center")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","Scope","HeaderHAlignment","Center")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","ClassNo","HeaderHAlignment","Center")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","ClassType","HeaderHAlignment","Center")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","Requestor","HeaderHAlignment","Center")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","Engineer","HeaderHAlignment","Center")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","Reviewer","HeaderHAlignment","Center")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","Approver","HeaderHAlignment","Center")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","Job","HeaderHAlignment","Center")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","Suffix","HeaderHAlignment","Center")
+	
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","Seq","CellHAlignment","Center")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","StartDate","CellHAlignment","Center")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","DueDate","CellHAlignment","Center")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","CompDate","CellHAlignment","Center")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","AckDate","CellHAlignment","Center")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","ClassNo","CellHAlignment","Center")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","Requestor","CellHAlignment","Center")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","Engineer","CellHAlignment","Center")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","Reviewer","CellHAlignment","Center")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","Approver","CellHAlignment","Center")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","Job","CellHAlignment","Center")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","Suffix","CellHAlignment","Center")
+	
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","Seq","MinWidth","40")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","StartDate","MinWidth","100")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","DueDate","MinWidth","100")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","CompDate","MinWidth","100")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","AckDate","MinWidth","100")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","Scope","MinWidth","170")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","ClassNo","MinWidth","80")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","ClassType","MinWidth","90")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","Requestor","MinWidth","90")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","Engineer","MinWidth","90")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","Reviewer","MinWidth","90")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","Approver","MinWidth","90")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","Job","MinWidth","70")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","Suffix","MinWidth","60")
+	
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","StartDate","Caption","Start Date")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","DueDate","Caption","Due Date")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","CompDate","Caption","Completion Date")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","AckDate","Caption","Acknowledge Date")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","ClassNo","Caption","Class")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","ClassType","Caption","Type")
+	
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","Seq","AllowEdit",False)
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","StartDate","AllowEdit",False)
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","DueDate","AllowEdit",False)
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","CompDate","AllowEdit",False)
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","AckDate","AllowEdit",False)
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","Scope","AllowEdit",False)
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","ClassNo","AllowEdit",False)
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","ClassType","AllowEdit",False)
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","Requestor","AllowEdit",False)
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","Engineer","AllowEdit",False)
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","Reviewer","AllowEdit",False)
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","Approver","AllowEdit",False)
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","Job","AllowEdit",False)
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","Suffix","AllowEdit",False)
+	
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","StartDate","DisplayCustomDatetime","d")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","DueDate","DisplayCustomDatetime","d")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","CompDate","DisplayCustomDatetime","d")
+	Gui.F_History.GsGCSeq.SetColumnProperty("gvPDRF","AckDate","DisplayCustomDatetime","d")
+	
+	Gui.F_History.GsGCSeq.Visible(True)
+	
+F.Intrinsic.Control.EndIf
+Program.Sub.cmdBrwPDRF_Click.End
+
+Program.Sub.GsGCSeq_RowClick.Start
+V.Local.iPDRF.Declare
+V.Local.sGASFile.Declare
+
+F.Intrinsic.Control.If(V.Args.Clicks,=,1)
+	V.Local.iPDRF.Set(V.Screen.F_History!txtPDRF.Text)
+	
+	F.Global.General.SetPassedDataElement("PDRF",V.Local.iPDRF)
+	F.Global.General.SetPassedDataElement("Seq",V.DataTable.dtPDRF(V.Args.RowIndex).Seq!FieldVal)
+	F.Global.General.SetPassedDataElement("Engineer",0)
+	F.Intrinsic.String.Concat(V.Caller.GasDir,"\GAB_5237_PDRF_VIEW.g2u",V.Local.sGASFile)
+	F.Global.General.CallSyncGAS(V.Local.sGASFile)
+F.Intrinsic.Control.EndIf
+Program.Sub.GsGCSeq_RowClick.End
