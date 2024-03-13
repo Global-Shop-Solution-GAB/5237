@@ -1,0 +1,283 @@
+Program.Sub.ScreenSU.Start
+Gui.F_Setup..Create
+Gui.F_Setup..Caption("PDRF Setup [5237]")
+Gui.F_Setup..Size(10365,8700)
+Gui.F_Setup..MinX(0)
+Gui.F_Setup..MinY(0)
+Gui.F_Setup..Position(0,0)
+Gui.F_Setup..FontSize(9)
+Gui.F_Setup..BackColor(-2147483633)
+Gui.F_Setup..MousePointer(0)
+Gui.F_Setup..Event(UnLoad,Unload)
+Gui.F_Setup.tab1.Create(Tab)
+Gui.F_Setup.tab1.Size(10020,7995)
+Gui.F_Setup.tab1.Position(45,75)
+Gui.F_Setup.tab1.FontSize(9)
+Gui.F_Setup.tab1.Tabs(2)
+Gui.F_Setup.tab1.SetTab(0)
+Gui.F_Setup.tab1.Caption("Organizational Structure")
+Gui.F_Setup.tab1.SetTab(1)
+Gui.F_Setup.tab1.Caption("Numbering")
+Gui.F_Setup.GsGCUser.Create(GsGridControl)
+Gui.F_Setup.GsGCUser.Size(9795,7455)
+Gui.F_Setup.GsGCUser.Position(60,60)
+Gui.F_Setup.GsGCUser.Event(CellValueChanged,GsGCUser_CellValueChanged)
+Gui.F_Setup.GsGCUser.Parent("tab1",0)
+Gui.F_Setup.GsGCNumbering.Create(GsGridControl)
+Gui.F_Setup.GsGCNumbering.Size(9795,7455)
+Gui.F_Setup.GsGCNumbering.Position(60,60)
+Gui.F_Setup.GsGCNumbering.Parent("tab1",1)
+Gui.F_Setup.GsGCNumbering.Event(CellValueChanged,GsGCNumbering_CellValueChanged)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+V.Local.sIcon.Declare
+
+F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+F.ODBC.Connection!ccon.OpenConnection(V.Ambient.Ccon,V.Ambient.Cuser,V.Ambient.Cpass)
+
+F.Intrinsic.String.Build("{0}\ART\gss2.ico",V.Caller.GlobalDir,V.Local.sIcon)
+Gui.F_Setup..Icon(V.Local.sIcon)
+
+Gui.F_Setup.tab1.Anchor(15)
+Gui.F_Setup.GsGCUser.Anchor(15)
+Gui.F_Setup.GsGCNumbering.Anchor(15)
+
+F.Intrinsic.Control.CallSub(LoadGrid)
+
+Gui.F_Setup..Show
+Program.Sub.Main.End
+
+Program.Sub.Unload.Start
+F.Data.DataTable.Close("dtUser")
+F.Data.DataTable.Close("dtNumber")
+F.ODBC.Connection!conx.Close
+F.ODBC.Connection!ccon.Close
+F.Intrinsic.Control.End
+
+Program.Sub.Unload.End
+
+Program.Sub.LoadGrid.Start
+V.Local.sSQL.Declare
+
+F.Intrinsic.String.Build("select gs_user as UserID, rtrim(first_name)+' '+rtrim(last_name) as UserName from user_information where company = '' or company = '{0}' order by gs_user",V.Caller.CompanyCode,V.Local.sSQL)
+
+'User Region
+F.Data.DataTable.CreateFromSQL("dtUser","ccon",V.Local.sSQL,True)
+F.Data.DataTable.AddColumn("dtUser","Engineer","Boolean",False)
+F.Data.DataTable.AddColumn("dtUser","Manager","Boolean",False)
+F.Data.DataTable.AddColumn("dtUser","Management","Boolean",False)
+'Fill Engineer from GAB_5237_PDRF_LVL
+F.Data.Dictionary.CreateFromSQL("dicLvl","conx","select gss_user, engineer from GAB_5237_PDRF_LVL")
+F.Data.Dictionary.SetDefaultReturn("dicLvl",False)
+F.Data.DataTable.FillFromDictionary("dtUser","dicLvl","UserID","Engineer")
+F.Data.Dictionary.Close("dicLvl")
+'Fill Manager from GAB_5237_PDRF_LVL
+F.Data.Dictionary.CreateFromSQL("dicLvl","conx","select gss_user, manager from GAB_5237_PDRF_LVL")
+F.Data.Dictionary.SetDefaultReturn("dicLvl",False)
+F.Data.DataTable.FillFromDictionary("dtUser","dicLvl","UserID","Manager")
+F.Data.Dictionary.Close("dicLvl")
+'Fill Management from GAB_5237_PDRF_LVL
+F.Data.Dictionary.CreateFromSQL("dicLvl","conx","select gss_user, management from GAB_5237_PDRF_LVL")
+F.Data.Dictionary.SetDefaultReturn("dicLvl",False)
+F.Data.DataTable.FillFromDictionary("dtUser","dicLvl","UserID","Management")
+F.Data.Dictionary.Close("dicLvl")
+
+Gui.F_Setup.GsGCUser.AddGridviewFromDatatable("gvUser","dtUser")
+Gui.F_Setup.GsGCUser.MainView("gvUser")
+Gui.F_Setup.GsGCUser.SetColumnProperty("gvUser","UserID","HeaderHAlignment","Center")
+Gui.F_Setup.GsGCUser.SetColumnProperty("gvUser","UserName","HeaderHAlignment","Center")
+Gui.F_Setup.GsGCUser.SetColumnProperty("gvUser","Engineer","HeaderHAlignment","Center")
+Gui.F_Setup.GsGCUser.SetColumnProperty("gvUser","Manager","HeaderHAlignment","Center")
+Gui.F_Setup.GsGCUser.SetColumnProperty("gvUser","Management","HeaderHAlignment","Center")
+Gui.F_Setup.GsGCUser.SetColumnProperty("gvUser","UserName","Caption","Name")
+Gui.F_Setup.GsGCUser.SetColumnProperty("gvUser","UserID","MinWidth","100")
+Gui.F_Setup.GsGCUser.SetColumnProperty("gvUser","UserName","MinWidth","180")
+Gui.F_Setup.GsGCUser.SetColumnProperty("gvUser","Engineer","MinWidth","100")
+Gui.F_Setup.GsGCUser.SetColumnProperty("gvUser","Manager","MinWidth","100")
+Gui.F_Setup.GsGCUser.SetColumnProperty("gvUser","Management","MinWidth","100")
+Gui.F_Setup.GsGCUser.SetColumnProperty("gvUser","Engineer","AllowEdit",True)
+Gui.F_Setup.GsGCUser.SetColumnProperty("gvUser","Engineer","ReadOnly",False)
+Gui.F_Setup.GsGCUser.SetColumnProperty("gvUser","Manager","AllowEdit",True)
+Gui.F_Setup.GsGCUser.SetColumnProperty("gvUser","Manager","ReadOnly",False)
+Gui.F_Setup.GsGCUser.SetColumnProperty("gvUser","Management","AllowEdit",True)
+Gui.F_Setup.GsGCUser.SetColumnProperty("gvUser","Management","ReadOnly",False)
+
+'Numbering 
+F.Data.DataTable.Create("dtNumber",True)
+F.Data.DataTable.AddColumn("dtNumber","Field","String")
+F.Data.DataTable.AddColumn("dtNumber","LastNo","Long",0)
+F.Data.DataTable.AddRow("dtNumber","Field","PDRF")
+F.Data.DataTable.AddRow("dtNumber","Field","SC")
+F.Data.DataTable.AddRow("dtNumber","Field","SP")
+F.Data.DataTable.AddRow("dtNumber","Field","CK")
+F.Data.DataTable.AddRow("dtNumber","Field","N")
+F.Data.DataTable.AddRow("dtNumber","Field","SB")
+F.Data.DataTable.AddRow("dtNumber","Field","STD")
+F.Data.DataTable.AddRow("dtNumber","Field","P")
+
+F.Data.Dictionary.CreateFromSQL("dicNo","conx","select field_name, last_no from GAB_5237_PDRF_NO")
+F.Data.Dictionary.SetDefaultReturn("dicNo",0)
+F.Data.DataTable.FillFromDictionary("dtNumber","dicNo","Field","LastNo")
+F.Data.Dictionary.Close("dicNo")
+
+F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst","select max(id) as id from GAB_5237_PDRF")
+F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+	F.Data.DataTable.SetValue("dtNumber",0,"LastNo",V.ODBC.conx!rst.FieldVal!id)
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rst.Close
+
+Gui.F_Setup.GsGCNumbering.AddGridviewFromDatatable("gvNo","dtNumber")
+Gui.F_Setup.GsGCNumbering.MainView("gvNo")
+Gui.F_Setup.GsGCNumbering.SetColumnProperty("gvNo","Field","HeaderHAlignment","Center")
+Gui.F_Setup.GsGCNumbering.SetColumnProperty("gvNo","LastNo","HeaderHAlignment","Center")
+Gui.F_Setup.GsGCNumbering.SetColumnProperty("gvNo","LastNo","Caption","Last Number")
+Gui.F_Setup.GsGCNumbering.SetColumnProperty("gvNo","LastNo","AllowEdit",True)
+Gui.F_Setup.GsGCNumbering.SetColumnProperty("gvNo","LastNo","ReadOnly",False)
+Program.Sub.LoadGrid.End
+
+Program.Sub.GsGCUser_CellValueChanged.Start
+V.Local.bValue.Declare
+V.Local.sSQL.Declare
+V.Local.sUser.Declare
+
+V.Local.bValue.Set(V.Args.Value)
+V.Local.sUser.Set(V.DataTable.dtUser(V.Args.RowIndex).UserID!FieldValTrim)
+F.Intrinsic.Control.If(V.Args.Column,=,"Engineer")
+	F.Intrinsic.Control.If(V.Local.bValue)
+		F.Data.DataTable.SetValue("dtUser",V.Args.RowIndex,"Manager",False,"Management",False)
+		F.Intrinsic.String.Build("select engineer, manager, management from GAB_5237_PDRF_LVL where gss_user = '{0}'",V.Local.sUser.Trim,V.Local.sSQL)
+		F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF)
+			F.Intrinsic.String.Build("insert into GAB_5237_PDRF_LVL(gss_user,engineer,manager,management) values('{0}',1,0,0);",V.Local.sUser.Trim,V.Local.sSQL)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("update GAB_5237_PDRF_LVL set engineer = 1, manager = 0, management = 0 where gss_user = '{0}'",V.Local.sUser.Trim,V.Local.sSQL)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conx!rst.Close
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.Else
+		F.Data.DataTable.SetValue("dtUser",V.Args.RowIndex,"Engineer",False)
+		F.Intrinsic.String.Build("select engineer, manager, management from GAB_5237_PDRF_LVL where gss_user = '{0}'",V.Local.sUser.Trim,V.Local.sSQL)
+		F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+			F.Intrinsic.String.Build("update GAB_5237_PDRF_LVL set engineer = 0 where gss_user = '{0}'",V.Local.sUser.Trim,V.Local.sSQL)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conx!rst.Close
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ElseIf(V.Args.Column,=,"Manager")
+	F.Intrinsic.Control.If(V.Local.bValue)
+		F.Data.DataTable.SetValue("dtUser",V.Args.RowIndex,"Engineer",False,"Management",False)
+		F.Intrinsic.String.Build("select engineer, manager, management from GAB_5237_PDRF_LVL where gss_user = '{0}'",V.Local.sUser.Trim,V.Local.sSQL)
+		F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF)
+			F.Intrinsic.String.Build("insert into GAB_5237_PDRF_LVL(gss_user,engineer,manager,management) values('{0}',0,1,0);",V.Local.sUser.Trim,V.Local.sSQL)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("update GAB_5237_PDRF_LVL set engineer = 0, manager = 1, management = 0 where gss_user = '{0}'",V.Local.sUser.Trim,V.Local.sSQL)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conx!rst.Close
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.Else
+		F.Data.DataTable.SetValue("dtUser",V.Args.RowIndex,"Manager",False)
+		F.Intrinsic.String.Build("select engineer, manager, management from GAB_5237_PDRF_LVL where gss_user = '{0}'",V.Local.sUser.Trim,V.Local.sSQL)
+		F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+			F.Intrinsic.String.Build("update GAB_5237_PDRF_LVL set manager = 0 where gss_user = '{0}'",V.Local.sUser.Trim,V.Local.sSQL)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conx!rst.Close
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ElseIf(V.Args.Column,=,"Management")
+	F.Intrinsic.Control.If(V.Local.bValue)
+		F.Data.DataTable.SetValue("dtUser",V.Args.RowIndex,"Manager",False,"Engineer",False)
+		F.Intrinsic.String.Build("select engineer, manager, management from GAB_5237_PDRF_LVL where gss_user = '{0}'",V.Local.sUser.Trim,V.Local.sSQL)
+		F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF)
+			F.Intrinsic.String.Build("insert into GAB_5237_PDRF_LVL(gss_user,engineer,manager,management) values('{0}',0,0,1);",V.Local.sUser.Trim,V.Local.sSQL)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("update GAB_5237_PDRF_LVL set engineer = 0, manager = 0, management = 1 where gss_user = '{0}'",V.Local.sUser.Trim,V.Local.sSQL)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conx!rst.Close
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.Else
+		F.Data.DataTable.SetValue("dtUser",V.Args.RowIndex,"Management",False)
+		F.Intrinsic.String.Build("select engineer, manager, management from GAB_5237_PDRF_LVL where gss_user = '{0}'",V.Local.sUser.Trim,V.Local.sSQL)
+		F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+			F.Intrinsic.String.Build("update GAB_5237_PDRF_LVL set management = 0 where gss_user = '{0}'",V.Local.sUser.Trim,V.Local.sSQL)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conx!rst.Close
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+Program.Sub.GsGCUser_CellValueChanged.End
+
+Program.Sub.GsGCNumbering_CellValueChanged.Start
+V.Local.bNumeric.Declare
+V.Local.iNo.Declare
+V.Local.sMessage.Declare
+V.Local.sSQL.Declare
+
+F.Intrinsic.Math.IsNumeric(V.Args.Value,V.Local.bNumeric)
+F.Intrinsic.Control.If(V.Local.bNumeric,=,False)
+	F.Intrinsic.UI.Msgbox("Input must be numeric")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtNumber(V.Args.RowIndex).Field!FieldValTrim,=,"PDRF")
+	'Check GAB_5237_PDRF
+	F.Intrinsic.String.Build("select id from GAB_5237_PDRF where id > {0}",V.Args.Value,V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF)
+		'No record of PDRF number greater than the entered value
+		F.ODBC.Connection!conx.OpenLocalRecordsetRO("rstUpd","select id from GAB_5237_PDRF where date_start = '1900-01-01'")
+		F.Intrinsic.Control.If(V.ODBC.conx!rstUpd.EOF,=,False)
+			F.Intrinsic.String.Build("delete from GAB_5237_PDRF where id = {0}",V.ODBC.conx!rstUpd.FieldVal!id,V.Local.sSQL)
+			F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conx!rstUpd.Close
+		F.Intrinsic.String.Build("insert into GAB_5237_PDRF(id,date_start) values({0},'1900-01-01');",V.Args.Value,V.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.Else
+		'There is a record of PDRF number greater than the entered value, info is restored back
+		F.Intrinsic.UI.Msgbox("There is a PDRF value greater than the entered value")
+		F.ODBC.Connection!conx.OpenLocalRecordsetRO("rstUpd","select max(id) as id from GAB_5237_PDRF")
+		F.Intrinsic.Control.If(V.ODBC.conx!rstUpd.EOF,=,False)
+			F.Data.DataTable.SetValue("dtNumber",V.Args.RowIndex,"LastNo",V.ODBC.conx!rstUpd.FieldVal!id)
+		F.Intrinsic.Control.Else
+			F.Data.DataTable.SetValue("dtNumber",V.Args.RowIndex,"LastNo",0)
+		F.Intrinsic.Control.EndIf
+		F.Data.DataTable.AcceptChanges("dtNumber")
+		F.ODBC.conx!rstUpd.Close
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.Close
+F.Intrinsic.Control.Else
+	'Check GAB_5237_PDRF_NO for other numberings
+	F.Intrinsic.String.Build("select last_no from GAB_5237_PDRF_NO where field_name = '{0}'",V.DataTable.dtNumber(V.Args.RowIndex).Field!FieldValTrim,V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF)
+		F.Intrinsic.String.Build("insert into GAB_5237_PDRF_NO(field_name,last_no) values('{0}',{1});",V.DataTable.dtNumber(V.Args.RowIndex).Field!FieldValTrim,V.Args.Value,V.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.Else
+		V.Local.iNo.Set(V.ODBC.conx!rst.FieldVal!last_no)
+		F.Intrinsic.Control.If(V.Args.Value,>,V.Local.iNo)
+			F.Intrinsic.String.Build("update GAB_5237_PDRF_NO set last_no = {1} where field_name = '{0}'",V.DataTable.dtNumber(V.Args.RowIndex).Field!FieldValTrim,V.Args.Value,V.Local.sSQL)
+			F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("There is a {0} value greater than the entered value",V.DataTable.dtNumber(V.Args.RowIndex).Field!FieldValTrim,V.Local.sMessage)
+			F.Intrinsic.UI.Msgbox(V.Local.sMessage)
+			F.Data.DataTable.SetValue("dtNumber",V.Args.RowIndex,"LastNo",V.Local.iNo)
+			F.Data.DataTable.AcceptChanges("dtNumber")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.Close
+F.Intrinsic.Control.EndIf
+Program.Sub.GsGCNumbering_CellValueChanged.End
+
+Program.Sub.Comments.Start
+${$0$}$$}$$}$12:00:00 AM$}$False
+${$3$}$0$}$$}$0$}$-1$}$$}$12:00:00 AM$}$This will allow a user to view all non-approved POs. They can approve one, multiple, or all POs. If the PO has a value greater than the users approval limit, they will not be able to approve that PO.
+Program.Sub.Comments.End
