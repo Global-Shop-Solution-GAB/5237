@@ -1,0 +1,26 @@
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+V.Local.bExist.Declare
+V.Local.sFile.Declare
+V.Local.sFilename.Declare
+V.Local.sTemp.Declare
+V.Local.sToday.Declare
+V.Local.sUser.Declare
+
+F.Intrinsic.Control.If(V.Caller.Switches,=,"2")
+	'Work Order Post OK hook
+	F.Intrinsic.Control.If(V.Caller.Hook,=,16800)
+		'Update the reference file in temp GSS folder with the work order/suffix no
+		V.Local.sUser.Set(V.Caller.User)
+		F.Intrinsic.String.Format(V.Ambient.Date,"YYYYMMDD",V.Local.sToday)
+		F.Intrinsic.String.Build("{0}\GSS\GAB_PDRF_{1}_{2}.txt",V.System.Temp,V.Local.sUser.Trim,V.Local.sToday,V.Local.sFilename)
+		F.Intrinsic.File.Exists(V.Local.sFilename,V.Local.bExist)
+		F.Intrinsic.Control.If(V.Local.bExist)
+			F.Intrinsic.String.Concat(V.Passed.009000,"*!*",V.Passed.009001,V.Local.sFile)
+			F.Intrinsic.File.String2File(V.Local.sFilename,V.Local.sFile)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+Program.Sub.Main.End
